@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lbl_create" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="lbl_date" max="32767" attributes="0"/>
+                              <Component id="lbl_pos" max="32767" attributes="0"/>
+                              <Component id="lbl_id" alignment="1" max="32767" attributes="0"/>
+                              <Component id="lbl_age" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lbl_gender" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lbl_level" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lbl_teaminfo" alignment="1" max="32767" attributes="0"/>
+                              <Component id="lbl_name" alignment="1" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="lbl_profile" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jCmbBox" pref="217" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="txt_name" max="32767" attributes="0"/>
+                                          <Component id="txt_id" pref="218" max="32767" attributes="0"/>
+                                          <Component id="txt_age" max="32767" attributes="0"/>
+                                          <Component id="txt_level" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txt_teaminfo" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="0" pref="294" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txt_pos" max="32767" attributes="0"/>
+                                  <Component id="txt_date" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="btn_choosefile" min="-2" pref="130" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="309" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="216" max="-2" attributes="0"/>
+              <Component id="btn_save" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+              <Component id="lbl_create" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbl_name" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_name" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbl_id" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_id" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbl_age" alignment="3" max="32767" attributes="0"/>
+                  <Component id="txt_age" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbl_gender" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCmbBox" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbl_level" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_level" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbl_teaminfo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_teaminfo" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbl_pos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_pos" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbl_date" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_date" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbl_profile" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_choosefile" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+              <Component id="btn_save" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="lbl_create">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="                                               CREATE"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_name">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="NAME:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_id">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="EMPLOYEE ID:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt_name">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt_id">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_idActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_save">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="SAVE"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_saveActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_age">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="AGE:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt_age">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_gender">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="GENDER:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_level">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="LEVEL:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt_level">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_teaminfo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="TEAM INFO:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt_teaminfo">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_pos">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="POSITION TITLE:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt_pos">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_date">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="DATE:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt_date">
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jCmbBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="Select Your Gender"/>
+            <StringItem index="1" value="FEMALE"/>
+            <StringItem index="2" value="MALE"/>
+            <StringItem index="3" value="OTHER"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCmbBoxActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_profile">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="PROFILE PICTURE:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_choosefile">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Choose picture"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_choosefileActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>
