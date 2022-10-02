@@ -38,34 +38,72 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Component id="txtContactNumber" min="-2" pref="220" max="-2" attributes="0"/>
-                                      <Component id="txtDate" min="-2" pref="220" max="-2" attributes="0"/>
-                                      <Component id="txtEmailId" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="btn_save" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_save" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="txtPos" max="32767" attributes="0"/>
-                                          <Component id="txtAge" pref="218" max="32767" attributes="0"/>
-                                          <Component id="txtName" pref="218" max="32767" attributes="0"/>
-                                          <Component id="jCmbBox" alignment="0" min="-2" pref="217" max="-2" attributes="0"/>
-                                          <Component id="txtLevel" alignment="0" pref="218" max="32767" attributes="0"/>
-                                          <Component id="txtId" alignment="0" pref="218" max="32767" attributes="0"/>
-                                          <Component id="txtTeamInfo" alignment="0" pref="218" max="32767" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="txtPos" max="32767" attributes="0"/>
+                                                  <Component id="txtAge" pref="218" max="32767" attributes="0"/>
+                                                  <Component id="txtName" pref="218" max="32767" attributes="0"/>
+                                                  <Component id="jCmbBox" alignment="0" min="-2" pref="217" max="-2" attributes="0"/>
+                                                  <Component id="txtLevel" alignment="0" pref="218" max="32767" attributes="0"/>
+                                                  <Component id="txtId" alignment="0" pref="218" max="32767" attributes="0"/>
+                                                  <Component id="txtTeamInfo" alignment="0" pref="218" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                          <Component id="labelName" max="32767" attributes="0"/>
+                                                          <Component id="labelEmployeeId" max="32767" attributes="0"/>
+                                                          <Component id="labelAge" alignment="0" pref="153" max="32767" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="labelLevel" alignment="1" min="-2" pref="145" max="-2" attributes="0"/>
+                                                          <Component id="labelTeamInfo" alignment="1" min="-2" pref="145" max="-2" attributes="0"/>
+                                                          <Component id="labelPosition" alignment="1" min="-2" pref="145" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="txtContactNumber" min="-2" pref="220" max="-2" attributes="0"/>
+                                                  <Component id="txtDate" min="-2" pref="220" max="-2" attributes="0"/>
+                                                  <Component id="txtEmailId" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                                              <Component id="labelEmail" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace min="-2" pref="256" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="labelDate" alignment="1" min="-2" pref="145" max="-2" attributes="0"/>
+                                                  <Component id="labelNumber" alignment="1" min="-2" pref="145" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="lbl_profile" min="-2" pref="123" max="-2" attributes="0"/>
                                           <Component id="btn_choosefile" min="-2" pref="130" max="-2" attributes="0"/>
                                       </Group>
+                                      <EmptySpace min="-2" pref="1215" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <Component id="jLabel1" min="-2" pref="106" max="-2" attributes="0"/>
-                          <Component id="lblContactNumber" min="-2" pref="86" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel1" min="-2" pref="106" max="-2" attributes="0"/>
+                                  <Component id="lblContactNumber" min="-2" pref="86" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="0" pref="257" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -74,15 +112,16 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-              <Component id="lblCreate" min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="lblCreate" pref="62" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblName" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelName" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
@@ -92,13 +131,17 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtId" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="labelEmployeeId" max="32767" attributes="0"/>
+                                  <Component id="txtId" max="32767" attributes="0"/>
+                              </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblAge" alignment="3" max="32767" attributes="0"/>
                           <Component id="txtAge" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelAge" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -106,45 +149,55 @@
                           <Component id="jCmbBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblLevel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtLevel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblTeamInfo" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtTeamInfo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblPos" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtPos" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblLevel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtLevel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelLevel" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblTeamInfo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtTeamInfo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelTeamInfo" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblPos" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtPos" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="labelPosition" min="-2" pref="22" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblDate" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelDate" alignment="1" pref="24" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblContactNumber" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           <Component id="txtContactNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelNumber" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtEmailId" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelEmail" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Component id="btn_save" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="lbl_profile" min="-2" pref="74" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btn_choosefile" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="377" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="365" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -154,16 +207,38 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="lblCreate">
       <Properties>
-        <Property name="text" type="java.lang.String" value="                                                                                                             CREATE"/>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Sitka Text" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="30" green="30" red="ba" type="rgb"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="2"/>
+        <Property name="text" type="java.lang.String" value="                                                                                                             CREATE THE EMPLOYEE DETAILS"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblName">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Sitka Text" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5a" green="5a" red="d9" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="NAME:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblId">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Sitka Text" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5a" green="5a" red="d9" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="EMPLOYEE ID:"/>
       </Properties>
     </Component>
@@ -178,10 +253,17 @@
     <Component class="javax.swing.JTextField" name="txtId">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIdActionPerformed"/>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtIdKeyReleased"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn_save">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Sitka Text" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="97" green="5b" red="d3" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="SAVE"/>
       </Properties>
       <Events>
@@ -190,43 +272,94 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblAge">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Sitka Text" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5a" green="5a" red="d9" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="AGE:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtAge">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtAgeKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblGender">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Sitka Text" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5a" green="5a" red="d9" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="GENDER:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblLevel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Sitka Text" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5a" green="5a" red="d9" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="LEVEL:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtLevel">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtLevelKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblTeamInfo">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Sitka Text" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5a" green="5a" red="d9" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="TEAM INFO:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtTeamInfo">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTeamInfoKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblPos">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Sitka Text" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5a" green="5a" red="d9" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="POSITION TITLE:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPos">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPosKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblDate">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Sitka Text" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5a" green="5a" red="d9" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="DATE:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtDate">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDateKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="jCmbBox">
       <Properties>
@@ -248,11 +381,23 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_profile">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Sitka Text" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5a" green="5a" red="d9" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="PROFILE PICTURE:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btn_choosefile">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Sitka Text" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5a" green="5a" red="d9" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Choose picture"/>
       </Properties>
       <Events>
@@ -261,17 +406,56 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblContactNumber">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Sitka Text" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5a" green="5a" red="d9" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="NUMBER:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtContactNumber">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtContactNumberKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Sitka Text" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5a" green="5a" red="d9" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="EMAIL ID:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtEmailId">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEmailIdKeyReleased"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelName">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="labelNameKeyReleased"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelEmployeeId">
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelAge">
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelLevel">
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelTeamInfo">
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelPosition">
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelDate">
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelNumber">
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelEmail">
     </Component>
   </SubComponents>
 </Form>
