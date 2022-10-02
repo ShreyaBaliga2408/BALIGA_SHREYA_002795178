@@ -594,7 +594,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         if ((txtEmailId.getText().equals("")) || (!txtEmailId.getText().matches("^\\S+@\\S+$"))) {  
             labelEmail.setText("Contact Email is Invalid");
         } else {
-            labelNumber.setText("");
+            labelEmail.setText("");
         }
     }//GEN-LAST:event_txtEmailIdKeyReleased
 //     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt)
