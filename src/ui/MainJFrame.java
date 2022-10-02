@@ -17,12 +17,12 @@ public class MainJFrame extends javax.swing.JFrame {
      * Creates new form MainJFrame
      */
    Employee emp;
-   EmployeeHistory emphistory;
+   EmployeeHistory empHistory;
     
     public MainJFrame() {
         initComponents();
        emp = new Employee();
-       emphistory = new EmployeeHistory();
+       empHistory = new EmployeeHistory();
     }
 
     /**
@@ -115,13 +115,13 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
-             CreateJPanel createPanel = new CreateJPanel(emphistory);
+             CreateJPanel createPanel = new CreateJPanel(empHistory);
     SplitPane1.setRightComponent(createPanel);
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
-        ViewJPanel viewPanel = new ViewJPanel(emphistory);
+        ViewJPanel viewPanel = new ViewJPanel(empHistory);
        SplitPane1.setRightComponent(viewPanel);
     }//GEN-LAST:event_btnViewActionPerformed
 

@@ -19,11 +19,11 @@ public class Employee {
     private int age;
     private String gender;
     private int level;
-    private String team_info;
-    private String pos_title;
+    private String teamInfo;
+    private String posTitle;
     private String date;
-     private String emailid;
-    private long contact_number;
+     private String emailId;
+    private long contactNumber;
     private String image;
 
     public String getImage() {
@@ -37,12 +37,12 @@ public class Employee {
   
     
 
-    public String getTeam_info() {
-        return team_info;
+    public String getTeamInfo() {
+        return teamInfo;
     }
 
-    public void setTeam_info(String team_info) {
-        this.team_info = team_info;
+    public void setTeamInfo(String teamInfo) {
+        this.teamInfo = teamInfo;
     }
    
     
@@ -87,12 +87,12 @@ public class Employee {
         this.level = level;
     }
 
-    public String getPos_title() {
-        return pos_title;
+    public String getPosTitle() {
+        return posTitle;
     }
 
-    public void setPos_title(String pos_title) {
-        this.pos_title = pos_title;
+    public void setPosTitle(String posTitle) {
+        this.posTitle = posTitle;
     }
 
     public String getDate() {
@@ -103,20 +103,20 @@ public class Employee {
         this.date = date;
     }
 
-    public String getEmailid() {
-        return emailid;
+    public String getEmailId() {
+        return emailId;
     }
 
-    public void setEmailid(String emailid) {
-        this.emailid = emailid;
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
     }
 
-    public long getContact_number() {
-        return contact_number;
+    public long getContactNumber() {
+        return contactNumber;
     }
 
-    public void setContact_number(long contact_number) {
-        this.contact_number = contact_number;
+    public void setContactNumber(long contactNumber) {
+        this.contactNumber = contactNumber;
     }
 
   

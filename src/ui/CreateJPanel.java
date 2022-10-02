@@ -11,6 +11,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import model.Employee;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.filechooser.FileSystemView;
 import model.EmployeeHistory;
 
@@ -25,12 +26,12 @@ public class CreateJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CreateJPanel
      */
-    EmployeeHistory emphistory;
+    EmployeeHistory empHistory;
     String filePath="";
-    public CreateJPanel(EmployeeHistory emphistory) {
+    public CreateJPanel(EmployeeHistory empHistory) {
         initComponents();
         
-       this.emphistory= emphistory;
+       this.empHistory= empHistory;
     }
 
     /**
@@ -42,36 +43,57 @@ public class CreateJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbl_create = new javax.swing.JLabel();
-        lbl_name = new javax.swing.JLabel();
-        lbl_id = new javax.swing.JLabel();
-        txt_name = new javax.swing.JTextField();
-        txt_id = new javax.swing.JTextField();
+        lblCreate = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        lblId = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        txtId = new javax.swing.JTextField();
         btn_save = new javax.swing.JButton();
-        lbl_age = new javax.swing.JLabel();
-        txt_age = new javax.swing.JTextField();
-        lbl_gender = new javax.swing.JLabel();
-        lbl_level = new javax.swing.JLabel();
-        txt_level = new javax.swing.JTextField();
-        lbl_teaminfo = new javax.swing.JLabel();
-        txt_teaminfo = new javax.swing.JTextField();
-        lbl_pos = new javax.swing.JLabel();
-        txt_pos = new javax.swing.JTextField();
-        lbl_date = new javax.swing.JLabel();
-        txt_date = new javax.swing.JTextField();
+        lblAge = new javax.swing.JLabel();
+        txtAge = new javax.swing.JTextField();
+        lblGender = new javax.swing.JLabel();
+        lblLevel = new javax.swing.JLabel();
+        txtLevel = new javax.swing.JTextField();
+        lblTeamInfo = new javax.swing.JLabel();
+        txtTeamInfo = new javax.swing.JTextField();
+        lblPos = new javax.swing.JLabel();
+        txtPos = new javax.swing.JTextField();
+        lblDate = new javax.swing.JLabel();
+        txtDate = new javax.swing.JTextField();
         jCmbBox = new javax.swing.JComboBox<>();
         lbl_profile = new javax.swing.JLabel();
         btn_choosefile = new javax.swing.JButton();
+        lblContactNumber = new javax.swing.JLabel();
+        txtContactNumber = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        txtEmailId = new javax.swing.JTextField();
 
-        lbl_create.setText("                                               CREATE");
+        lblCreate.setText("                                               CREATE");
 
-        lbl_name.setText("NAME:");
+        lblName.setText("NAME:");
 
-        lbl_id.setText("EMPLOYEE ID:");
+        lblId.setText("EMPLOYEE ID:");
 
-        txt_id.addActionListener(new java.awt.event.ActionListener() {
+        txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_idActionPerformed(evt);
+                txtNameActionPerformed(evt);
+            }
+        });
+        txtName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNameKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNameKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNameKeyTyped(evt);
+            }
+        });
+
+        txtId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdActionPerformed(evt);
             }
         });
 
@@ -82,17 +104,17 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
-        lbl_age.setText("AGE:");
+        lblAge.setText("AGE:");
 
-        lbl_gender.setText("GENDER:");
+        lblGender.setText("GENDER:");
 
-        lbl_level.setText("LEVEL:");
+        lblLevel.setText("LEVEL:");
 
-        lbl_teaminfo.setText("TEAM INFO:");
+        lblTeamInfo.setText("TEAM INFO:");
 
-        lbl_pos.setText("POSITION TITLE:");
+        lblPos.setText("POSITION TITLE:");
 
-        lbl_date.setText("DATE:");
+        lblDate.setText("DATE:");
 
         jCmbBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Your Gender", "FEMALE", "MALE", "OTHER" }));
         jCmbBox.addActionListener(new java.awt.event.ActionListener() {
@@ -110,6 +132,10 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblContactNumber.setText("NUMBER:");
+
+        jLabel1.setText("EMAIL ID:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -118,141 +144,175 @@ public class CreateJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(lbl_create, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(lblCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(57, 57, 57)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lbl_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lbl_pos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lbl_id, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lbl_age, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lbl_gender, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lbl_level, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lbl_teaminfo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lbl_name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(lbl_profile))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jCmbBox, 0, 217, Short.MAX_VALUE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGap(17, 17, 17)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txt_name)
-                                            .addComponent(txt_id, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                                            .addComponent(txt_age)
-                                            .addComponent(txt_level)
-                                            .addComponent(txt_teaminfo))))
-                                .addGap(0, 294, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblPos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblId, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblAge, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblGender, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblLevel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblTeamInfo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txt_pos)
-                                    .addComponent(txt_date)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(txtContactNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtEmailId, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(btn_save)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btn_choosefile, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE)))))
-                        .addGap(309, 309, 309)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtPos)
+                                            .addComponent(txtAge, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                                            .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                                            .addComponent(jCmbBox, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtLevel, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                                            .addComponent(txtId, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                                            .addComponent(txtTeamInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE))
+                                        .addGap(66, 66, 66)
+                                        .addComponent(lbl_profile)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btn_choosefile, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblContactNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 308, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(216, 216, 216)
-                .addComponent(btn_save)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(lbl_create)
+                .addComponent(lblCreate)
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_name)
-                    .addComponent(txt_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
+                    .addComponent(lblName)
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_profile)
+                    .addComponent(btn_choosefile))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(lblId)
+                        .addGap(30, 30, 30))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_id)
-                    .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_age, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txt_age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblAge, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_gender)
+                    .addComponent(lblGender)
                     .addComponent(jCmbBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_level)
-                    .addComponent(txt_level, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblLevel)
+                    .addComponent(txtLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_teaminfo)
-                    .addComponent(txt_teaminfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblTeamInfo)
+                    .addComponent(txtTeamInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_pos)
-                    .addComponent(txt_pos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblPos)
+                    .addComponent(txtPos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_date)
-                    .addComponent(txt_date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
+                    .addComponent(lblDate)
+                    .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_profile)
-                    .addComponent(btn_choosefile))
-                .addGap(52, 52, 52)
+                    .addComponent(lblContactNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtContactNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtEmailId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(btn_save)
                 .addGap(16, 16, 16))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txt_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_idActionPerformed
+    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_txt_idActionPerformed
+    }//GEN-LAST:event_txtIdActionPerformed
 
     private void btn_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_saveActionPerformed
         // TODO add your handling code here:
-        Employee emp = emphistory.addnewEmployee();
-        String name = txt_name.getText();
-        String id=txt_id.getText();
-        String age=(String)txt_age.getText();
+        Employee emp = empHistory.addnewEmployee();
+        String name = txtName.getText();
+        
+        String id=txtId.getText();
+        if((!id.matches("/^([A-Za-z]{2,}-\\d+;)+$/;")))
+        {
+            JOptionPane.showMessageDialog(this,"Please enter a valid ID");
+            return;
+        }
+        String age=(String)txtAge.getText();
+        if(!age.matches("[0-1]{1}[0-9]{0,2}"))
+        {
+            JOptionPane.showMessageDialog(this,"Enter a valid age");
+            return;
+        }
         String gender=(String)jCmbBox.getSelectedItem();
-        String date=txt_date.getText();
-        String level=(String)txt_level.getText();
-        String position=txt_pos.getText();
-        String teaminfo=txt_teaminfo.getText();
+        String date=txtDate.getText();
+        String level=(String)txtLevel.getText();
+        String position=txtPos.getText();
+        String teamInfo=txtTeamInfo.getText();
         String path=filePath;
+  
+        String contactNumber=txtContactNumber.getText();
+        String emailId=txtEmailId.getText();
+        if(contactNumber.matches("(0/91)?[7-9][0-9]{9}"))
+        {
+            JOptionPane.showMessageDialog(this,"Enter a valid contact number");
+            return;
+        }
         //String image = emp.getImage();
+        if(emailId.matches("^[A-Za-z0-9+_.-]+@(.+)$"))
+        {
+            JOptionPane.showMessageDialog(this,"Enter a valid email");
+            return;
+        }
         emp.setName(name);
         emp.setId(id);
         emp.setAge(Integer.parseInt(age));
         emp.setDate(date);
         emp.setLevel(Integer.parseInt(level));
-        emp.setPos_title(position);
-        emp.setTeam_info(teaminfo);
+        emp.setPosTitle(position);
+        emp.setTeamInfo(teamInfo);
         emp.setGender(gender);
         emp.setImage(path);
+        emp.setContactNumber(Long.parseLong(contactNumber));
+        emp.setEmailId(emailId);
         
         
         //JOptionPane.showMessageDialog(this, "saved successfully","SAVE", HEIGHT);
-         txt_name.setText("");
-         txt_id.setText("");
+         txtName.setText("");
+         txtId.setText("");
          jCmbBox.setSelectedIndex(0);
-         txt_age.setText("");
-         txt_date.setText("");
-         txt_level.setText("");
-         txt_pos.setText("");
-         txt_teaminfo.setText("");
+         txtAge.setText("");
+         txtDate.setText("");
+         txtLevel.setText("");
+         txtPos.setText("");
+         txtTeamInfo.setText("");
+         txtContactNumber.setText("");
+         txtEmailId.setText("");
          
          //lbl_picture.setText("");
-//        emphist.setName(txt_name.getText());
-//       emphist.setId(txt_id.getText());
+//        emphist.setName(txtName.getText());
+//       emphist.setId(txtId.getText());
        
        JOptionPane.showMessageDialog(this, "saved successfully","SAVE", HEIGHT);
+       
     }//GEN-LAST:event_btn_saveActionPerformed
 
     private void jCmbBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCmbBoxActionPerformed
@@ -279,6 +339,36 @@ public class CreateJPanel extends javax.swing.JPanel {
 //                lbl_picture.setText("the user cancelled the operation");
 //        
     }//GEN-LAST:event_btn_choosefileActionPerformed
+
+    private void txtNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyReleased
+        // TODO add your handling code here:
+       
+        
+    }//GEN-LAST:event_txtNameKeyReleased
+
+    private void txtNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyPressed
+        // TODO add your handling code here:
+         
+        
+    }//GEN-LAST:event_txtNameKeyPressed
+
+    private void txtNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyTyped
+        // TODO add your handling code here:
+//        String name=txtName.getText();
+//        if((name.matches("^[a-zA-Z{0,30}]$"))||(name.equals(" ")) )
+//                {                      
+//                    return;
+//                }
+//        else{
+//             JOptionPane.showMessageDialog(this,"Please enter a valid character");
+//             return;
+//        }
+//        
+    }//GEN-LAST:event_txtNameKeyTyped
+
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNameActionPerformed
 //     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt)
 //     {
 //         emp.setName(txtName.getText());
@@ -288,23 +378,27 @@ public class CreateJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btn_choosefile;
     private javax.swing.JButton btn_save;
     private javax.swing.JComboBox<String> jCmbBox;
-    private javax.swing.JLabel lbl_age;
-    private javax.swing.JLabel lbl_create;
-    private javax.swing.JLabel lbl_date;
-    private javax.swing.JLabel lbl_gender;
-    private javax.swing.JLabel lbl_id;
-    private javax.swing.JLabel lbl_level;
-    private javax.swing.JLabel lbl_name;
-    private javax.swing.JLabel lbl_pos;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblAge;
+    private javax.swing.JLabel lblContactNumber;
+    private javax.swing.JLabel lblCreate;
+    private javax.swing.JLabel lblDate;
+    private javax.swing.JLabel lblGender;
+    private javax.swing.JLabel lblId;
+    private javax.swing.JLabel lblLevel;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblPos;
+    private javax.swing.JLabel lblTeamInfo;
     private javax.swing.JLabel lbl_profile;
-    private javax.swing.JLabel lbl_teaminfo;
-    private javax.swing.JTextField txt_age;
-    private javax.swing.JTextField txt_date;
-    private javax.swing.JTextField txt_id;
-    private javax.swing.JTextField txt_level;
-    private javax.swing.JTextField txt_name;
-    private javax.swing.JTextField txt_pos;
-    private javax.swing.JTextField txt_teaminfo;
+    private javax.swing.JTextField txtAge;
+    private javax.swing.JTextField txtContactNumber;
+    private javax.swing.JTextField txtDate;
+    private javax.swing.JTextField txtEmailId;
+    private javax.swing.JTextField txtId;
+    private javax.swing.JTextField txtLevel;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtPos;
+    private javax.swing.JTextField txtTeamInfo;
     // End of variables declaration//GEN-END:variables
 
    public String retrieveImage()
@@ -312,6 +406,8 @@ public class CreateJPanel extends javax.swing.JPanel {
      JFileChooser j = new JFileChooser();
      j.showOpenDialog(null);
     // j.addChoosableFileFilter(new ImageFilter());
+    
+    
      File file=j.getSelectedFile();
      String path=file.getAbsolutePath();
      return path;  
