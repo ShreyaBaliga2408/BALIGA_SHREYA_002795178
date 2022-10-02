@@ -42,7 +42,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="SplitPane1" alignment="1" max="32767" attributes="0"/>
+          <Component id="SplitPane1" alignment="1" pref="669" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -79,7 +79,7 @@
                       <Component id="btnCreate" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="btnView" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="190" max="32767" attributes="0"/>
+                      <EmptySpace pref="559" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -113,12 +113,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="289" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="627" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="669" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>

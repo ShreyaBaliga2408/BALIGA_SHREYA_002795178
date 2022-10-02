@@ -18,7 +18,7 @@ public class Employee {
     private String id;
     private int age;
     private String gender;
-    private int level;
+    private String level;
     private String teamInfo;
     private String posTitle;
     private String date;
@@ -79,11 +79,11 @@ public class Employee {
         this.gender = gender;
     }
 
-    public int getLevel() {
+    public String getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
+    public void setLevel(String level) {
         this.level = level;
     }
 
