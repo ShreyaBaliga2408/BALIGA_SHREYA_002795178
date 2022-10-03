@@ -61,7 +61,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         lblDate = new javax.swing.JLabel();
         txtDate = new javax.swing.JTextField();
         jCmbBox = new javax.swing.JComboBox<>();
-        lbl_profile = new javax.swing.JLabel();
+        lblProfile = new javax.swing.JLabel();
         btn_choosefile = new javax.swing.JButton();
         lblContactNumber = new javax.swing.JLabel();
         txtContactNumber = new javax.swing.JTextField();
@@ -189,9 +189,9 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
-        lbl_profile.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
-        lbl_profile.setForeground(new java.awt.Color(217, 90, 90));
-        lbl_profile.setText("PROFILE PICTURE:");
+        lblProfile.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
+        lblProfile.setForeground(new java.awt.Color(217, 90, 90));
+        lblProfile.setText("PROFILE PICTURE:");
 
         btn_choosefile.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
         btn_choosefile.setForeground(new java.awt.Color(217, 90, 90));
@@ -291,7 +291,7 @@ public class CreateJPanel extends javax.swing.JPanel {
                                                     .addComponent(labelNumber, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lbl_profile, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(btn_choosefile, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(1215, 1215, 1215))))
                             .addGroup(layout.createSequentialGroup()
@@ -370,7 +370,7 @@ public class CreateJPanel extends javax.swing.JPanel {
                         .addGap(16, 16, 16))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lbl_profile, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btn_choosefile)
                         .addGap(365, 365, 365))))
@@ -384,7 +384,7 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void btn_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_saveActionPerformed
         // TODO add your handling code here:
-        Employee emp = empHistory.addnewEmployee();
+        
        String name = txtName.getText();
 //        if ((name.equals("")) || (!name.matches("^[a-zA-Z]+[\\-'\\s]?[a-zA-Z ]+$"))) {  
 //            JOptionPane.showMessageDialog(this, "Enter the valid name");
@@ -443,21 +443,39 @@ public class CreateJPanel extends javax.swing.JPanel {
 //            return;
 //        }
         
-        emp.setName(name);
-        emp.setId(id);
-        emp.setAge(Integer.parseInt(age));
-        emp.setDate(date);
-        emp.setLevel(level);
-        emp.setPosTitle(position);
-        emp.setTeamInfo(teamInfo);
+//        emp.setName(name);
+//        emp.setId(id);
+//        emp.setAge(Integer.parseInt(age));
+//        emp.setDate(date);
+//        emp.setLevel(level);
+//        emp.setPosTitle(position);
+//        emp.setTeamInfo(teamInfo);
+//        emp.setGender(gender);
+//        emp.setImage(path);
+//        emp.setContactNumber(Long.parseLong(contactNumber));
+//        emp.setEmailId(emailId);
+
+        if ((name.length() <= 0) || (age.length() <= 0) || (gender.length() <= 0) || (id.length() <= 0) || (date.length() <= 0) ||
+                (level.length() <= 0) || (teamInfo.length() <= 0) || (position.length() <= 0) || (contactNumber.length() <= 0) || (emailId.length() <= 0) || (path.isEmpty()) || (!txtName.getText().matches("^[a-zA-Z]+[\\-'\\s]?[a-zA-Z ]+$")) || (!txtId.getText().matches("^[a-zA-Z0-9_]*$"))||(!txtAge.getText().matches("^(?:[1-9][0-9]?|1[01][0-9]|120)$"))
+                ||(!txtLevel.getText().matches("^[a-zA-Z0-9_]*$"))||(!txtTeamInfo.getText().matches("^[A-Za-z]+$"))||(!txtPos.getText().matches("^[A-Za-z]+$"))||
+                (!txtDate.getText().matches("(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((?:19|20)[0-9][0-9])"))||(!txtContactNumber.getText().matches("^(\\+\\d{1,3}[-\\s]{1}?)?\\d{10}$"))||(!txtEmailId.getText().matches("^\\S+@\\S+$"))) {
+            JOptionPane.showMessageDialog(this, "Please fill all the  fields properly");
+        } else {
+             Employee emp = empHistory.addnewEmployee();       
+         emp.setName(name);
+     emp.setId(id);
+       emp.setAge(Integer.parseInt(age));
+       emp.setDate(date);
+       emp.setLevel(level);
+      emp.setPosTitle(position);
+       emp.setTeamInfo(teamInfo);
         emp.setGender(gender);
         emp.setImage(path);
         emp.setContactNumber(Long.parseLong(contactNumber));
-        emp.setEmailId(emailId);
-        
-        
-        //JOptionPane.showMessageDialog(this, "saved successfully","SAVE", HEIGHT);
-         txtName.setText("");
+        emp.setEmailId(emailId);           
+            JOptionPane.showMessageDialog(this, "Employees saved successfully");
+       
+              txtName.setText("");
          txtId.setText("");
          jCmbBox.setSelectedIndex(0);
          txtAge.setText("");
@@ -467,12 +485,19 @@ public class CreateJPanel extends javax.swing.JPanel {
          txtTeamInfo.setText("");
          txtContactNumber.setText("");
          txtEmailId.setText("");
+           JOptionPane.showMessageDialog(this, "saved successfully","SAVE", HEIGHT);
+        }
+
+        
+        
+        //JOptionPane.showMessageDialog(this, "saved successfully","SAVE", HEIGHT);
+      
          
          //lbl_picture.setText("");
 //        emphist.setName(txtName.getText());
 //       emphist.setId(txtId.getText());
        
-       JOptionPane.showMessageDialog(this, "saved successfully","SAVE", HEIGHT);
+     
        
     }//GEN-LAST:event_btn_saveActionPerformed
 
@@ -503,7 +528,7 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void txtNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyReleased
         // TODO add your handling code here:
-        if ((txtName.getText().equals("")) || (!txtName.getText().matches("^[a-zA-Z]+[\\-'\\s]?[a-zA-Z ]+$"))) {  
+        if ((!txtName.getText().matches("^[a-zA-Z]+[\\-'\\s]?[a-zA-Z ]+$"))) {  
             labelName.setText("Name is Invalid");
         } else {
             labelName.setText("");
@@ -528,7 +553,7 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void txtIdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyReleased
         // TODO add your handling code here:
-        if ((txtId.getText().equals("")) || (!txtId.getText().matches("^[a-zA-Z0-9_]*$"))) {  
+        if ((!txtId.getText().matches("^[a-zA-Z0-9_]*$"))) {  
             labelEmployeeId.setText("EmployeeId is Invalid");
         } else {
             labelEmployeeId.setText("");
@@ -537,7 +562,7 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void txtAgeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgeKeyReleased
         // TODO add your handling code here:
-        if ((txtAge.getText().equals("")) || (!txtAge.getText().matches("^(?:[1-9][0-9]?|1[01][0-9]|120)$"))) {  
+        if ((!txtAge.getText().matches("^(?:[1-9][0-9]?|1[01][0-9]|120)$"))) {  
             labelAge.setText("Age is Invalid");
         } else {
             labelAge.setText("");
@@ -546,7 +571,7 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void txtLevelKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLevelKeyReleased
         // TODO add your handling code here:
-        if ((txtLevel.getText().equals("")) || (!txtLevel.getText().matches("^[a-zA-Z0-9_]*$"))) {  
+        if ((!txtLevel.getText().matches("^[a-zA-Z0-9_]*$"))) {  
             labelLevel.setText("Level is Invalid");
         } else {
             labelLevel.setText("");
@@ -555,7 +580,7 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void txtTeamInfoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTeamInfoKeyReleased
         // TODO add your handling code here:
-        if ((txtTeamInfo.getText().equals("")) || (!txtTeamInfo.getText().matches("^[A-Za-z]+$"))) {  
+        if ((!txtTeamInfo.getText().matches("^[A-Za-z]+$"))) {  
             labelTeamInfo.setText("Team Information is Invalid");
         } else {
             labelTeamInfo.setText("");
@@ -564,7 +589,7 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void txtPosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPosKeyReleased
         // TODO add your handling code here:
-        if ((txtPos.getText().equals("")) || (!txtPos.getText().matches("^[A-Za-z]+$"))) {  
+        if ((!txtPos.getText().matches("^[A-Za-z]+$"))) {  
             labelPosition.setText("Position is Invalid");
         } else {
             labelPosition.setText("");
@@ -573,7 +598,7 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void txtDateKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDateKeyReleased
         // TODO add your handling code here:
-        if ((txtDate.getText().equals("")) || (!txtDate.getText().matches("(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((?:19|20)[0-9][0-9])"))) {  
+        if ((!txtDate.getText().matches("(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((?:19|20)[0-9][0-9])"))) {  
             labelDate.setText("Date is Invalid");
         } else {
             labelDate.setText("");
@@ -582,7 +607,7 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void txtContactNumberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContactNumberKeyReleased
         // TODO add your handling code here:
-        if ((txtContactNumber.getText().equals("")) || (!txtContactNumber.getText().matches("^(\\+\\d{1,3}[-\\s]{1}?)?\\d{10}$"))) {  
+        if ((!txtContactNumber.getText().matches("^(\\+\\d{1,3}[-\\s]{1}?)?\\d{10}$"))) {  
             labelNumber.setText("Contact Number is Invalid");
         } else {
             labelNumber.setText("");
@@ -591,7 +616,7 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void txtEmailIdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailIdKeyReleased
         // TODO add your handling code here:
-        if ((txtEmailId.getText().equals("")) || (!txtEmailId.getText().matches("^\\S+@\\S+$"))) {  
+        if ((!txtEmailId.getText().matches("^\\S+@\\S+$"))) {  
             labelEmail.setText("Contact Email is Invalid");
         } else {
             labelEmail.setText("");
@@ -625,8 +650,8 @@ public class CreateJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblLevel;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPos;
+    private javax.swing.JLabel lblProfile;
     private javax.swing.JLabel lblTeamInfo;
-    private javax.swing.JLabel lbl_profile;
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtContactNumber;
     private javax.swing.JTextField txtDate;

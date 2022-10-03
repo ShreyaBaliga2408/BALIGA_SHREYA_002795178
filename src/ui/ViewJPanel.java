@@ -435,6 +435,7 @@ public class ViewJPanel extends javax.swing.JPanel {
          txtGender.setText("");
          txtContactNumber.setText("");
          txtEmailId.setText("");
+         lblPic.setVisible(false);
          
         populateTable();
         
