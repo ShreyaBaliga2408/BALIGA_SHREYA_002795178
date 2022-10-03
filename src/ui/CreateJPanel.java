@@ -384,7 +384,8 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void btn_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_saveActionPerformed
         // TODO add your handling code here:
-        
+       try
+       { 
        String name = txtName.getText();
 //        if ((name.equals("")) || (!name.matches("^[a-zA-Z]+[\\-'\\s]?[a-zA-Z ]+$"))) {  
 //            JOptionPane.showMessageDialog(this, "Enter the valid name");
@@ -488,7 +489,11 @@ public class CreateJPanel extends javax.swing.JPanel {
            JOptionPane.showMessageDialog(this, "saved successfully","SAVE", HEIGHT);
         }
 
-        
+       }
+       catch(Exception e)
+       {
+           JOptionPane.showMessageDialog(this,"Please enter the details required");
+       }
         
         //JOptionPane.showMessageDialog(this, "saved successfully","SAVE", HEIGHT);
       
