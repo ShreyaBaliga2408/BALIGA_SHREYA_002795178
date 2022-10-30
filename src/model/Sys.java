@@ -108,12 +108,15 @@ public class Sys {
         
         // Step 1. Get patient
         Patient selectedPatient = pD.searchPatientByName("Shreya Baliga");
+        Patient selectPatient = pD.searchPatientByName("Neha Baliga");
         
         // Step 2. Create vital signs
         VitalSigns vs = new VitalSigns(90.0,120.0,72.0);
+        VitalSigns vsign = new VitalSigns(90.0,120.0,72.0);
         
         // Step 3. Map vital signs, patient & encounter
         selectedPatient.getEncounterHistory().addEncounter(vs);
+         selectPatient.getEncounterHistory().addEncounter(vsign);
                 
     }
 
