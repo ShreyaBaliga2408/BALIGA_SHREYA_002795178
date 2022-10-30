@@ -93,7 +93,7 @@ public class HomeScreen extends javax.swing.JPanel {
 
         lblAddPerson.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         lblAddPerson.setForeground(new java.awt.Color(255, 255, 255));
-        lblAddPerson.setText("Workforce");
+        lblAddPerson.setText("PERSON");
         lblAddPerson.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lblAddPersonMouseEntered(evt);
@@ -108,7 +108,7 @@ public class HomeScreen extends javax.swing.JPanel {
 
         lblAddPerson1.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         lblAddPerson1.setForeground(new java.awt.Color(255, 255, 255));
-        lblAddPerson1.setText("Territories");
+        lblAddPerson1.setText("Communities");
         lblAddPerson1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lblAddPerson1MouseEntered(evt);
@@ -158,7 +158,7 @@ public class HomeScreen extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(130, 130, 130)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
