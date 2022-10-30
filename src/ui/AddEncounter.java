@@ -252,15 +252,18 @@ public class AddEncounter extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(lblContactNum, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btnDeletePatient)
                                         .addGroup(layout.createSequentialGroup()
                                             .addComponent(jButton1)
-                                            .addGap(17, 17, 17)))
+                                            .addGap(31, 31, 31)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(lblDOB)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(lblDOBdata, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)))))
+                                .addGap(18, 18, 18))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(btnDeletePatient)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -283,9 +286,12 @@ public class AddEncounter extends javax.swing.JPanel {
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(67, 67, 67))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(149, 149, 149)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(246, 246, 246)
+                                .addComponent(btnSaveEncounter))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(149, 149, 149)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(lblHeartRate)
                                     .addComponent(lblBP))
@@ -299,11 +305,7 @@ public class AddEncounter extends javax.swing.JPanel {
                                         .addComponent(txtBP_HIGH, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(lblSlash))
-                                    .addComponent(txtHeartRate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnSaveEncounter)
-                                .addGap(226, 226, 226)))
+                                    .addComponent(txtHeartRate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -336,9 +338,9 @@ public class AddEncounter extends javax.swing.JPanel {
                             .addComponent(lblContactNum)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(btnDeletePatient)
-                            .addGap(26, 26, 26)
+                            .addGap(44, 44, 44)
                             .addComponent(jButton1)
-                            .addGap(28, 28, 28))
+                            .addGap(10, 10, 10))
                         .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -687,6 +689,8 @@ public class AddEncounter extends javax.swing.JPanel {
     private javax.swing.JTextField txtHeartRate;
     private javax.swing.JTextField txtSearchPatient;
     // End of variables declaration//GEN-END:variables
+
+   
 
     
 }

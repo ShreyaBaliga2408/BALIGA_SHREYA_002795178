@@ -124,6 +124,7 @@ public class Dashboard extends javax.swing.JPanel {
         chkSearch = new javax.swing.JCheckBox();
         btnView = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
+        jUpdate = new javax.swing.JButton();
 
         jTextField4.setText("jTextField4");
 
@@ -244,6 +245,13 @@ public class Dashboard extends javax.swing.JPanel {
             }
         });
 
+        jUpdate.setText("Update");
+        jUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jUpdateActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -281,8 +289,7 @@ public class Dashboard extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(chkSearch)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnSearch)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(btnSearch))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(lblEncounterHist)
@@ -317,7 +324,9 @@ public class Dashboard extends javax.swing.JPanel {
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(173, 173, 173)
+                        .addGap(74, 74, 74)
+                        .addComponent(jUpdate)
+                        .addGap(27, 27, 27)
                         .addComponent(btnView)
                         .addGap(18, 18, 18)
                         .addComponent(btnDelete)
@@ -376,7 +385,8 @@ public class Dashboard extends javax.swing.JPanel {
                                     .addGap(18, 18, 18)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(btnView)
-                                        .addComponent(btnDelete)))
+                                        .addComponent(btnDelete)
+                                        .addComponent(jUpdate)))
                                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(110, 110, 110)
@@ -667,6 +677,13 @@ public class Dashboard extends javax.swing.JPanel {
         //btnUpdate.setEnabled(false);
     }//GEN-LAST:event_btnDeleteActionPerformed
 
+    private void jUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUpdateActionPerformed
+        // TODO add your handling code here:
+        saveValues();
+        JOptionPane.showMessageDialog(this, "Visit updated");
+        populateTableInitially();
+    }//GEN-LAST:event_jUpdateActionPerformed
+
     private void populateFields(Encounter selectedEncounter) {
         
             
@@ -896,6 +913,7 @@ public class Dashboard extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JButton jUpdate;
     private javax.swing.JLabel lblAge;
     private javax.swing.JLabel lblAgeData;
     private javax.swing.JLabel lblBP;
