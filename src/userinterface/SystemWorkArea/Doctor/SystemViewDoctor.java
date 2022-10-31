@@ -18,7 +18,7 @@ import userinterface.SystemWorkArea.Patient.*;
 /**
  *
  * @author Shreya Baliga*/
-public class systemViewDoctor extends javax.swing.JPanel {
+public class SystemViewDoctor extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -27,7 +27,7 @@ public class systemViewDoctor extends javax.swing.JPanel {
     PersonDirectory personDirectory;
     DoctorDirectory doctorDirectory;
     Doctor doctor;
-    public systemViewDoctor(PersonDirectory personDirectory, DoctorDirectory doctorDirectory) {
+    public SystemViewDoctor(PersonDirectory personDirectory, DoctorDirectory doctorDirectory) {
         initComponents();
         this.doctorDirectory=doctorDirectory;
         this.personDirectory=personDirectory;

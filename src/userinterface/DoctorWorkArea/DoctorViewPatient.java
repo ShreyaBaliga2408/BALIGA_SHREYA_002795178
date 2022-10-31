@@ -17,7 +17,7 @@ import model.PersonDirectory;
 /**
  *
  * @author Shreya Baliga*/
-public class doctorViewPatient extends javax.swing.JPanel {
+public class DoctorViewPatient extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -28,7 +28,7 @@ public class doctorViewPatient extends javax.swing.JPanel {
     Person person;
     String username;
     
-    public doctorViewPatient(String username, PatientDirectory patientDirectory, PersonDirectory personDirectory) {
+    public DoctorViewPatient(String username, PatientDirectory patientDirectory, PersonDirectory personDirectory) {
         initComponents();
         this.patientDirectory=patientDirectory;
         this.personDirectory=personDirectory;

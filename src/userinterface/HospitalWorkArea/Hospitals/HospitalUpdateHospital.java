@@ -18,7 +18,7 @@ import model.HospitalDirectory;
 /**
  *
  * @author Shreya Baliga*/
-public class hospitalUpdateHospital extends javax.swing.JPanel {
+public class HospitalUpdateHospital extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -26,7 +26,7 @@ public class hospitalUpdateHospital extends javax.swing.JPanel {
     HospitalDirectory hospitalDirectory;
     boolean validationCheck = true;
     boolean emptyValidationStatus = true;
-    public hospitalUpdateHospital(HospitalDirectory hospitalDirectory) {
+    public HospitalUpdateHospital(HospitalDirectory hospitalDirectory) {
         initComponents();
         this.hospitalDirectory = hospitalDirectory;
         initCityCmbx();

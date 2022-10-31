@@ -10,15 +10,15 @@ import model.DoctorDirectory;
 import model.HospitalDirectory;
 import model.PatientDirectory;
 import model.PersonDirectory;
-import userinterface.mainJFrame;
+import userinterface.MainJFrame;
 
 /**
  *
  * @author Shreya Baliga*/
-public class patientJFrame extends javax.swing.JFrame {
+public class PatientJFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form patientJFrame
+     * Creates new form PatientJFrame
      */
     public static String username;
     public static PersonDirectory personDirectory;
@@ -27,7 +27,7 @@ public class patientJFrame extends javax.swing.JFrame {
     public static HospitalDirectory hospitalDirectory;
    
     
-    public patientJFrame(String username,PersonDirectory personDirectory ,PatientDirectory patientDirectory, DoctorDirectory doctorDirectory, HospitalDirectory hospitalDirectory, String name) {
+    public PatientJFrame(String username,PersonDirectory personDirectory ,PatientDirectory patientDirectory, DoctorDirectory doctorDirectory, HospitalDirectory hospitalDirectory, String name) {
         initComponents();
         this.username = username;
         this.personDirectory = personDirectory;
@@ -39,11 +39,11 @@ public class patientJFrame extends javax.swing.JFrame {
         if(username == null){
             JOptionPane.showMessageDialog(this, "Please login to proceed");
             dispose();
-            mainJFrame mainFrame = new mainJFrame();
+            MainJFrame mainFrame = new MainJFrame();
             mainFrame.main(null);
         }
         
-        patientViewHospital viewHosp = new patientViewHospital(username, hospitalDirectory);
+        PatientViewHospital viewHosp = new PatientViewHospital(username, hospitalDirectory);
         jSplitPaneSystem.setRightComponent(viewHosp);
     }
 
@@ -196,27 +196,27 @@ public class patientJFrame extends javax.swing.JFrame {
     private void btnHospActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHospActionPerformed
         // TODO add your handling code here:
         
-        patientViewHospital viewHosp = new patientViewHospital(username,hospitalDirectory);
+        PatientViewHospital viewHosp = new PatientViewHospital(username,hospitalDirectory);
         jSplitPaneSystem.setRightComponent(viewHosp);
     }//GEN-LAST:event_btnHospActionPerformed
 
     private void btnDoctorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoctorsActionPerformed
         // TODO add your handling code here:
         //System.out.println(doctorDirectory.getDoctors().toString()+" In Doctors call");
-        patientViewDoctor pvd = new patientViewDoctor(username,personDirectory, doctorDirectory);
+        PatientViewDoctor pvd = new PatientViewDoctor(username,personDirectory, doctorDirectory);
         jSplitPaneSystem.setRightComponent(pvd);
     }//GEN-LAST:event_btnDoctorsActionPerformed
 
     private void btnPersonalInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPersonalInfoActionPerformed
         // TODO add your handling code here:
-        patientViewPatientInfo vpi= new patientViewPatientInfo(username,personDirectory, patientDirectory);
+        PatientViewPatientInfo vpi= new PatientViewPatientInfo(username,personDirectory, patientDirectory);
         jSplitPaneSystem.setRightComponent(vpi);
     }//GEN-LAST:event_btnPersonalInfoActionPerformed
 
     private void btnAppointmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAppointmentsActionPerformed
         // TODO add your handling code here:
         
-        patientViewEncounter ve = new patientViewEncounter(username,patientDirectory);
+        PatientViewEncounter ve = new PatientViewEncounter(username,patientDirectory);
         jSplitPaneSystem.setRightComponent(ve);
     }//GEN-LAST:event_btnAppointmentsActionPerformed
 
@@ -242,20 +242,20 @@ public class patientJFrame extends javax.swing.JFrame {
 //                }
 //            }
 //        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(patientJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(PatientJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(patientJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(PatientJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(patientJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(PatientJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(patientJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(PatientJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        }
 //        //</editor-fold>
 //
 //        /* Create and display the form */
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            public void run() {
-//                patientJFrame patientFrame = new patientJFrame(username,personDirectory ,patientDirectory, doctorDirectory, hospitalDirectory);
+//                PatientJFrame patientFrame = new PatientJFrame(username,personDirectory ,patientDirectory, doctorDirectory, hospitalDirectory);
 //                patientFrame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 //                patientFrame.setVisible(true);
 //            }

@@ -29,7 +29,7 @@ import userinterface.SystemWorkArea.Patient.*;
 /**
  *
  * @author Shreya Baliga*/
-public class hospitalUpdateEncounter extends javax.swing.JPanel {
+public class HospitalUpdateEncounter extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -38,7 +38,7 @@ public class hospitalUpdateEncounter extends javax.swing.JPanel {
     DoctorDirectory doctorDirectory;
     boolean validationCheck=true;
     
-    public hospitalUpdateEncounter(PatientDirectory patientDirectory, DoctorDirectory doctorDirectory ) {
+    public HospitalUpdateEncounter(PatientDirectory patientDirectory, DoctorDirectory doctorDirectory ) {
         initComponents();
         this.patientDirectory = patientDirectory;
         this.doctorDirectory = doctorDirectory;
@@ -320,7 +320,7 @@ public class hospitalUpdateEncounter extends javax.swing.JPanel {
                                         patientEncounter.put(encounterDate,vitalSigns);
 
                                     } catch (ParseException ex) {
-                                        Logger.getLogger(systemCreateEncounter.class.getName()).log(Level.SEVERE, null, ex);
+                                        Logger.getLogger(SystemCreateEncounter.class.getName()).log(Level.SEVERE, null, ex);
                                     }
                                     encounter = en;
                                     encounter.setPatientEncounter(patientEncounter);

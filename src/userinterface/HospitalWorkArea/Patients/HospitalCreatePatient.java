@@ -23,7 +23,7 @@ import model.PersonDirectory;
 /**
  *
  * @author Shreya Baliga*/
-public class hospitalCreatePatient extends javax.swing.JPanel {
+public class HospitalCreatePatient extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -34,7 +34,7 @@ public class hospitalCreatePatient extends javax.swing.JPanel {
     boolean emptyValidationStatus = true;
     boolean validationCheck = true;
     
-    public hospitalCreatePatient(PersonDirectory personDirectory,PatientDirectory patientDirectory) {
+    public HospitalCreatePatient(PersonDirectory personDirectory,PatientDirectory patientDirectory) {
         initComponents();
         initCityCmbx();
         this.personDirectory = personDirectory;

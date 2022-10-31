@@ -22,7 +22,7 @@ import model.VitalSigns;
 /**
  *
  * @author Shreya Baliga*/
-public class patientViewEncounter extends javax.swing.JPanel {
+public class PatientViewEncounter extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -30,7 +30,7 @@ public class patientViewEncounter extends javax.swing.JPanel {
     PatientDirectory patientDirectory;
     String username;
     
-    public patientViewEncounter(String username, PatientDirectory patientDirectory) {
+    public PatientViewEncounter(String username, PatientDirectory patientDirectory) {
         initComponents();
         this.patientDirectory = patientDirectory;
         this.username = username;

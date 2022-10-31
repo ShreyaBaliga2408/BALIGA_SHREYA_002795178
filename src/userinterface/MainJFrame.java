@@ -17,19 +17,19 @@ import model.PatientDirectory;
 import model.Person;
 import model.PersonDirectory;
 import model.UserRoles;
-import userinterface.CommunityWorkArea.communityJFrame;
-import userinterface.DoctorWorkArea.doctorJFrame;
-import userinterface.HospitalWorkArea.hospitalJFrame;
-import userinterface.PatientWorkArea.patientJFrame;
-import userinterface.SystemWorkArea.systemJFrame;
+import userinterface.CommunityWorkArea.CommunityJFrame;
+import userinterface.DoctorWorkArea.DoctorJFrame;
+import userinterface.HospitalWorkArea.HospitalJFrame;
+import userinterface.PatientWorkArea.PatientJFrame;
+import userinterface.SystemWorkArea.SystemJFrame;
 
 /**
  *
  * @author Shreya Baliga*/
-public class mainJFrame extends javax.swing.JFrame {
+public class MainJFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form mainJFrame
+     * Creates new form MainJFrame
      */
     
     public  PersonDirectory personDirectory;
@@ -38,7 +38,7 @@ public class mainJFrame extends javax.swing.JFrame {
     public  HospitalDirectory hospitalDirectory;
     public Community community;
     
-    public mainJFrame() {
+    public MainJFrame() {
         initComponents();
         this.personDirectory = new PersonDirectory();
         this.doctorDirectory = new DoctorDirectory();
@@ -213,7 +213,7 @@ public class mainJFrame extends javax.swing.JFrame {
                     if(username.equals("system") && password.equals("system")){
                         reset();
                         loginStatus = true;
-                        systemJFrame systemFrame = new systemJFrame(username,personDirectory,doctorDirectory,patientDirectory,hospitalDirectory);
+                        SystemJFrame systemFrame = new SystemJFrame(username,personDirectory,doctorDirectory,patientDirectory,hospitalDirectory);
                         systemFrame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
                         systemFrame.setVisible(true);
                     }
@@ -226,7 +226,7 @@ public class mainJFrame extends javax.swing.JFrame {
                     if(username.equals("community") && password.equals("community")){
                         reset();
                         loginStatus = true;
-                        communityJFrame communityFrame = new communityJFrame(username, this.community);
+                        CommunityJFrame communityFrame = new CommunityJFrame(username, this.community);
                         communityFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                         communityFrame.setVisible(true);
                     }
@@ -239,7 +239,7 @@ public class mainJFrame extends javax.swing.JFrame {
                     if(username.equals("hospital") && password.equals("hospital")){
                         reset();
                         loginStatus = true;
-                        hospitalJFrame hospitalFrame = new hospitalJFrame(username,personDirectory, doctorDirectory, patientDirectory, hospitalDirectory);
+                        HospitalJFrame hospitalFrame = new HospitalJFrame(username,personDirectory, doctorDirectory, patientDirectory, hospitalDirectory);
                         hospitalFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                         hospitalFrame.setVisible(true);
                     }
@@ -257,7 +257,7 @@ public class mainJFrame extends javax.swing.JFrame {
                             
                             reset();
                             loginStatus = true;
-                            doctorJFrame doctorFrame = new doctorJFrame(username,personDirectory, patientDirectory, doctorDirectory, hospitalDirectory, doctor.getName());
+                            DoctorJFrame doctorFrame = new DoctorJFrame(username,personDirectory, patientDirectory, doctorDirectory, hospitalDirectory, doctor.getName());
                             doctorFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                             doctorFrame.setVisible(true);
                         }
@@ -277,7 +277,7 @@ public class mainJFrame extends javax.swing.JFrame {
                         reset();
                         loginStatus = true;
                         System.out.println(patientDirectory.getPatients().toString()+ " p patient jfraame call");
-                        patientJFrame patientFrame = new patientJFrame(username,personDirectory,patientDirectory,doctorDirectory,hospitalDirectory, patient.getName());
+                        PatientJFrame patientFrame = new PatientJFrame(username,personDirectory,patientDirectory,doctorDirectory,hospitalDirectory, patient.getName());
                         patientFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                         patientFrame.setVisible(true);
                         }
@@ -299,7 +299,7 @@ public class mainJFrame extends javax.swing.JFrame {
 //
 //                       // System.out.println(hospitalDirectory.getHospitals().toString()+ " patient jfraame call");
 //                        System.out.println(patientDirectory.getPatients().toString()+ " p patient jfraame call");
-//                        patientJFrame patientFrame = new patientJFrame(username,personDirectory,patientDirectory,doctorDirectory,hospitalDirectory);
+//                        PatientJFrame patientFrame = new PatientJFrame(username,personDirectory,patientDirectory,doctorDirectory,hospitalDirectory);
 //                        patientFrame.main(null);
 //                    }
 //                    else{
@@ -338,21 +338,23 @@ public class mainJFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                mainJFrame frame = new mainJFrame();
+                MainJFrame frame = new MainJFrame();
                 frame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
                 frame.setVisible(true);
 //                LoginJPanel loginPanel = new LoginJPanel();

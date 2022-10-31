@@ -18,7 +18,7 @@ import model.HospitalDirectory;
 /**
  *
  * @author Shreya Baliga*/
-public class addCommunity extends javax.swing.JPanel {
+public class AddCommunity extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -28,7 +28,7 @@ public class addCommunity extends javax.swing.JPanel {
     boolean emptyValidationStatus = true;
     Community community;
             
-    public addCommunity(Community community) {
+    public AddCommunity(Community community) {
         initComponents();
         this.community = community;
     }

@@ -31,7 +31,7 @@ import userinterface.SystemWorkArea.Patient.*;
 /**
  *
  * @author Shreya Baliga*/
-public class hospitalCreateDoctor extends javax.swing.JPanel {
+public class HospitalCreateDoctor extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -43,7 +43,7 @@ public class hospitalCreateDoctor extends javax.swing.JPanel {
     boolean validationCheck = true;
     HospitalDirectory hospitalDirectory;
     
-    public hospitalCreateDoctor(PersonDirectory personDirectory, DoctorDirectory doctorDirectory, HospitalDirectory hospitalDirectory) {
+    public HospitalCreateDoctor(PersonDirectory personDirectory, DoctorDirectory doctorDirectory, HospitalDirectory hospitalDirectory) {
         initComponents();
         this.personDirectory = personDirectory;
         this.doctorDirectory = doctorDirectory;

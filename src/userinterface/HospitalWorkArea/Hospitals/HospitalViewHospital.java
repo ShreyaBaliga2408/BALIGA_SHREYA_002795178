@@ -18,13 +18,13 @@ import userinterface.SystemWorkArea.Patient.*;
 /**
  *
  * @author Shreya Baliga*/
-public class hospitalViewHospital extends javax.swing.JPanel {
+public class HospitalViewHospital extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemViewHospital
      */
     HospitalDirectory hospitalDirectory;
-    public hospitalViewHospital(HospitalDirectory hospitalDirectory) {
+    public HospitalViewHospital(HospitalDirectory hospitalDirectory) {
         initComponents();
         this.hospitalDirectory = hospitalDirectory;
         PopulateData();

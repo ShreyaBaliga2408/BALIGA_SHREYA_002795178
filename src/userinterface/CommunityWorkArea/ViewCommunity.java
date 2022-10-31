@@ -15,13 +15,13 @@ import model.Hospital;
 /**
  *
  * @author Shreya Baliga*/
-public class viewCommunity extends javax.swing.JPanel {
+public class ViewCommunity extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemViewHospital
      */
     Community community;
-    public viewCommunity(Community community) {
+    public ViewCommunity(Community community) {
         initComponents();
         initCityCmbx();
         this.community = community;

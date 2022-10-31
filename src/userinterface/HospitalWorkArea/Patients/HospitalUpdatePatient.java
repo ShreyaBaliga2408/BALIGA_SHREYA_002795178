@@ -22,7 +22,7 @@ import model.PersonDirectory;
 /**
  *
  * @author Shreya Baliga*/
-public class hospitalUpdatePatient extends javax.swing.JPanel {
+public class HospitalUpdatePatient extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -34,7 +34,7 @@ public class hospitalUpdatePatient extends javax.swing.JPanel {
     boolean validationCheck = true;
     
     
-    public hospitalUpdatePatient(PersonDirectory personDirectory,PatientDirectory patientDirectory) {
+    public HospitalUpdatePatient(PersonDirectory personDirectory,PatientDirectory patientDirectory) {
         initComponents();
         this.personDirectory = personDirectory;
         this.patientDirectory = patientDirectory;

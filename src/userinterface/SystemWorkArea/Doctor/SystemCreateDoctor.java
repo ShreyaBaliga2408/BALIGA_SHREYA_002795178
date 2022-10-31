@@ -30,7 +30,7 @@ import userinterface.SystemWorkArea.Patient.*;
 /**
  *
  * @author Shreya Baliga*/
-public class systemCreateDoctor extends javax.swing.JPanel {
+public class SystemCreateDoctor extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -43,7 +43,7 @@ public class systemCreateDoctor extends javax.swing.JPanel {
     HospitalDirectory hospitalDirectory;
     
     
-    public systemCreateDoctor(PersonDirectory personDirectory, DoctorDirectory doctorDirectory, HospitalDirectory hospitalDirectory) {
+    public SystemCreateDoctor(PersonDirectory personDirectory, DoctorDirectory doctorDirectory, HospitalDirectory hospitalDirectory) {
         initComponents();
         this.personDirectory = personDirectory;
         this.doctorDirectory = doctorDirectory;
@@ -415,7 +415,7 @@ public class systemCreateDoctor extends javax.swing.JPanel {
 //                        try {
 //                            practisingFrom = new SimpleDateFormat("MM/dd/yyyy").parse(practisingDate);
 //                        } catch (ParseException ex) {
-//                            Logger.getLogger(systemCreateDoctor.class.getName()).log(Level.SEVERE, null, ex);
+//                            Logger.getLogger(SystemCreateDoctor.class.getName()).log(Level.SEVERE, null, ex);
 //                        }
                         
                     DoctorSpecialization specialization = DoctorSpecialization.valueOf(comboSpecialization.getSelectedItem().toString() );

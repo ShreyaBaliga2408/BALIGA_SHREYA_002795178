@@ -19,7 +19,7 @@ import model.PersonDirectory;
 /**
  *
  * @author Shreya Baliga*/
-public class patientViewPatientInfo extends javax.swing.JPanel {
+public class PatientViewPatientInfo extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -32,7 +32,7 @@ public class patientViewPatientInfo extends javax.swing.JPanel {
     boolean validationCheck = true;
     
     
-    public patientViewPatientInfo(String username, PersonDirectory personDirectory, PatientDirectory patientDirectory) {
+    public PatientViewPatientInfo(String username, PersonDirectory personDirectory, PatientDirectory patientDirectory) {
         initComponents();
         this.personDirectory = personDirectory;
         this.patientDirectory = patientDirectory;

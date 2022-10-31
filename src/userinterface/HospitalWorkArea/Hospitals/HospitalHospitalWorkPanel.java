@@ -17,7 +17,7 @@ import model.PersonDirectory;
 /**
  *
  * @author Shreya Baliga*/
-public class hospitalHospitalWorkPanel extends javax.swing.JPanel {
+public class HospitalHospitalWorkPanel extends javax.swing.JPanel {
 
 //    PatientDirectory patientDirectory;
 //    EncounterHistory encounterHistory;
@@ -28,14 +28,14 @@ public class hospitalHospitalWorkPanel extends javax.swing.JPanel {
     /**
      * Creates new form SystemPatient
      */
-    public hospitalHospitalWorkPanel(HospitalDirectory hosptialDirectory) {
+    public HospitalHospitalWorkPanel(HospitalDirectory hosptialDirectory) {
         initComponents();
 //        patientDirectory = new PatientDirectory();
 //        encounterHistory = new EncounterHistory();
 //        doctorDirectory = new DoctorDirectory();
         this.hosptialDirectory = hosptialDirectory;
               
-        systemViewHospital systemViewHospital = new systemViewHospital(hosptialDirectory);
+        SystemViewHospital systemViewHospital = new SystemViewHospital(hosptialDirectory);
         splitPane.setRightComponent(systemViewHospital );
     }
 
@@ -144,19 +144,19 @@ public class hospitalHospitalWorkPanel extends javax.swing.JPanel {
 
     private void btnCreateHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateHospitalActionPerformed
         // TODO add your handling code here:
-        systemCreateHospital systemCreateHospital = new systemCreateHospital(hosptialDirectory);
+        SystemCreateHospital systemCreateHospital = new SystemCreateHospital(hosptialDirectory);
         splitPane.setRightComponent(systemCreateHospital);
     }//GEN-LAST:event_btnCreateHospitalActionPerformed
 
     private void btnViewHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewHospitalActionPerformed
         // TODO add your handling code here:
-        systemViewHospital systemViewHospital = new systemViewHospital(hosptialDirectory);
+        SystemViewHospital systemViewHospital = new SystemViewHospital(hosptialDirectory);
         splitPane.setRightComponent(systemViewHospital );
     }//GEN-LAST:event_btnViewHospitalActionPerformed
 
     private void btnUpdateHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateHospitalActionPerformed
         // TODO add your handling code here:
-        systemUpdateHospital systemUpdateHospital = new systemUpdateHospital(hosptialDirectory);
+        SystemUpdateHospital systemUpdateHospital = new SystemUpdateHospital(hosptialDirectory);
         splitPane.setRightComponent(systemUpdateHospital);
     }//GEN-LAST:event_btnUpdateHospitalActionPerformed
 

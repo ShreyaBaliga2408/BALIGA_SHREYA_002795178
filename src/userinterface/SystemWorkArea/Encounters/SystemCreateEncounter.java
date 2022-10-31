@@ -25,7 +25,7 @@ import model.VitalSigns;
 /**
  *
  * @author Shreya Baliga*/
-public class systemCreateEncounter extends javax.swing.JPanel {
+public class SystemCreateEncounter extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -35,7 +35,7 @@ public class systemCreateEncounter extends javax.swing.JPanel {
     DoctorDirectory doctorDirectory;
     boolean validationCheck=true;
     
-    public systemCreateEncounter(PatientDirectory patientDirectory,DoctorDirectory doctorDirectory) {
+    public SystemCreateEncounter(PatientDirectory patientDirectory,DoctorDirectory doctorDirectory) {
         initComponents();
         this.patientDirectory = patientDirectory;
         this.doctorDirectory = doctorDirectory;
@@ -70,7 +70,7 @@ public class systemCreateEncounter extends javax.swing.JPanel {
         lblDoctorId1 = new javax.swing.JLabel();
         txtHospId = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(191, 172, 224));
+        setBackground(new java.awt.Color(0, 153, 153));
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
@@ -314,7 +314,7 @@ public class systemCreateEncounter extends javax.swing.JPanel {
                         patientEncounter.put(encounterDate,vitalSigns);
                          
                     } catch (ParseException ex) {
-                        Logger.getLogger(systemCreateEncounter.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(SystemCreateEncounter.class.getName()).log(Level.SEVERE, null, ex);
                     }
                    
                     encounter.setPatientEncounter(patientEncounter);

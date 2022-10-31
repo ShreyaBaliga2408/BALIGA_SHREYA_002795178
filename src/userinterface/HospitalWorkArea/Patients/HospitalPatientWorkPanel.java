@@ -8,26 +8,26 @@ import userinterface.SystemWorkArea.Patient.*;
 import model.PatientDirectory;
 import model.PersonDirectory;
 import userinterface.SystemWorkArea.Doctor.*;
-import userinterface.SystemWorkArea.Patient.systemCreatePatient;
-import userinterface.SystemWorkArea.Patient.systemUpdatePatient;
-import userinterface.SystemWorkArea.Patient.systemViewPatient;
+import userinterface.SystemWorkArea.Patient.SystemCreatePatient;
+import userinterface.SystemWorkArea.Patient.SystemUpdatePatient;
+import userinterface.SystemWorkArea.Patient.SystemViewPatient;
 
 /**
  *
  * @author Shreya Baliga*/
-public class hospitalPatientWorkPanel extends javax.swing.JPanel {
+public class HospitalPatientWorkPanel extends javax.swing.JPanel {
 
     PersonDirectory personDirectory;
     PatientDirectory patientDirectory;
     /**
      * Creates new form SystemPatient
      */
-    public hospitalPatientWorkPanel(PersonDirectory personDirectory, PatientDirectory patientDirectory) {
+    public HospitalPatientWorkPanel(PersonDirectory personDirectory, PatientDirectory patientDirectory) {
         initComponents();
         this.personDirectory = personDirectory;
         this.patientDirectory = patientDirectory;
               
-        hospitalViewPatient hospitalViewPatient = new hospitalViewPatient(patientDirectory,personDirectory);
+        HospitalViewPatient hospitalViewPatient = new HospitalViewPatient(patientDirectory,personDirectory);
         splitPane.setRightComponent(hospitalViewPatient );
     }
 
@@ -136,19 +136,19 @@ public class hospitalPatientWorkPanel extends javax.swing.JPanel {
 
     private void btnCreatePatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreatePatientActionPerformed
         // TODO add your handling code here:
-        hospitalCreatePatient hospitalCreatePatient = new hospitalCreatePatient(personDirectory, patientDirectory);
+        HospitalCreatePatient hospitalCreatePatient = new HospitalCreatePatient(personDirectory, patientDirectory);
         splitPane.setRightComponent(hospitalCreatePatient);
     }//GEN-LAST:event_btnCreatePatientActionPerformed
 
     private void btnViewPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewPatientActionPerformed
         // TODO add your handling code here:
-        hospitalViewPatient hospitalViewPatient = new hospitalViewPatient(patientDirectory,personDirectory);
+        HospitalViewPatient hospitalViewPatient = new HospitalViewPatient(patientDirectory,personDirectory);
         splitPane.setRightComponent(hospitalViewPatient );
     }//GEN-LAST:event_btnViewPatientActionPerformed
 
     private void btnUpdatePatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdatePatientActionPerformed
         // TODO add your handling code here:
-        hospitalUpdatePatient hospitalUpdatePatient = new hospitalUpdatePatient(personDirectory,patientDirectory);
+        HospitalUpdatePatient hospitalUpdatePatient = new HospitalUpdatePatient(personDirectory,patientDirectory);
         splitPane.setRightComponent(hospitalUpdatePatient);
     }//GEN-LAST:event_btnUpdatePatientActionPerformed
 

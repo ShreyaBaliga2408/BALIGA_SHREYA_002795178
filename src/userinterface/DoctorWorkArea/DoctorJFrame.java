@@ -4,7 +4,7 @@
  */
 package userinterface.DoctorWorkArea;
 
-import userinterface.SystemWorkArea.Doctor.systemDoctorWorkPanel;
+import userinterface.SystemWorkArea.Doctor.SystemDoctorWorkPanel;
 import userinterface.SystemWorkArea.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -12,16 +12,16 @@ import model.DoctorDirectory;
 import model.HospitalDirectory;
 import model.PatientDirectory;
 import model.PersonDirectory;
-import userinterface.DoctorWorkArea.Encounters.doctorEncountersWorkPanel;
-import userinterface.mainJFrame;
+import userinterface.DoctorWorkArea.Encounters.DoctorEncountersWorkPanel;
+import userinterface.MainJFrame;
 
 /**
  *
  * @author Shreya Baliga*/
-public class doctorJFrame extends javax.swing.JFrame {
+public class DoctorJFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form doctorJFrame
+     * Creates new form DoctorJFrame
      */
     
     public static String username;
@@ -30,7 +30,7 @@ public class doctorJFrame extends javax.swing.JFrame {
     public static DoctorDirectory doctorDirectory;
     public static HospitalDirectory hospitalDirectory;
     
-    public doctorJFrame(String username,PersonDirectory personDirectory ,PatientDirectory patientDirectory, DoctorDirectory doctorDirectory, HospitalDirectory hospitalDirectory, String nameDoctor) {
+    public DoctorJFrame(String username,PersonDirectory personDirectory ,PatientDirectory patientDirectory, DoctorDirectory doctorDirectory, HospitalDirectory hospitalDirectory, String nameDoctor) {
         initComponents();
         this.username = username;
         this.personDirectory = personDirectory;
@@ -43,11 +43,11 @@ public class doctorJFrame extends javax.swing.JFrame {
         if(username == null){
             JOptionPane.showMessageDialog(this, "Please login to proceed");
             dispose();
-            mainJFrame mainFrame = new mainJFrame();
+            MainJFrame mainFrame = new MainJFrame();
             mainFrame.main(null);
         }
         
-        doctorViewPatient dvp = new doctorViewPatient(username, patientDirectory, personDirectory);
+        DoctorViewPatient dvp = new DoctorViewPatient(username, patientDirectory, personDirectory);
         jSplitPaneSystem.setRightComponent(dvp);
         
     }
@@ -175,13 +175,13 @@ public class doctorJFrame extends javax.swing.JFrame {
     private void btnPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientActionPerformed
         // TODO add your handling code here:
         
-        doctorViewPatient dvp = new doctorViewPatient(username,patientDirectory, personDirectory);
+        DoctorViewPatient dvp = new DoctorViewPatient(username,patientDirectory, personDirectory);
         jSplitPaneSystem.setRightComponent(dvp);
     }//GEN-LAST:event_btnPatientActionPerformed
 
     private void btnEncountersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncountersActionPerformed
         // TODO add your handling code here:
-        doctorEncountersWorkPanel dewp = new doctorEncountersWorkPanel(username,patientDirectory, doctorDirectory);
+        DoctorEncountersWorkPanel dewp = new DoctorEncountersWorkPanel(username,patientDirectory, doctorDirectory);
         jSplitPaneSystem.setRightComponent(dewp);
     }//GEN-LAST:event_btnEncountersActionPerformed
 
@@ -207,13 +207,13 @@ public class doctorJFrame extends javax.swing.JFrame {
 //                }
 //            }
 //        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(doctorJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(DoctorJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(doctorJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(DoctorJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(doctorJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(DoctorJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(doctorJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(DoctorJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        }
 //        //</editor-fold>
 //        //</editor-fold>
@@ -223,7 +223,7 @@ public class doctorJFrame extends javax.swing.JFrame {
 //        /* Create and display the form */
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            public void run() {
-//               doctorJFrame systemFrame = new doctorJFrame(username,personDirectory, patientDirectory, doctorDirectory, hospitalDirectory);
+//               DoctorJFrame systemFrame = new DoctorJFrame(username,personDirectory, patientDirectory, doctorDirectory, hospitalDirectory);
 //               systemFrame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 //               systemFrame.setVisible(true);
 //            }
