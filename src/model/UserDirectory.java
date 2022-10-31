@@ -42,11 +42,11 @@ public class UserDirectory {
         user1.setUsername("neha"); //doctor
         user1.setPassword("123");
         user1.setRole("Doctor");  
-        /*
+        
         User user2 = addUser();
-        user2.setUsername("arpit");
-        user2.setPassword("123");
-        user2.setRole("xyz");*/
+        user2.setUsername("savitha");
+        user2.setPassword("1234");
+        user2.setRole("Doctor");
     }
 
     public ArrayList<User> getUserDir() {

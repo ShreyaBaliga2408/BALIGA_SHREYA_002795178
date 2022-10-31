@@ -112,7 +112,7 @@ public class People extends javax.swing.JPanel {
         jTextArea1.setRows(5);
         txtAddr.setViewportView(jTextArea1);
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
         lblEncounterHist1.setFont(new java.awt.Font("Segoe UI Symbol", 1, 24)); // NOI18N

@@ -34,7 +34,6 @@ public class HomeScreen extends javax.swing.JPanel {
         lblAddPatient = new javax.swing.JLabel();
         lblDashboard = new javax.swing.JLabel();
         lblAddEncounter = new javax.swing.JLabel();
-        lblAddPerson = new javax.swing.JLabel();
         lblAddPerson1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -42,7 +41,7 @@ public class HomeScreen extends javax.swing.JPanel {
         setForeground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(650, 600));
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setForeground(new java.awt.Color(0, 102, 102));
         jPanel1.setToolTipText("");
 
@@ -91,21 +90,6 @@ public class HomeScreen extends javax.swing.JPanel {
             }
         });
 
-        lblAddPerson.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
-        lblAddPerson.setForeground(new java.awt.Color(255, 255, 255));
-        lblAddPerson.setText("PERSON");
-        lblAddPerson.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblAddPersonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblAddPersonMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                lblAddPersonMousePressed(evt);
-            }
-        });
-
         lblAddPerson1.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         lblAddPerson1.setForeground(new java.awt.Color(255, 255, 255));
         lblAddPerson1.setText("Communities");
@@ -129,7 +113,6 @@ public class HomeScreen extends javax.swing.JPanel {
                 .addContainerGap(65, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblAddPerson1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAddPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAddEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAddPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -144,11 +127,9 @@ public class HomeScreen extends javax.swing.JPanel {
                 .addComponent(lblDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(lblAddEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lblAddPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblAddPerson1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(207, Short.MAX_VALUE))
+                .addContainerGap(278, Short.MAX_VALUE))
         );
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/AED_ASS_4_logo.png"))); // NOI18N
@@ -203,16 +184,6 @@ public class HomeScreen extends javax.swing.JPanel {
         lblAddEncounter.setForeground(Color.white);
     }//GEN-LAST:event_lblAddEncounterMouseExited
 
-    private void lblAddPersonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAddPersonMouseEntered
-        // TODO add your handling code here:.
-        lblAddPerson.setForeground(Color.black);
-    }//GEN-LAST:event_lblAddPersonMouseEntered
-
-    private void lblAddPersonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAddPersonMouseExited
-        // TODO add your handling code here:
-        lblAddPerson.setForeground(Color.white);
-    }//GEN-LAST:event_lblAddPersonMouseExited
-
     private void lblAddPatientMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAddPatientMousePressed
         // TODO add your handling code here:
         homePanel.clickPatient(this);
@@ -240,12 +211,6 @@ public class HomeScreen extends javax.swing.JPanel {
         lblAddPerson1.setForeground(Color.white);
     }//GEN-LAST:event_lblAddPerson1MouseExited
 
-    private void lblAddPersonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAddPersonMousePressed
-        // TODO add your handling code here:
-        homePanel.clickAddWorkforce(this);
-        
-    }//GEN-LAST:event_lblAddPersonMousePressed
-
     private void lblAddPerson1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAddPerson1MousePressed
         // TODO add your handling code here:
         homePanel.clickTerritories(this);
@@ -257,7 +222,6 @@ public class HomeScreen extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblAddEncounter;
     private javax.swing.JLabel lblAddPatient;
-    private javax.swing.JLabel lblAddPerson;
     private javax.swing.JLabel lblAddPerson1;
     private javax.swing.JLabel lblDashboard;
     // End of variables declaration//GEN-END:variables
