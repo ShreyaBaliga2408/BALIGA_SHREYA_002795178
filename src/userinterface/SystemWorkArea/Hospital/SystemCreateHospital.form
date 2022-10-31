@@ -103,7 +103,7 @@
     <Component class="javax.swing.JLabel" name="lblHospName">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="11"/>
-        <Property name="text" type="java.lang.String" value="Hospital Name :"/>
+        <Property name="text" type="java.lang.String" value=" Name :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtHospitalName">
@@ -114,7 +114,7 @@
     <Component class="javax.swing.JLabel" name="lblHospitalAddress">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="11"/>
-        <Property name="text" type="java.lang.String" value="Hospital Address :"/>
+        <Property name="text" type="java.lang.String" value="Address :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtHospAddress">

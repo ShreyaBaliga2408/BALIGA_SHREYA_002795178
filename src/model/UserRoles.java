@@ -9,10 +9,10 @@ package model;
  * @author Shreya Baliga*/
 public enum UserRoles {
     
-    System_Admin,
+    systemAdmin,
     Doctor,
     Patient,
-    Hospital_Admin,
-    Community_Admin
+    hospitalAdmin,
+    communityAdmin
     
 }

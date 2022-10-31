@@ -137,9 +137,9 @@
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="5">
-                <StringItem index="0" value="System_Admin"/>
-                <StringItem index="1" value="Hospital_Admin"/>
-                <StringItem index="2" value="Community_Admin"/>
+                <StringItem index="0" value="systemAdmin"/>
+                <StringItem index="1" value="hospitalAdmin"/>
+                <StringItem index="2" value="communityAdmin"/>
                 <StringItem index="3" value="Doctor"/>
                 <StringItem index="4" value="Patient"/>
               </StringArray>
@@ -177,7 +177,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnLogin">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Login"/>
+            <Property name="text" type="java.lang.String" value="Sign In"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLoginActionPerformed"/>
@@ -191,7 +191,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="0" red="99" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="         LOGIN"/>
+            <Property name="text" type="java.lang.String" value="         SIGN IN"/>
           </Properties>
         </Component>
       </SubComponents>

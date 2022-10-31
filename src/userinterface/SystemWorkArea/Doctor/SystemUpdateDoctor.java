@@ -62,8 +62,6 @@ public class SystemUpdateDoctor extends javax.swing.JPanel {
         txtName = new javax.swing.JTextField();
         lblSpecialization = new javax.swing.JLabel();
         comboSpecialization = new javax.swing.JComboBox<>();
-        lblPractsingFrom = new javax.swing.JLabel();
-        txtPractisingFrom = new javax.swing.JFormattedTextField();
         comboGender = new javax.swing.JComboBox<>();
         txtAge = new javax.swing.JTextField();
         lblGender = new javax.swing.JLabel();
@@ -111,11 +109,6 @@ public class SystemUpdateDoctor extends javax.swing.JPanel {
 
         lblSpecialization.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblSpecialization.setText("Specialization");
-
-        lblPractsingFrom.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblPractsingFrom.setText("Practising From :");
-
-        txtPractisingFrom.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("MM/dd/yyyy"))));
 
         comboGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
 
@@ -167,7 +160,7 @@ public class SystemUpdateDoctor extends javax.swing.JPanel {
         });
 
         lblCellPhoneNo.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblCellPhoneNo.setText("Cell Phone Number :");
+        lblCellPhoneNo.setText("Contact Number :");
 
         txtCellPhoneNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,7 +171,7 @@ public class SystemUpdateDoctor extends javax.swing.JPanel {
         lblState.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblState.setText("State :");
 
-        comboState.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NY", "MA", "CA", "TX" }));
+        comboState.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CA", "MA", "WA", "NC" }));
 
         lblStreet.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblStreet.setText("Street :");
@@ -270,14 +263,12 @@ public class SystemUpdateDoctor extends javax.swing.JPanel {
                                                 .addComponent(txtStreet)))))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(lblSpecialization, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(lblName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(lblPractsingFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(lblSpecialization, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+                                        .addComponent(lblName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(txtName)
-                                        .addComponent(comboSpecialization, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txtPractisingFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(comboSpecialization, 0, 174, Short.MAX_VALUE))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(lblHosp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -317,12 +308,9 @@ public class SystemUpdateDoctor extends javax.swing.JPanel {
                     .addComponent(comboSpecialization, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblGender))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblHosp)
-                        .addComponent(txtHospId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtPractisingFrom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPractsingFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblHosp)
+                    .addComponent(txtHospId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -400,15 +388,10 @@ public class SystemUpdateDoctor extends javax.swing.JPanel {
                     
                     DoctorSpecialization specialization = DoctorSpecialization.valueOf(comboSpecialization.getSelectedItem().toString() );
                     
-                    String practisingDate = txtPractisingFrom.getText();
+                    
                     int hospId = Integer.parseInt(txtHospId.getText());
                     
-                    Date practisingFrom = null;  
-                        try {
-                            practisingFrom = new SimpleDateFormat("MM/dd/yyyy").parse(practisingDate);
-                        } catch (ParseException ex) {
-                            Logger.getLogger(SystemCreateDoctor.class.getName()).log(Level.SEVERE, null, ex);
-                        }
+                    
                     
                     int doctorId = Integer.parseInt( txtSearchDoctor.getText());
                     
@@ -422,7 +405,7 @@ public class SystemUpdateDoctor extends javax.swing.JPanel {
                             d.setGender(gender);
                             d.setHouse(house);
                             d.setDoctorSpecialization(specialization);
-                            d.setPracticingFrom(practisingFrom);
+                            
                             d.setHospitalId(hospId);
                         }
                     }
@@ -473,15 +456,9 @@ public class SystemUpdateDoctor extends javax.swing.JPanel {
                 comboGender.setSelectedItem(d.getGender());
                 comboSpecialization.setSelectedItem(d.getDoctorSpecialization());
                 
-                String practisingFromDate = null;
-                try {
-                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
-                    practisingFromDate = simpleDateFormat.format(d.getPracticingFrom());
-                } catch (Exception ex) {
-                    System.out.println("Date is null");
-                }
+               
                 
-                txtPractisingFrom.setText(practisingFromDate);
+                
                 txtHospId.setText(String.valueOf(d.getHospitalId()));
 
                 txtHouseNo.setText(String.valueOf(d.getHouse().getHouseNum()));
@@ -574,16 +551,8 @@ public class SystemUpdateDoctor extends javax.swing.JPanel {
         }
         
         
-        if(!txtPractisingFrom.getText().matches("^(1[0-2]|0[1-9])/(3[01]" + "|[12][0-9]|0[1-9])/[0-9]{4}$")){
-            txtPractisingFrom.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
-            txtPractisingFrom.setToolTipText("Please enter date in format mm/dd/yyyy");
-            validationCheck=false;
-        }
         
-        if(txtPractisingFrom.getText().matches("^(1[0-2]|0[1-9])/(3[01]" + "|[12][0-9]|0[1-9])/[0-9]{4}$"))
-        {
-            txtPractisingFrom.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
-        }
+        
         
         return validationCheck;
     }
@@ -710,7 +679,6 @@ public class SystemUpdateDoctor extends javax.swing.JPanel {
     private javax.swing.JLabel lblHosp;
     private javax.swing.JLabel lblHouseNo;
     private javax.swing.JLabel lblName;
-    private javax.swing.JLabel lblPractsingFrom;
     private javax.swing.JLabel lblSearchDoctor;
     private javax.swing.JLabel lblSpecialization;
     private javax.swing.JLabel lblState;
@@ -722,7 +690,6 @@ public class SystemUpdateDoctor extends javax.swing.JPanel {
     private javax.swing.JTextField txtHospId;
     private javax.swing.JTextField txtHouseNo;
     private javax.swing.JTextField txtName;
-    private javax.swing.JFormattedTextField txtPractisingFrom;
     private javax.swing.JTextField txtSearchDoctor;
     private javax.swing.JTextField txtStreet;
     // End of variables declaration//GEN-END:variables

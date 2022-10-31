@@ -331,10 +331,10 @@
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
-            <StringItem index="0" value="NY"/>
+            <StringItem index="0" value="CA"/>
             <StringItem index="1" value="MA"/>
-            <StringItem index="2" value="CA"/>
-            <StringItem index="3" value="TX"/>
+            <StringItem index="2" value="WA"/>
+            <StringItem index="3" value="NC"/>
           </StringArray>
         </Property>
       </Properties>
@@ -361,7 +361,7 @@
     <Component class="javax.swing.JLabel" name="lblCellPhoneNo">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="11"/>
-        <Property name="text" type="java.lang.String" value="Cell Phone Number :"/>
+        <Property name="text" type="java.lang.String" value="Contact Number :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCellPhoneNo">

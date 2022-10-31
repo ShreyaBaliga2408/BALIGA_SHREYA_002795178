@@ -62,7 +62,7 @@ public class SystemUpdateHospital extends javax.swing.JPanel {
         setBackground(new java.awt.Color(0, 153, 153));
 
         lblHospName.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblHospName.setText("Hospital Name :");
+        lblHospName.setText(" Name :");
 
         txtHospitalName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,7 +71,7 @@ public class SystemUpdateHospital extends javax.swing.JPanel {
         });
 
         lblHospitalAddress.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblHospitalAddress.setText("Hospital Address :");
+        lblHospitalAddress.setText(" Address :");
 
         txtHospAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

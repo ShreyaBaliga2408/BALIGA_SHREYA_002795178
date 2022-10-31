@@ -160,17 +160,17 @@ public class AddCommunity extends javax.swing.JPanel {
                     data[communityList.length] = comm;
                     
                      switch (city.toLowerCase()) {
-                        case "newyork":
-                             this.community.getLstCommunity().put(City.NewYork, data);
+                        case "california":
+                             this.community.getLstCommunity().put(City.California, data);
                              break;
                         case "boston":
                              this.community.getLstCommunity().put(City.Boston, data);
                              break;
-                        case "southerncalifornia":
-                             this.community.getLstCommunity().put(City.SouthernCalifornia, data);
+                        case "seattle":
+                             this.community.getLstCommunity().put(City.Seattle, data);
                              break;
-                        case "austin":
-                             this.community.getLstCommunity().put(City.Austin, data);
+                        case "northcarolina":
+                             this.community.getLstCommunity().put(City.NorthCarolina, data);
                              break;
                          default:
                              throw new AssertionError();

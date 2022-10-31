@@ -88,7 +88,7 @@ public class MainJFrame extends javax.swing.JFrame {
         lblRole.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblRole.setText("User  Role   :");
 
-        comboBoxRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "System_Admin", "Hospital_Admin", "Community_Admin", "Doctor", "Patient" }));
+        comboBoxRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "systemAdmin", "hospitalAdmin", "communityAdmin", "Doctor", "Patient" }));
         comboBoxRole.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboBoxRoleActionPerformed(evt);
@@ -109,7 +109,7 @@ public class MainJFrame extends javax.swing.JFrame {
         lblPassword.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblPassword.setText("Password  :");
 
-        btnLogin.setText("Login");
+        btnLogin.setText("Sign In");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
@@ -118,7 +118,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         lSignIn.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
         lSignIn.setForeground(new java.awt.Color(153, 0, 51));
-        lSignIn.setText("         LOGIN");
+        lSignIn.setText("         SIGN IN");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -209,7 +209,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
             if((username != null && !username.trim().isEmpty()) && (password != null && !password.trim().isEmpty())){
 
-                if(userRole.equals(UserRoles.System_Admin)){
+                if(userRole.equals(UserRoles.systemAdmin)){
                     if(username.equals("system") && password.equals("system")){
                         reset();
                         loginStatus = true;
@@ -222,7 +222,7 @@ public class MainJFrame extends javax.swing.JFrame {
                     }
                 }
 
-                if(userRole.equals(UserRoles.Community_Admin)){
+                if(userRole.equals(UserRoles.communityAdmin)){
                     if(username.equals("community") && password.equals("community")){
                         reset();
                         loginStatus = true;
@@ -235,7 +235,7 @@ public class MainJFrame extends javax.swing.JFrame {
                     }
                 }
 
-                if(userRole.equals(UserRoles.Hospital_Admin)){
+                if(userRole.equals(UserRoles.hospitalAdmin)){
                     if(username.equals("hospital") && password.equals("hospital")){
                         reset();
                         loginStatus = true;

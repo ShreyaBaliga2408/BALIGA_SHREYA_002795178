@@ -16,10 +16,10 @@ public class Doctor extends Person{
     private int hospitalId;
     private DoctorSpecialization doctorSpecialization;
 
-    public Doctor(String name, long cellPhoneNumber, String emailId, int age, String gender, House house,int doctorId,Date practicingFrom,DoctorSpecialization doctorSpecialization,int hospitalId ,String password) {
+    public Doctor(String name, long cellPhoneNumber, String emailId, int age, String gender, House house,int doctorId,DoctorSpecialization doctorSpecialization,int hospitalId ,String password) {
         super(name, cellPhoneNumber, emailId, age, gender, house,password);
         this.doctorId = doctorId;
-        this.practicingFrom = practicingFrom;
+        
         this.doctorSpecialization = doctorSpecialization;
         this.hospitalId = hospitalId;
     }
@@ -34,13 +34,7 @@ public class Doctor extends Person{
         this.doctorId = doctorId;
     }
 
-    public Date getPracticingFrom() {
-        return practicingFrom;
-    }
-
-    public void setPracticingFrom(Date practicingFrom) {
-        this.practicingFrom = practicingFrom;
-    }
+  
 
     public DoctorSpecialization getDoctorSpecialization() {
         return doctorSpecialization;

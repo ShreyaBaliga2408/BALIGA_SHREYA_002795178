@@ -183,7 +183,7 @@ public class SystemCreatePatient extends javax.swing.JPanel {
             }
         });
 
-        comboState.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NY", "MA", "CA", "TX" }));
+        comboState.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CA", "MA", "WA", "NC" }));
 
         lblCommunity.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblCommunity.setText("Community :");

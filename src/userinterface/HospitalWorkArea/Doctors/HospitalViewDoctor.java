@@ -167,16 +167,10 @@ public class HospitalViewDoctor extends javax.swing.JPanel {
                     community = m.getValue().toString();
                 }  
                 
-                String practisingFromDate = null;
-                try {
-                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
-                    practisingFromDate = simpleDateFormat.format(doctor.getPracticingFrom());
-                } catch (Exception ex) {
-                    System.out.println("Date is null");
-                }
+               
                     
                 model.addRow(new Object[]
-                {doctor.getDoctorId(),doctor.getName(),doctor.getDoctorSpecialization().toString() ,practisingFromDate,doctor.getHospitalId(),doctor.getAge(),doctor.getGender(), doctor.getCellPhoneNumber(),doctor.getEmailId(),doctor.getHouse().getHouseNum()+" "+ doctor.getHouse().getStreet(),
+                {doctor.getDoctorId(),doctor.getName(),doctor.getDoctorSpecialization().toString(),doctor.getHospitalId(),doctor.getAge(),doctor.getGender(), doctor.getCellPhoneNumber(),doctor.getEmailId(),doctor.getHouse().getHouseNum()+" "+ doctor.getHouse().getStreet(),
                     city,community});
 
             });
@@ -193,7 +187,7 @@ public class HospitalViewDoctor extends javax.swing.JPanel {
     private void populateDataByDocHospital() {
        try{
             var x = doctorDirectory.getDoctors();
-            DefaultTableModel model = new DefaultTableModel(new Object[]{ "Id", "Doctor Name", "Specialization","Practising From","HospitalId" ,"Age","Gender","Contact Number" ,"Email", "Address", "City", "Community"}, 0);
+            DefaultTableModel model = new DefaultTableModel(new Object[]{ "Id", "Doctor Name", "Specialization","HospitalId" ,"Age","Gender","Contact Number" ,"Email", "Address", "City", "Community"}, 0);
             if(x!=null && !x.isEmpty())
             {
                 x.forEach(doctor -> {
@@ -210,16 +204,10 @@ public class HospitalViewDoctor extends javax.swing.JPanel {
                         community = m.getValue().toString();
                     }  
 
-                    String practisingFromDate = null;
-                    try {
-                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
-                        practisingFromDate = simpleDateFormat.format(doctor.getPracticingFrom());
-                    } catch (Exception ex) {
-                        System.out.println("Date is null");
-                    }
+                   
 
                     model.addRow(new Object[]
-                    {doctor.getDoctorId(),doctor.getName(),doctor.getDoctorSpecialization().toString() ,practisingFromDate,doctor.getHospitalId(),doctor.getAge(),doctor.getGender(), doctor.getCellPhoneNumber(),doctor.getEmailId(),doctor.getHouse().getHouseNum()+" "+ doctor.getHouse().getStreet(),
+                    {doctor.getDoctorId(),doctor.getName(),doctor.getDoctorSpecialization().toString(),doctor.getHospitalId(),doctor.getAge(),doctor.getGender(), doctor.getCellPhoneNumber(),doctor.getEmailId(),doctor.getHouse().getHouseNum()+" "+ doctor.getHouse().getStreet(),
                         city,community});
                 
                 

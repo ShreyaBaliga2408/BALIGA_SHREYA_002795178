@@ -177,7 +177,7 @@ public class HospitalUpdatePatient extends javax.swing.JPanel {
         lblCommunity.setText("Community :");
 
         lblCellPhoneNo.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblCellPhoneNo.setText("Cell Phone Number :");
+        lblCellPhoneNo.setText("Contact Number :");
 
         txtCellPhoneNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

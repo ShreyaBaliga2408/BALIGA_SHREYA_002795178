@@ -63,7 +63,7 @@ public class SystemCreateHospital extends javax.swing.JPanel {
         lblTitle.setText("Create Hospital");
 
         lblHospName.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblHospName.setText("Hospital Name :");
+        lblHospName.setText(" Name :");
 
         txtHospitalName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,7 +72,7 @@ public class SystemCreateHospital extends javax.swing.JPanel {
         });
 
         lblHospitalAddress.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblHospitalAddress.setText("Hospital Address :");
+        lblHospitalAddress.setText("Address :");
 
         txtHospAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

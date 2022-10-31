@@ -310,7 +310,7 @@
     <Component class="javax.swing.JLabel" name="lblCellPhoneNo">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="11"/>
-        <Property name="text" type="java.lang.String" value="Cell Phone Number :"/>
+        <Property name="text" type="java.lang.String" value="Contact Number :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblEmailID">

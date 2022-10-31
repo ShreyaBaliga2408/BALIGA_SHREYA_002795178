@@ -170,7 +170,7 @@ public class SystemUpdatePatient extends javax.swing.JPanel {
         lblState.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblState.setText("State :");
 
-        comboState.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NY", "MA", "CA", "TX" }));
+        comboState.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CA", "MA", "WA", "NC" }));
 
         lblCommunity.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblCommunity.setText("Community :");

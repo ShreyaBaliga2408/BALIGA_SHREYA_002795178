@@ -87,8 +87,6 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
         txtCellPhoneNo = new javax.swing.JTextField();
         btnCreateDoctor = new javax.swing.JButton();
         comboSpecialization = new javax.swing.JComboBox<>();
-        lblPractsingFrom = new javax.swing.JLabel();
-        txtPractisingFrom = new javax.swing.JFormattedTextField();
         lblHosp = new javax.swing.JLabel();
         txtHospId = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -168,12 +166,17 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
         });
 
         lblCellPhoneNo.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblCellPhoneNo.setText("Cell Phone Number :");
+        lblCellPhoneNo.setText("Contact Number :");
 
         lblState.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblState.setText("State :");
 
-        comboState.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NY", "MA", "CA", "TX" }));
+        comboState.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CA", "MA", "WA", "NC" }));
+        comboState.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboStateActionPerformed(evt);
+            }
+        });
 
         txtCellPhoneNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,10 +191,11 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
             }
         });
 
-        lblPractsingFrom.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblPractsingFrom.setText("Practising From :");
-
-        txtPractisingFrom.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("MM/dd/yyyy"))));
+        comboSpecialization.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboSpecializationActionPerformed(evt);
+            }
+        });
 
         lblHosp.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblHosp.setText("Hospital Id :");
@@ -245,13 +249,11 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(lblSpecialization, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
-                                .addComponent(lblName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblPractsingFrom, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE))
+                                .addComponent(lblName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
-                                .addComponent(comboSpecialization, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtPractisingFrom))
+                                .addComponent(comboSpecialization, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(lblAge, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -300,12 +302,9 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
                     .addComponent(comboGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(comboSpecialization, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtPractisingFrom)
-                        .addComponent(txtHospId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblHosp))
-                    .addComponent(lblPractsingFrom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtHospId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblHosp))
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1)
                 .addGap(24, 24, 24)
@@ -396,22 +395,16 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
                     
                     String password = passwordField.getText();
                     
-                    Date practisingDate = (Date) txtPractisingFrom.getValue();
-                    
+                   
                     int hospId = Integer.parseInt(txtHospId.getText());
                     
-//                    Date practisingFrom = null;  
-//                        try {
-//                            practisingFrom = new SimpleDateFormat("MM/dd/yyyy").parse(practisingDate);
-//                        } catch (ParseException ex) {
-//                            Logger.getLogger(SystemCreateDoctor.class.getName()).log(Level.SEVERE, null, ex);
-//                        }
+
                         
                     DoctorSpecialization specialization = DoctorSpecialization.valueOf(comboSpecialization.getSelectedItem().toString() );
 
                     
                     
-                    Person doctor = new Doctor(name,cellPhoneNumber,emailId,age,gender,house,doctorID,practisingDate,specialization,hospId, password);
+                    Person doctor = new Doctor(name,cellPhoneNumber,emailId,age,gender,house,doctorID,specialization,hospId, password);
          
                     personDirectory.addNewPerson(doctor);
                     doctorDirectory.addNewDoctor(doctor);
@@ -466,6 +459,14 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this,"Hospital doesn't exist. List of hospitals: \n"+ hospitalsData);
         }
     }//GEN-LAST:event_txtHospIdFocusLost
+
+    private void comboStateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboStateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboStateActionPerformed
+
+    private void comboSpecializationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboSpecializationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboSpecializationActionPerformed
 
     public Boolean hospitalExists(){
            
@@ -532,15 +533,7 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
         }
         
         
-        if(!txtPractisingFrom.getText().matches("^(1[0-2]|0[1-9])/(3[01]" + "|[12][0-9]|0[1-9])/[0-9]{4}$")){
-            txtPractisingFrom.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
-            txtPractisingFrom.setToolTipText("Please enter date in format mm/dd/yyyy");
-            validationCheck=false;
-        }
-        else
-        {
-            txtPractisingFrom.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
-        }
+      
         
         if(!txtHouseNo.getText().matches("\\b\\d+\\b"))
         {
@@ -711,7 +704,6 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
     private javax.swing.JLabel lblHosp;
     private javax.swing.JLabel lblHouseNo;
     private javax.swing.JLabel lblName;
-    private javax.swing.JLabel lblPractsingFrom;
     private javax.swing.JLabel lblSpecialization;
     private javax.swing.JLabel lblState;
     private javax.swing.JLabel lblStreet;
@@ -723,7 +715,6 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
     private javax.swing.JTextField txtHospId;
     private javax.swing.JTextField txtHouseNo;
     private javax.swing.JTextField txtName;
-    private javax.swing.JFormattedTextField txtPractisingFrom;
     private javax.swing.JTextField txtStreet;
     // End of variables declaration//GEN-END:variables
 }

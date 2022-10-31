@@ -8,20 +8,14 @@ package model;
  *
  * @author Shreya Baliga*/
 public enum DoctorSpecialization {
-    AllergyAndImmunology,
+    
     Dermatology,
-    DiagnosticRadiology,
     EmergencyMedicine,
     FamilyMedicine,
     InternalMedicine,
     Neurology,
-    ObstetricsAndGynecology,
     Ophthalmology,
-    Pathology,
     Pediatrics,
-    PreventiveMedicine,
     Psychiatry,
-    RadiationOncology,
-    Surgery,
     Urology;
 }

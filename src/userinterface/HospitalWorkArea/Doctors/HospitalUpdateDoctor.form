@@ -86,15 +86,13 @@
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="lblSpecialization" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="lblSpecialization" alignment="1" pref="99" max="32767" attributes="0"/>
                                       <Component id="lblName" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="lblPractsingFrom" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="txtName" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="comboSpecialization" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="txtPractisingFrom" alignment="0" min="-2" pref="174" max="-2" attributes="0"/>
+                                      <Component id="comboSpecialization" alignment="0" pref="174" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -147,13 +145,9 @@
                   <Component id="lblGender" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="txtPractisingFrom" alignment="3" max="32767" attributes="0"/>
-                      <Component id="txtHospId" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblHosp" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="lblPractsingFrom" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtHospId" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblHosp" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
@@ -241,19 +235,6 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblPractsingFrom">
-      <Properties>
-        <Property name="horizontalAlignment" type="int" value="11"/>
-        <Property name="text" type="java.lang.String" value="Practising From :"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JFormattedTextField" name="txtPractisingFrom">
-      <Properties>
-        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-          <Format format="MM/dd/yyyy" subtype="-1" type="1"/>
-        </Property>
-      </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="comboGender">
       <Properties>
@@ -360,7 +341,7 @@
     <Component class="javax.swing.JLabel" name="lblCellPhoneNo">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="11"/>
-        <Property name="text" type="java.lang.String" value="Cell Phone Number :"/>
+        <Property name="text" type="java.lang.String" value="Contact Number :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCellPhoneNo">
@@ -378,10 +359,10 @@
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
-            <StringItem index="0" value="NY"/>
+            <StringItem index="0" value="CA"/>
             <StringItem index="1" value="MA"/>
-            <StringItem index="2" value="CA"/>
-            <StringItem index="3" value="TX"/>
+            <StringItem index="2" value="WA"/>
+            <StringItem index="3" value="NC"/>
           </StringArray>
         </Property>
       </Properties>

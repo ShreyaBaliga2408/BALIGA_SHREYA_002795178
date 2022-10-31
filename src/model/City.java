@@ -8,8 +8,8 @@ package model;
  *
  * @author Shreya Baliga*/
 public enum City {
-    NewYork,
+    California,
     Boston,
-    SouthernCalifornia,
-    Austin;
+    Seattle,
+    NorthCarolina;
 }
