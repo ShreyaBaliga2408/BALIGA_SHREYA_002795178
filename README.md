@@ -13,11 +13,7 @@ README file is important
 NO DATABASE required - USE ArrayList or suitable DATA STRUCTURES for the DIRECTORIES
 Panels - At least 5 panels required: System Administrator, Doctor, Patient, Community Admin and Hospital Admin
 CRUD can be implemented in the same panel - e.g: A Hospital Administrator can perform all CRUD operations on Doctors in the same panel
-UNIQUE ID - for a person, doctor, encounter wherever valid is necessary
-follow camel convention
-fulfills and meets all the requirements of the assignment 2 pdf uploaded on canvas.
-Student should be able to explain their assignment code.
-No deadline extensions will be given so please start your assignment on time.
-Book your code review slots under your assigned TA. Do not book multiple slots .Failure to appear in code review will lead to 0 points.
-Do not be late for code review and be professional.
+UNIQUE ID - for a person, doctor, encounter wherever valid is necessary.
+
+
 
