@@ -5,24 +5,26 @@
 package userinterface.SystemWorkArea.Doctor;
 
 import model.DoctorDirectory;
+import model.HospitalDirectory;
 import model.PersonDirectory;
 
 /**
  *
  * @author Shreya Baliga*/
-public class SystemDoctorWorkPanel extends javax.swing.JPanel {
+public class systemDoctorWorkPanel extends javax.swing.JPanel {
 
     PersonDirectory personDirectory;
     DoctorDirectory doctorDirectory;
+    HospitalDirectory hospitalDirectory;
     /**
      * Creates new form SystemPatient
      */
-    public SystemDoctorWorkPanel(PersonDirectory personDirectory,DoctorDirectory doctorDirectory) {
+    public systemDoctorWorkPanel(PersonDirectory personDirectory,DoctorDirectory doctorDirectory, HospitalDirectory hospitalDirectory) {
         initComponents();
         this.personDirectory = personDirectory;
         this.doctorDirectory = doctorDirectory;
-              
-        SystemViewDoctor systemViewDoctor = new SystemViewDoctor(personDirectory,doctorDirectory);
+        this.hospitalDirectory = hospitalDirectory;
+        systemViewDoctor systemViewDoctor = new systemViewDoctor(personDirectory,doctorDirectory);
         splitPane.setRightComponent(systemViewDoctor );
     }
 
@@ -46,7 +48,7 @@ public class SystemDoctorWorkPanel extends javax.swing.JPanel {
 
         splitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        controlPanel.setBackground(new java.awt.Color(204, 0, 0));
+        controlPanel.setBackground(new java.awt.Color(153, 0, 51));
         controlPanel.setPreferredSize(new java.awt.Dimension(150, 609));
         controlPanel.setVerifyInputWhenFocusTarget(false);
 
@@ -131,19 +133,19 @@ public class SystemDoctorWorkPanel extends javax.swing.JPanel {
 
     private void btnCreateDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateDoctorActionPerformed
         // TODO add your handling code here:
-        SystemCreateDoctor systemCreateDoctor = new SystemCreateDoctor(personDirectory, doctorDirectory);
+        systemCreateDoctor systemCreateDoctor = new systemCreateDoctor(personDirectory, doctorDirectory, this.hospitalDirectory);
         splitPane.setRightComponent(systemCreateDoctor);
     }//GEN-LAST:event_btnCreateDoctorActionPerformed
 
     private void btnViewDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDoctorActionPerformed
         // TODO add your handling code here:
-        SystemViewDoctor systemViewDoctor = new SystemViewDoctor(personDirectory, doctorDirectory);
+        systemViewDoctor systemViewDoctor = new systemViewDoctor(personDirectory, doctorDirectory);
         splitPane.setRightComponent(systemViewDoctor );
     }//GEN-LAST:event_btnViewDoctorActionPerformed
 
     private void btnUpdateDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateDoctorActionPerformed
         // TODO add your handling code here:
-        SystemUpdateDoctor systemUpdateDoctor = new SystemUpdateDoctor(personDirectory,doctorDirectory);
+        systemUpdateDoctor systemUpdateDoctor = new systemUpdateDoctor(personDirectory,doctorDirectory);
         splitPane.setRightComponent(systemUpdateDoctor);
     }//GEN-LAST:event_btnUpdateDoctorActionPerformed
 

@@ -8,7 +8,7 @@ import java.awt.Color;
 import java.awt.event.ItemEvent;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
+
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import model.City;
@@ -22,10 +22,10 @@ import model.PersonDirectory;
 /**
  *
  * @author Shreya Baliga*/
-public class SystemCreatePatient extends javax.swing.JPanel {
+public class systemCreatePatient extends javax.swing.JPanel {
 
     /**
-     * Creates new form SystemCreatePatient
+     * Creates new form systemCreatePatient
      */
     
     PersonDirectory personDirectory;
@@ -33,7 +33,7 @@ public class SystemCreatePatient extends javax.swing.JPanel {
     boolean emptyValidationStatus = true;
     boolean validationCheck = true;
     
-    public SystemCreatePatient(PersonDirectory personDirectory,PatientDirectory patientDirectory) {
+    public systemCreatePatient(PersonDirectory personDirectory,PatientDirectory patientDirectory) {
         initComponents();
         initCityCmbx();
         this.personDirectory = personDirectory;
@@ -78,6 +78,8 @@ public class SystemCreatePatient extends javax.swing.JPanel {
         comboCommunity = new javax.swing.JComboBox<>();
         txtHouseNo = new javax.swing.JTextField();
         comboGender = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        passwordField = new javax.swing.JPasswordField();
 
         setBackground(new java.awt.Color(0, 153, 153));
 
@@ -188,6 +190,14 @@ public class SystemCreatePatient extends javax.swing.JPanel {
 
         comboGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
 
+        jLabel3.setText("Password :");
+
+        passwordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordFieldActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -250,9 +260,13 @@ public class SystemCreatePatient extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnCreatePatient)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblCellPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(lblCellPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtCellPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtCellPhoneNo, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                                    .addComponent(passwordField))))))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -304,7 +318,9 @@ public class SystemCreatePatient extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtEmailID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblEmailID))
+                    .addComponent(lblEmailID)
+                    .addComponent(jLabel3)
+                    .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnCreatePatient)
                 .addContainerGap(101, Short.MAX_VALUE))
@@ -351,26 +367,26 @@ public class SystemCreatePatient extends javax.swing.JPanel {
                     float height = Float.parseFloat(txtHeight.getText());
                     float weight = Float.parseFloat(txtWeight.getText());
                     
-                    Random random=new Random();
-                    int patientID=random.nextInt((9999 - 100) + 1) + 10;
+                    
+                    int patientID = this.patientDirectory.getPatients().size()+1;
                      
-                    String password = name + String.valueOf(random.nextInt((9999 - 100) + 1)+ 10);
+                    String password = passwordField.getText();
                     
                     Person patient = new Patient(name,cellPhoneNumber,emailId,age,gender,house,patientID ,height ,weight, password);
                     personDirectory.addNewPerson(patient);
                     patientDirectory.addNewPatient(patient);
                     
-                    JOptionPane.showMessageDialog(this,"Patient Registered Successfully.Your New Patient Id is: "+patientID+" and password: "+password+",Please save this Patient Id for furture appointments.");
+                    JOptionPane.showMessageDialog(this,"Patient Registered Successfully. Your id is: "+patientID);
                                     
 
                 }
                 else{
-                    JOptionPane.showMessageDialog(this,"Some Error in entered data.Please check over the red fields to know more.");
+                    JOptionPane.showMessageDialog(this,"Hover on red fields for more description");
                     validationCheck=true;
                 }
             }
             else{
-                    JOptionPane.showMessageDialog(this,"Some Error in entered data. Please check over the red fields to know more.");
+                    JOptionPane.showMessageDialog(this,"Hover on red fields for more description");
                     emptyValidationStatus=true;
                 }   
         }
@@ -406,6 +422,10 @@ public class SystemCreatePatient extends javax.swing.JPanel {
         // TODO add your handling code here:
         initCommunityCmbx();
     }//GEN-LAST:event_comboCityItemStateChanged
+
+    private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordFieldActionPerformed
 
     private boolean RegexValidation() {
         if(!txtName.getText().matches("^[a-zA-Z ]+$"))
@@ -479,6 +499,17 @@ public class SystemCreatePatient extends javax.swing.JPanel {
         if(txtCellPhoneNo.getText().matches("^[0-9]{10}$"))
         {
             txtCellPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        
+        if(!passwordField.getText().matches("^[a-zA-Z0-9@#$%&]+$"))
+        {
+            passwordField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            passwordField.setToolTipText("This Field must contain number, alphabets and one special character");
+            validationCheck=false;
+        }
+        else
+        {
+            passwordField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
         }
         return validationCheck;
     }
@@ -561,6 +592,19 @@ public class SystemCreatePatient extends javax.swing.JPanel {
         {
             txtCellPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
+        
+         
+        if(passwordField.getText().equals(null) || passwordField.getText().trim().isEmpty())
+        {
+            passwordField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            passwordField.setToolTipText("This Field must contain number, alphabets and one special character");
+            emptyValidationStatus=false;
+        }
+         if(!passwordField.getText().equals(null) && !passwordField.getText().trim().isEmpty())
+        {
+            passwordField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+         
         return emptyValidationStatus;
     }
     
@@ -596,6 +640,7 @@ public class SystemCreatePatient extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> comboState;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lblAge;
     private javax.swing.JLabel lblCellPhoneNo;
     private javax.swing.JLabel lblCity;
@@ -609,6 +654,7 @@ public class SystemCreatePatient extends javax.swing.JPanel {
     private javax.swing.JLabel lblStreet;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblWeight;
+    private javax.swing.JPasswordField passwordField;
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtCellPhoneNo;
     private javax.swing.JTextField txtEmailID;

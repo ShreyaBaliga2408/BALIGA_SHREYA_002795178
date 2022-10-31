@@ -18,7 +18,7 @@ import userinterface.SystemWorkArea.Patient.*;
 /**
  *
  * @author Shreya Baliga*/
-public class HospitalViewDoctor extends javax.swing.JPanel {
+public class hospitalViewDoctor extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -27,7 +27,7 @@ public class HospitalViewDoctor extends javax.swing.JPanel {
     PersonDirectory personDirectory;
     DoctorDirectory doctorDirectory;
     Doctor doctor;
-    public HospitalViewDoctor(PersonDirectory personDirectory, DoctorDirectory doctorDirectory) {
+    public hospitalViewDoctor(PersonDirectory personDirectory, DoctorDirectory doctorDirectory) {
         initComponents();
         this.doctorDirectory=doctorDirectory;
         this.personDirectory=personDirectory;
@@ -52,7 +52,6 @@ public class HospitalViewDoctor extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(0, 153, 153));
 
-        lblTitle.setBackground(new java.awt.Color(0, 153, 153));
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("View Doctors");

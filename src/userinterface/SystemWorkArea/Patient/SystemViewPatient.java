@@ -16,7 +16,7 @@ import model.PersonDirectory;
 /**
  *
  * @author Shreya Baliga*/
-public class SystemViewPatient extends javax.swing.JPanel {
+public class systemViewPatient extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -26,7 +26,7 @@ public class SystemViewPatient extends javax.swing.JPanel {
     PersonDirectory personDirectory;
     Person person;
     
-    public SystemViewPatient(PatientDirectory patientDirectory,PersonDirectory personDirectory) {
+    public systemViewPatient(PatientDirectory patientDirectory,PersonDirectory personDirectory) {
         initComponents();
         this.patientDirectory=patientDirectory;
         this.personDirectory=personDirectory;
@@ -70,7 +70,7 @@ public class SystemViewPatient extends javax.swing.JPanel {
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("View Patient");
+        lblTitle.setText("View Patient Information");
 
         tblPatientList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -187,7 +187,7 @@ public class SystemViewPatient extends javax.swing.JPanel {
     private void populateData() {
         try{
             var x = patientDirectory.getPatients();
-            DefaultTableModel model = new DefaultTableModel(new Object[]{ "Patient Id", "Patient Name", "Contact Number", "Age","Height","Weight","Email", "Contact", "Address", "City", "Community"}, 0);
+            DefaultTableModel model = new DefaultTableModel(new Object[]{ "Patient Id", "Patient Name", "Contact Number", "Age","Height","Weight","Email", "Address", "City", "Community"}, 0);
             if(x!=null && !x.isEmpty())
             {
                 x.forEach(patient -> {
@@ -200,10 +200,15 @@ public class SystemViewPatient extends javax.swing.JPanel {
                     community = m.getValue().toString();
                 }  
                     
-                model.addRow(new Object[]
-                {patient,patient.getName(), 
-                    patient.getAge(),patient.getGender(),patient.getHeight(),patient.getWeight(), patient.getCellPhoneNumber(),patient.getEmailId(),patient.getHouse().getHouseNum()+" "+ patient.getHouse().getStreet(),
-                    city,community});
+//                   model.addRow(new Object[]
+//                    {patient,patient.getName(), 
+//                         patient.getCellPhoneNumber(),patient.getEmailId(),patient.getAge(),patient.getGender(),patient.getHeight(),patient.getWeight(),patient.getHouse().getHouseNum()+" "+ patient.getHouse().getStreet(),
+//                        city,community});
+
+model.addRow(new Object[]
+                    {patient,patient.getName(), 
+                         patient.getCellPhoneNumber(),patient.getAge(),patient.getHeight(),patient.getWeight(),patient.getEmailId(),patient.getHouse().getHouseNum()+" "+ patient.getHouse().getStreet(),
+                        city,community});
 
             });
                 
@@ -221,7 +226,7 @@ public class SystemViewPatient extends javax.swing.JPanel {
     private void populateDataByPatientName() {
         try{
             var x = patientDirectory.getPatients();
-            DefaultTableModel model = new DefaultTableModel(new Object[]{ "Patient Id", "Patient Name", "Contact Number", "Age","Height","Weight","Email", "Contact", "Address", "City", "Community"}, 0);
+            DefaultTableModel model = new DefaultTableModel(new Object[]{ "Patient Id", "Patient Name", "Contact Number", "Age","Height","Weight","Email", "Address", "City", "Community"}, 0);
             if(x!=null && !x.isEmpty())
             {
                 x.forEach(patient -> {
@@ -236,11 +241,10 @@ public class SystemViewPatient extends javax.swing.JPanel {
                         community = m.getValue().toString();
                     }  
 
-                    model.addRow(new Object[]
+                       model.addRow(new Object[]
                     {patient,patient.getName(), 
-                        patient.getAge(),patient.getGender(),patient.getHeight(),patient.getWeight(), patient.getCellPhoneNumber(),patient.getEmailId(),patient.getHouse().getHouseNum()+" "+ patient.getHouse().getStreet(),
+                         patient.getCellPhoneNumber(),patient.getAge(),patient.getHeight(),patient.getWeight(),patient.getEmailId(),patient.getHouse().getHouseNum()+" "+ patient.getHouse().getStreet(),
                         city,community});
-                    
                 }
 
             });

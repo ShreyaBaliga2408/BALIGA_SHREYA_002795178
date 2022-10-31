@@ -4,17 +4,17 @@
  */
 package userinterface.CommunityWorkArea;
 
-import userinterface.SystemWorkArea.Doctor.SystemDoctorWorkPanel;
+import userinterface.SystemWorkArea.Doctor.systemDoctorWorkPanel;
 import userinterface.SystemWorkArea.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import model.Community;
-import userinterface.MainJFrame;
+import userinterface.mainJFrame;
 
 /**
  *
  * @author Shreya Baliga*/
-public class CommunityJFrame extends javax.swing.JFrame {
+public class communityJFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form DoctorJFrame
@@ -23,7 +23,7 @@ public class CommunityJFrame extends javax.swing.JFrame {
     public static String username;
     Community community;
     
-    public CommunityJFrame(String username, Community community) {
+    public communityJFrame(String username, Community community) {
         initComponents();
         this.username = username;
         this.community = community;
@@ -31,7 +31,7 @@ public class CommunityJFrame extends javax.swing.JFrame {
         if(username == null){
             JOptionPane.showMessageDialog(this, "Please login to proceed");
             dispose();
-            MainJFrame mainFrame = new MainJFrame();
+            mainJFrame mainFrame = new mainJFrame();
             mainFrame.main(null);
         }
         
@@ -140,14 +140,14 @@ public class CommunityJFrame extends javax.swing.JFrame {
     private void btnViewCommunityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewCommunityActionPerformed
         // TODO add your handling code here:
         
-        ViewCommunity viewCommunity = new ViewCommunity(this.community);
+        viewCommunity viewCommunity = new viewCommunity(this.community);
         jSplitPaneSystem.setRightComponent(viewCommunity);
         
     }//GEN-LAST:event_btnViewCommunityActionPerformed
 
     private void btnAddCommunityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCommunityActionPerformed
         // TODO add your handling code here:
-        jSplitPaneSystem.setRightComponent(new AddCommunity(this.community));
+        jSplitPaneSystem.setRightComponent(new addCommunity(this.community));
  
         
     }//GEN-LAST:event_btnAddCommunityActionPerformed

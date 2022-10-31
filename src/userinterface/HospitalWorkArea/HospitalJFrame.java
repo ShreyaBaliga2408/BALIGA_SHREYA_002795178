@@ -12,17 +12,17 @@ import model.DoctorDirectory;
 import model.HospitalDirectory;
 import model.PatientDirectory;
 import model.PersonDirectory;
-import userinterface.HospitalWorkArea.Doctors.HospitalDoctorWorkPanel;
-import userinterface.HospitalWorkArea.Encounters.HospitalEncountersWorkPanel;
-import userinterface.HospitalWorkArea.Hospitals.HospitalHospitalWorkPanel;
-import userinterface.HospitalWorkArea.Patients.HospitalPatientWorkPanel;
-import userinterface.MainJFrame;
+import userinterface.HospitalWorkArea.Doctors.hospitalDoctorWorkPanel;
+import userinterface.HospitalWorkArea.Encounters.hospitalEncountersWorkPanel;
+import userinterface.HospitalWorkArea.Hospitals.hospitalHospitalWorkPanel;
+import userinterface.HospitalWorkArea.Patients.hospitalPatientWorkPanel;
+import userinterface.mainJFrame;
 
 
 /**
  *
  * @author Shreya Baliga*/
-public class HospitalJFrame extends javax.swing.JFrame {
+public class hospitalJFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form DoctorJFrame
@@ -34,7 +34,7 @@ public class HospitalJFrame extends javax.swing.JFrame {
     public static PatientDirectory patientDirectory;
     public static HospitalDirectory hospitalDirectory;
     
-    public HospitalJFrame(String username, PersonDirectory personDirectory, DoctorDirectory doctorDirectory, PatientDirectory patientDirectory, HospitalDirectory hospitalDirectory) {
+    public hospitalJFrame(String username, PersonDirectory personDirectory, DoctorDirectory doctorDirectory, PatientDirectory patientDirectory, HospitalDirectory hospitalDirectory) {
         initComponents();
         this.username = username;
         this.personDirectory = personDirectory;
@@ -45,11 +45,11 @@ public class HospitalJFrame extends javax.swing.JFrame {
         if(username == null){
             JOptionPane.showMessageDialog(this, "Please login to proceed");
             dispose();
-            MainJFrame mainFrame = new MainJFrame();
+            mainJFrame mainFrame = new mainJFrame();
             mainFrame.main(null);
         }
         
-        HospitalHospitalWorkPanel hospitalWorkPanel = new HospitalHospitalWorkPanel(hospitalDirectory);
+        hospitalHospitalWorkPanel hospitalWorkPanel = new hospitalHospitalWorkPanel(hospitalDirectory);
         jSplitPaneSystem.setRightComponent(hospitalWorkPanel);
         
     }
@@ -182,25 +182,25 @@ public class HospitalJFrame extends javax.swing.JFrame {
 
     private void btnHospitalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHospitalsActionPerformed
         // TODO add your handling code here:
-        HospitalHospitalWorkPanel hospitalWorkPanel = new HospitalHospitalWorkPanel(hospitalDirectory);
+        hospitalHospitalWorkPanel hospitalWorkPanel = new hospitalHospitalWorkPanel(hospitalDirectory);
         jSplitPaneSystem.setRightComponent(hospitalWorkPanel);
     }//GEN-LAST:event_btnHospitalsActionPerformed
 
     private void btnDoctorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoctorsActionPerformed
         // TODO add your handling code here:
-        HospitalDoctorWorkPanel hospitalDoctor = new HospitalDoctorWorkPanel(personDirectory, doctorDirectory);
+        hospitalDoctorWorkPanel hospitalDoctor = new hospitalDoctorWorkPanel(personDirectory, doctorDirectory, this.hospitalDirectory);
         jSplitPaneSystem.setRightComponent(hospitalDoctor);
     }//GEN-LAST:event_btnDoctorsActionPerformed
 
     private void btnPatientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientsActionPerformed
         // TODO add your handling code here:
-        HospitalPatientWorkPanel hospitalPatient = new HospitalPatientWorkPanel(personDirectory, patientDirectory);
+        hospitalPatientWorkPanel hospitalPatient = new hospitalPatientWorkPanel(personDirectory, patientDirectory);
         jSplitPaneSystem.setRightComponent(hospitalPatient);
     }//GEN-LAST:event_btnPatientsActionPerformed
 
     private void btnEncountersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncountersActionPerformed
         // TODO add your handling code here:
-        HospitalEncountersWorkPanel hospitalEncounters = new HospitalEncountersWorkPanel(patientDirectory, doctorDirectory);
+        hospitalEncountersWorkPanel hospitalEncounters = new hospitalEncountersWorkPanel(patientDirectory, doctorDirectory);
         jSplitPaneSystem.setRightComponent(hospitalEncounters);
     }//GEN-LAST:event_btnEncountersActionPerformed
 
@@ -209,45 +209,45 @@ public class HospitalJFrame extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HospitalJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HospitalJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HospitalJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HospitalJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-               HospitalJFrame systemFrame = new HospitalJFrame(username,personDirectory, doctorDirectory, patientDirectory, hospitalDirectory);
-               systemFrame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
-               systemFrame.setVisible(true);
-            }
-        });
-    }
+//    /**
+//     * @param args the command line arguments
+//     */
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(hospitalJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(hospitalJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(hospitalJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(hospitalJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//        //</editor-fold>
+//        //</editor-fold>
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//               hospitalJFrame systemFrame = new hospitalJFrame(username,personDirectory, doctorDirectory, patientDirectory, hospitalDirectory);
+//               systemFrame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+//               systemFrame.setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDoctors;

@@ -18,13 +18,13 @@ import userinterface.SystemWorkArea.Patient.*;
 /**
  *
  * @author Shreya Baliga*/
-public class HospitalViewHospital extends javax.swing.JPanel {
+public class hospitalViewHospital extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemViewHospital
      */
     HospitalDirectory hospitalDirectory;
-    public HospitalViewHospital(HospitalDirectory hospitalDirectory) {
+    public hospitalViewHospital(HospitalDirectory hospitalDirectory) {
         initComponents();
         this.hospitalDirectory = hospitalDirectory;
         PopulateData();
@@ -50,7 +50,7 @@ public class HospitalViewHospital extends javax.swing.JPanel {
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("View Hospital");
+        lblTitle.setText("View Hospital Details");
 
         lblSearchHospital.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblSearchHospital.setText("Search Hospital by Name:");

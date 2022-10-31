@@ -70,7 +70,7 @@
           <Font name="Segoe UI" size="18" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="View Doctors"/>
+        <Property name="text" type="java.lang.String" value=" View Doctor Details"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">

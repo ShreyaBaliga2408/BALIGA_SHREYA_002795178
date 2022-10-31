@@ -30,7 +30,7 @@ public class DoctorDirectory {
         community.setCommunity(communities);
         house.setCommunity(community);
        
-        Doctor d = new Doctor("Shreyas",Long.parseLong("8422097015"), "tg@g.com",22, "Male", house, 1989, new Date(), DoctorSpecialization.DiagnosticRadiology,1001,"s11");
+        Doctor d = new Doctor("Neha",Long.parseLong("8422097015"), "nh@g.com",22, "Male", house, 1, new Date(), DoctorSpecialization.DiagnosticRadiology,1,"n11");
        
         this.doctors.add(d);
     }
@@ -39,7 +39,7 @@ public class DoctorDirectory {
     
 
     public Set<Doctor> getDoctors() {
-        return doctors;
+        return this.doctors;
     }
 
     public void setDoctors(Set<Doctor> doctors) {
@@ -54,5 +54,6 @@ public class DoctorDirectory {
      public void deleteDoctor(Doctor selectedPatient) {
         doctors.remove(selectedPatient);
     }
+    
     
 }

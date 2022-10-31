@@ -17,7 +17,7 @@ import model.PersonDirectory;
 /**
  *
  * @author Shreya Baliga*/
-public class HospitalViewPatient extends javax.swing.JPanel {
+public class hospitalViewPatient extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -27,7 +27,7 @@ public class HospitalViewPatient extends javax.swing.JPanel {
     PersonDirectory personDirectory;
     Person person;
     
-    public HospitalViewPatient(PatientDirectory patientDirectory,PersonDirectory personDirectory) {
+    public hospitalViewPatient(PatientDirectory patientDirectory,PersonDirectory personDirectory) {
         initComponents();
         this.patientDirectory=patientDirectory;
         this.personDirectory=personDirectory;
@@ -70,7 +70,7 @@ public class HospitalViewPatient extends javax.swing.JPanel {
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("View Patient");
+        lblTitle.setText("View Patient Details");
 
         tblPatientList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

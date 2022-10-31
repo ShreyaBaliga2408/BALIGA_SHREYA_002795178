@@ -17,14 +17,14 @@ import userinterface.SystemWorkArea.Patient.*;
 /**
  *
  * @author Shreya Baliga*/
-public class PatientViewHospital extends javax.swing.JPanel {
+public class patientViewHospital extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemViewHospital
      */
     String username;
     HospitalDirectory hospitalDirectory;
-    public PatientViewHospital(String username, HospitalDirectory hospitalDirectory) {
+    public patientViewHospital(String username, HospitalDirectory hospitalDirectory) {
         initComponents();
         this.hospitalDirectory = hospitalDirectory;
         this.username = username;

@@ -18,7 +18,7 @@ public class HospitalDirectory {
 
     public HospitalDirectory() {
         
-        int hospitalId = 1001;
+        int hospitalId = 1;
         String hospitalName = "My Hospital";
         String hospitalAddress = "75 Alphonso";
         long contactNo = Long.parseLong("8877996633");

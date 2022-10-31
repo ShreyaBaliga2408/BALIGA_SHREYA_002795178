@@ -28,7 +28,7 @@ import userinterface.SystemWorkArea.Patient.*;
 /**
  *
  * @author Shreya Baliga*/
-public class SystemUpdateDoctor extends javax.swing.JPanel {
+public class systemUpdateDoctor extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -39,7 +39,7 @@ public class SystemUpdateDoctor extends javax.swing.JPanel {
     boolean emptyValidationStatus = true;
     boolean validationCheck = true;
     
-    public SystemUpdateDoctor(PersonDirectory personDirectory, DoctorDirectory doctorDirectory) {
+    public systemUpdateDoctor(PersonDirectory personDirectory, DoctorDirectory doctorDirectory) {
         initComponents();
         this.personDirectory = personDirectory;
         this.doctorDirectory = doctorDirectory;
@@ -407,7 +407,7 @@ public class SystemUpdateDoctor extends javax.swing.JPanel {
                         try {
                             practisingFrom = new SimpleDateFormat("MM/dd/yyyy").parse(practisingDate);
                         } catch (ParseException ex) {
-                            Logger.getLogger(SystemCreateDoctor.class.getName()).log(Level.SEVERE, null, ex);
+                            Logger.getLogger(systemCreateDoctor.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     
                     int doctorId = Integer.parseInt( txtSearchDoctor.getText());

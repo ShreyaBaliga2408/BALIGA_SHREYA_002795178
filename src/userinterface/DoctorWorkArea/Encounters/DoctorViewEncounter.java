@@ -19,7 +19,7 @@ import model.VitalSigns;
 /**
  *
  * @author Shreya Baliga*/
-public class DoctorViewEncounter extends javax.swing.JPanel {
+public class doctorViewEncounter extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -27,7 +27,7 @@ public class DoctorViewEncounter extends javax.swing.JPanel {
     PatientDirectory patientDirectory;
     String username;
     
-    public DoctorViewEncounter(String username, PatientDirectory patientDirectory) {
+    public doctorViewEncounter(String username, PatientDirectory patientDirectory) {
         initComponents();
         this.patientDirectory = patientDirectory;
         this.username = username;
@@ -147,7 +147,7 @@ public class DoctorViewEncounter extends javax.swing.JPanel {
         try{
    
             var patients = patientDirectory.getPatients();
-            DefaultTableModel model = new DefaultTableModel(new Object[]{ "PatientID","EncounterID" ,"Encounter Date", "PatientName","DoctorID","DoctorID","Date Of Vitals", "Blood Pressure","Pulse","Temperature"}, 0);
+            DefaultTableModel model = new DefaultTableModel(new Object[]{ "PatientID","EncounterID" ,"Encounter Date", "PatientName","DoctorID","HospitalID","Date Of Vitals", "Blood Pressure","Pulse","Temperature"}, 0);
             if(patients!=null && !patients.isEmpty())
             {
                 
@@ -231,7 +231,7 @@ public class DoctorViewEncounter extends javax.swing.JPanel {
         try{
    
             var patients = patientDirectory.getPatients();
-            DefaultTableModel model = new DefaultTableModel(new Object[]{ "PatientID","EncounterID" ,"Encounter Date", "PatientName","DoctorID","DoctorID","Date Of Vitals", "Blood Pressure","Pulse","Temperature"}, 0);
+            DefaultTableModel model = new DefaultTableModel(new Object[]{ "PatientID","EncounterID" ,"Encounter Date", "PatientName","DoctorID","HospitalID","Date Of Vitals", "Blood Pressure","Pulse","Temperature"}, 0);
             if(patients!=null && !patients.isEmpty())
             {
                 

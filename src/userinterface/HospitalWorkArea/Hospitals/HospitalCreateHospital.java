@@ -20,7 +20,7 @@ import userinterface.SystemWorkArea.Patient.*;
 /**
  *
  * @author Shreya Baliga*/
-public class HospitalCreateHospital extends javax.swing.JPanel {
+public class hospitalCreateHospital extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -29,7 +29,7 @@ public class HospitalCreateHospital extends javax.swing.JPanel {
     boolean validationCheck = true;
     boolean emptyValidationStatus = true;
             
-    public HospitalCreateHospital(HospitalDirectory hospitalDirectory) {
+    public hospitalCreateHospital(HospitalDirectory hospitalDirectory) {
         initComponents();
         initCityCmbx();
         this.hospitalDirectory = hospitalDirectory;

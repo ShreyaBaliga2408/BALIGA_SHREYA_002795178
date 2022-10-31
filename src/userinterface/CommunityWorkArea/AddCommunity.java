@@ -18,7 +18,7 @@ import model.HospitalDirectory;
 /**
  *
  * @author Shreya Baliga*/
-public class AddCommunity extends javax.swing.JPanel {
+public class addCommunity extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -28,7 +28,7 @@ public class AddCommunity extends javax.swing.JPanel {
     boolean emptyValidationStatus = true;
     Community community;
             
-    public AddCommunity(Community community) {
+    public addCommunity(Community community) {
         initComponents();
         this.community = community;
     }
@@ -53,7 +53,7 @@ public class AddCommunity extends javax.swing.JPanel {
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("Create Hospital");
+        lblTitle.setText("Add Community");
 
         lblHospName.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblHospName.setText("City");
@@ -181,11 +181,11 @@ public class AddCommunity extends javax.swing.JPanel {
              
              });
              
-             JOptionPane.showMessageDialog(this, "Community Added successfully",
+             JOptionPane.showMessageDialog(this, "Community has been added successfully",
                "Information", JOptionPane.INFORMATION_MESSAGE);
         }
         else{
-             JOptionPane.showMessageDialog(this, "Please enter correct data",
+             JOptionPane.showMessageDialog(this, "Please enter valid data",
                "Error", JOptionPane.ERROR_MESSAGE);
              
             cityField.setText("");

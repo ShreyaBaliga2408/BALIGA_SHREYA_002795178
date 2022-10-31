@@ -9,27 +9,27 @@ import model.DoctorDirectory;
 import model.EncounterHistory;
 import model.PatientDirectory;
 import model.PersonDirectory;
-import userinterface.HospitalWorkArea.Encounters.HospitalCreateEncounter;
-import userinterface.HospitalWorkArea.Encounters.HospitalUpdateEncounter;
-import userinterface.HospitalWorkArea.Encounters.HospitalViewEncounter;
+import userinterface.HospitalWorkArea.Encounters.hospitalCreateEncounter;
+import userinterface.HospitalWorkArea.Encounters.hospitalUpdateEncounter;
+import userinterface.HospitalWorkArea.Encounters.hospitalViewEncounter;
 
 
 /**
  *
  * @author Shreya Baliga*/
-public class HospitalEncountersWorkPanel extends javax.swing.JPanel {
+public class hospitalEncountersWorkPanel extends javax.swing.JPanel {
 
     PatientDirectory patientDirectory;
     DoctorDirectory doctorDirectory;
     /**
      * Creates new form SystemPatient
      */
-    public HospitalEncountersWorkPanel(PatientDirectory patientDirectory,DoctorDirectory doctorDirectory) {
+    public hospitalEncountersWorkPanel(PatientDirectory patientDirectory,DoctorDirectory doctorDirectory) {
         initComponents();
         this.patientDirectory = patientDirectory;
         this.doctorDirectory = doctorDirectory;
               
-        HospitalViewEncounter hospitalViewEncounter = new HospitalViewEncounter(patientDirectory);
+        hospitalViewEncounter hospitalViewEncounter = new hospitalViewEncounter(patientDirectory);
         splitPane.setRightComponent(hospitalViewEncounter );
     }
 
@@ -53,7 +53,7 @@ public class HospitalEncountersWorkPanel extends javax.swing.JPanel {
 
         splitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        controlPanel.setBackground(new java.awt.Color(204, 0, 0));
+        controlPanel.setBackground(new java.awt.Color(153, 0, 51));
         controlPanel.setPreferredSize(new java.awt.Dimension(150, 609));
         controlPanel.setVerifyInputWhenFocusTarget(false);
 
@@ -138,19 +138,19 @@ public class HospitalEncountersWorkPanel extends javax.swing.JPanel {
 
     private void btnCreateEncounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateEncounterActionPerformed
         // TODO add your handling code here:
-        HospitalCreateEncounter hospitalCreateEncounter = new HospitalCreateEncounter(patientDirectory, doctorDirectory);
+        hospitalCreateEncounter hospitalCreateEncounter = new hospitalCreateEncounter(patientDirectory, doctorDirectory);
         splitPane.setRightComponent(hospitalCreateEncounter);
     }//GEN-LAST:event_btnCreateEncounterActionPerformed
 
     private void btnViewEncountersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewEncountersActionPerformed
         // TODO add your handling code here:
-        HospitalViewEncounter hospitalViewEncounter = new HospitalViewEncounter(patientDirectory);
+        hospitalViewEncounter hospitalViewEncounter = new hospitalViewEncounter(patientDirectory);
         splitPane.setRightComponent(hospitalViewEncounter );
     }//GEN-LAST:event_btnViewEncountersActionPerformed
 
     private void btnUpdateEncounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateEncounterActionPerformed
         // TODO add your handling code here:
-        HospitalUpdateEncounter hospitalUpdateEncounter = new HospitalUpdateEncounter(patientDirectory,doctorDirectory);
+        hospitalUpdateEncounter hospitalUpdateEncounter = new hospitalUpdateEncounter(patientDirectory,doctorDirectory);
         splitPane.setRightComponent(hospitalUpdateEncounter);
     }//GEN-LAST:event_btnUpdateEncounterActionPerformed
 

@@ -14,19 +14,19 @@ import model.PersonDirectory;
 /**
  *
  * @author Shreya Baliga*/
-public class SystemEncountersWorkPanel extends javax.swing.JPanel {
+public class systemEncountersWorkPanel extends javax.swing.JPanel {
 
     PatientDirectory patientDirectory;
     DoctorDirectory doctorDirectory;
     /**
      * Creates new form SystemPatient
      */
-    public SystemEncountersWorkPanel(PatientDirectory patientDirectory, DoctorDirectory doctorDirectory) {
+    public systemEncountersWorkPanel(PatientDirectory patientDirectory, DoctorDirectory doctorDirectory) {
         initComponents();
         this.patientDirectory = patientDirectory;
         this.doctorDirectory = doctorDirectory;
               
-        SystemViewEncounter systemViewEncounter = new SystemViewEncounter(patientDirectory);
+        systemViewEncounter systemViewEncounter = new systemViewEncounter(patientDirectory);
         splitPane.setRightComponent(systemViewEncounter );
     }
 
@@ -50,7 +50,7 @@ public class SystemEncountersWorkPanel extends javax.swing.JPanel {
 
         splitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        controlPanel.setBackground(new java.awt.Color(204, 0, 51));
+        controlPanel.setBackground(new java.awt.Color(153, 0, 51));
         controlPanel.setPreferredSize(new java.awt.Dimension(150, 609));
         controlPanel.setVerifyInputWhenFocusTarget(false);
 
@@ -135,19 +135,19 @@ public class SystemEncountersWorkPanel extends javax.swing.JPanel {
 
     private void btnCreateEncounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateEncounterActionPerformed
         // TODO add your handling code here:
-        SystemCreateEncounter systemCreateEncounter = new SystemCreateEncounter(patientDirectory, doctorDirectory);
+        systemCreateEncounter systemCreateEncounter = new systemCreateEncounter(patientDirectory, doctorDirectory);
         splitPane.setRightComponent(systemCreateEncounter);
     }//GEN-LAST:event_btnCreateEncounterActionPerformed
 
     private void btnViewEncountersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewEncountersActionPerformed
         // TODO add your handling code here:
-        SystemViewEncounter systemViewEncounter = new SystemViewEncounter(patientDirectory);
+        systemViewEncounter systemViewEncounter = new systemViewEncounter(patientDirectory);
         splitPane.setRightComponent(systemViewEncounter );
     }//GEN-LAST:event_btnViewEncountersActionPerformed
 
     private void btnUpdateEncounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateEncounterActionPerformed
         // TODO add your handling code here:
-        SystemUpdateEncounter systemUpdateEncounter = new SystemUpdateEncounter(patientDirectory,doctorDirectory);
+        systemUpdateEncounter systemUpdateEncounter = new systemUpdateEncounter(patientDirectory,doctorDirectory);
         splitPane.setRightComponent(systemUpdateEncounter);
     }//GEN-LAST:event_btnUpdateEncounterActionPerformed
 

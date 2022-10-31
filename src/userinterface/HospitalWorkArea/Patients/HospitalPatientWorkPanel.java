@@ -8,26 +8,26 @@ import userinterface.SystemWorkArea.Patient.*;
 import model.PatientDirectory;
 import model.PersonDirectory;
 import userinterface.SystemWorkArea.Doctor.*;
-import userinterface.SystemWorkArea.Patient.SystemCreatePatient;
-import userinterface.SystemWorkArea.Patient.SystemUpdatePatient;
-import userinterface.SystemWorkArea.Patient.SystemViewPatient;
+import userinterface.SystemWorkArea.Patient.systemCreatePatient;
+import userinterface.SystemWorkArea.Patient.systemUpdatePatient;
+import userinterface.SystemWorkArea.Patient.systemViewPatient;
 
 /**
  *
  * @author Shreya Baliga*/
-public class HospitalPatientWorkPanel extends javax.swing.JPanel {
+public class hospitalPatientWorkPanel extends javax.swing.JPanel {
 
     PersonDirectory personDirectory;
     PatientDirectory patientDirectory;
     /**
      * Creates new form SystemPatient
      */
-    public HospitalPatientWorkPanel(PersonDirectory personDirectory, PatientDirectory patientDirectory) {
+    public hospitalPatientWorkPanel(PersonDirectory personDirectory, PatientDirectory patientDirectory) {
         initComponents();
         this.personDirectory = personDirectory;
         this.patientDirectory = patientDirectory;
               
-        HospitalViewPatient hospitalViewPatient = new HospitalViewPatient(patientDirectory,personDirectory);
+        hospitalViewPatient hospitalViewPatient = new hospitalViewPatient(patientDirectory,personDirectory);
         splitPane.setRightComponent(hospitalViewPatient );
     }
 
@@ -51,7 +51,7 @@ public class HospitalPatientWorkPanel extends javax.swing.JPanel {
 
         splitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        controlPanel.setBackground(new java.awt.Color(204, 0, 51));
+        controlPanel.setBackground(new java.awt.Color(153, 0, 51));
         controlPanel.setPreferredSize(new java.awt.Dimension(150, 609));
         controlPanel.setVerifyInputWhenFocusTarget(false);
 
@@ -136,19 +136,19 @@ public class HospitalPatientWorkPanel extends javax.swing.JPanel {
 
     private void btnCreatePatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreatePatientActionPerformed
         // TODO add your handling code here:
-        HospitalCreatePatient hospitalCreatePatient = new HospitalCreatePatient(personDirectory, patientDirectory);
+        hospitalCreatePatient hospitalCreatePatient = new hospitalCreatePatient(personDirectory, patientDirectory);
         splitPane.setRightComponent(hospitalCreatePatient);
     }//GEN-LAST:event_btnCreatePatientActionPerformed
 
     private void btnViewPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewPatientActionPerformed
         // TODO add your handling code here:
-        HospitalViewPatient hospitalViewPatient = new HospitalViewPatient(patientDirectory,personDirectory);
+        hospitalViewPatient hospitalViewPatient = new hospitalViewPatient(patientDirectory,personDirectory);
         splitPane.setRightComponent(hospitalViewPatient );
     }//GEN-LAST:event_btnViewPatientActionPerformed
 
     private void btnUpdatePatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdatePatientActionPerformed
         // TODO add your handling code here:
-        HospitalUpdatePatient hospitalUpdatePatient = new HospitalUpdatePatient(personDirectory,patientDirectory);
+        hospitalUpdatePatient hospitalUpdatePatient = new hospitalUpdatePatient(personDirectory,patientDirectory);
         splitPane.setRightComponent(hospitalUpdatePatient);
     }//GEN-LAST:event_btnUpdatePatientActionPerformed
 

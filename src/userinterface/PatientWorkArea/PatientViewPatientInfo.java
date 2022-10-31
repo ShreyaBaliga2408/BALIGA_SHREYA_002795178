@@ -19,7 +19,7 @@ import model.PersonDirectory;
 /**
  *
  * @author Shreya Baliga*/
-public class PatientViewPatientInfo extends javax.swing.JPanel {
+public class patientViewPatientInfo extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -32,7 +32,7 @@ public class PatientViewPatientInfo extends javax.swing.JPanel {
     boolean validationCheck = true;
     
     
-    public PatientViewPatientInfo(String username, PersonDirectory personDirectory, PatientDirectory patientDirectory) {
+    public patientViewPatientInfo(String username, PersonDirectory personDirectory, PatientDirectory patientDirectory) {
         initComponents();
         this.personDirectory = personDirectory;
         this.patientDirectory = patientDirectory;
@@ -52,9 +52,7 @@ public class PatientViewPatientInfo extends javax.swing.JPanel {
     private void initComponents() {
 
         lblTitle = new javax.swing.JLabel();
-        lblSearchPatient = new javax.swing.JLabel();
         txtSearchPatient = new javax.swing.JTextField();
-        btnSearchPatient = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
@@ -82,6 +80,7 @@ public class PatientViewPatientInfo extends javax.swing.JPanel {
         lblAge = new javax.swing.JLabel();
         lblGender = new javax.swing.JLabel();
         lblEmailID = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 153));
 
@@ -89,20 +88,10 @@ public class PatientViewPatientInfo extends javax.swing.JPanel {
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Update Personal Info");
 
-        lblSearchPatient.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblSearchPatient.setText("Search Patient by ID:");
-
         txtSearchPatient.setEditable(false);
         txtSearchPatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSearchPatientActionPerformed(evt);
-            }
-        });
-
-        btnSearchPatient.setText("Search");
-        btnSearchPatient.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchPatientActionPerformed(evt);
             }
         });
 
@@ -209,6 +198,8 @@ public class PatientViewPatientInfo extends javax.swing.JPanel {
         lblEmailID.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblEmailID.setText("Email ID :");
 
+        jLabel1.setText("Your ID :");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -240,12 +231,6 @@ public class PatientViewPatientInfo extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtAge)
                                     .addComponent(comboGender, 0, 167, Short.MAX_VALUE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblSearchPatient, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtSearchPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnSearchPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -286,19 +271,23 @@ public class PatientViewPatientInfo extends javax.swing.JPanel {
                                     .addComponent(txtCellPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addComponent(lblTitle, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(68, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtSearchPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(271, 271, 271))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblSearchPatient, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnSearchPatient)
-                        .addComponent(txtSearchPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(20, 20, 20)
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtSearchPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -447,42 +436,6 @@ public class PatientViewPatientInfo extends javax.swing.JPanel {
         }
 
     }//GEN-LAST:event_btnUpdatePatientActionPerformed
-
-    private void btnSearchPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchPatientActionPerformed
-        // TODO add your handling code here:
-
-        int patientId = Integer.parseInt(username);
-
-        for(Patient p: patientDirectory.getPatients()){
-
-            if(patientId == p.getPatientId()){
-                txtName.setText(p.getName());
-                txtAge.setText(String.valueOf(p.getAge()));
-                comboGender.setSelectedItem(p.getGender());
-                txtHeight.setText(String.valueOf(p.getHeight()));
-                txtWeight.setText(String.valueOf(p.getWeight()));
-
-                txtHouseNo.setText(String.valueOf(p.getHouse().getHouseNum()));
-                txtStreet.setText(String.valueOf(p.getHouse().getStreet()));
-
-                String city = null;
-                String community = null;
-                Map<String, String> communityMap = p.getHouse().getCommunity().getCommunity();
-                for(Map.Entry m: communityMap.entrySet()){
-                    city = m.getKey().toString();
-                    community = m.getValue().toString();
-                }
-
-                comboCity.setSelectedItem(city);
-                comboCommunity.setSelectedItem(community);
-
-                txtEmailID.setText(p.getEmailId());
-                txtCellPhoneNo.setText(String.valueOf(p.getCellPhoneNumber()));
-
-            }
-
-        }
-    }//GEN-LAST:event_btnSearchPatientActionPerformed
 
     private void txtSearchPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchPatientActionPerformed
         // TODO add your handling code here:
@@ -705,12 +658,12 @@ public class PatientViewPatientInfo extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnSearchPatient;
     private javax.swing.JButton btnUpdatePatient;
     private javax.swing.JComboBox<String> comboCity;
     private javax.swing.JComboBox<String> comboCommunity;
     private javax.swing.JComboBox<String> comboGender;
     private javax.swing.JComboBox<String> comboState;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblAge;
     private javax.swing.JLabel lblCellPhoneNo;
@@ -722,7 +675,6 @@ public class PatientViewPatientInfo extends javax.swing.JPanel {
     private javax.swing.JLabel lblHeight;
     private javax.swing.JLabel lblHouseNo;
     private javax.swing.JLabel lblName;
-    private javax.swing.JLabel lblSearchPatient;
     private javax.swing.JLabel lblState;
     private javax.swing.JLabel lblStreet;
     private javax.swing.JLabel lblTitle;

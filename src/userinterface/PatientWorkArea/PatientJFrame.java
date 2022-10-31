@@ -10,39 +10,40 @@ import model.DoctorDirectory;
 import model.HospitalDirectory;
 import model.PatientDirectory;
 import model.PersonDirectory;
-import userinterface.MainJFrame;
+import userinterface.mainJFrame;
 
 /**
  *
  * @author Shreya Baliga*/
-public class PatientJFrame extends javax.swing.JFrame {
+public class patientJFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form PatientJFrame
+     * Creates new form patientJFrame
      */
     public static String username;
     public static PersonDirectory personDirectory;
     public static PatientDirectory patientDirectory;
     public static DoctorDirectory doctorDirectory;
     public static HospitalDirectory hospitalDirectory;
+   
     
-    
-    public PatientJFrame(String username,PersonDirectory personDirectory ,PatientDirectory patientDirectory, DoctorDirectory doctorDirectory, HospitalDirectory hospitalDirectory) {
+    public patientJFrame(String username,PersonDirectory personDirectory ,PatientDirectory patientDirectory, DoctorDirectory doctorDirectory, HospitalDirectory hospitalDirectory, String name) {
         initComponents();
         this.username = username;
         this.personDirectory = personDirectory;
         this.patientDirectory = patientDirectory;
         this.doctorDirectory = doctorDirectory;
         this.hospitalDirectory = hospitalDirectory;
+        nameLabel.setText(name);
         
         if(username == null){
             JOptionPane.showMessageDialog(this, "Please login to proceed");
             dispose();
-            MainJFrame mainFrame = new MainJFrame();
+            mainJFrame mainFrame = new mainJFrame();
             mainFrame.main(null);
         }
         
-        PatientViewHospital viewHosp = new PatientViewHospital(username, hospitalDirectory);
+        patientViewHospital viewHosp = new patientViewHospital(username, hospitalDirectory);
         jSplitPaneSystem.setRightComponent(viewHosp);
     }
 
@@ -64,6 +65,7 @@ public class PatientJFrame extends javax.swing.JFrame {
         btnAppointments = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        nameLabel = new javax.swing.JLabel();
         workArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -111,12 +113,16 @@ public class PatientJFrame extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Patient");
 
+        nameLabel.setBackground(new java.awt.Color(255, 255, 255));
+        nameLabel.setForeground(new java.awt.Color(255, 255, 255));
+        nameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
+                .addContainerGap(45, Short.MAX_VALUE)
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnDoctors, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -124,14 +130,20 @@ public class PatientJFrame extends javax.swing.JFrame {
                     .addComponent(btnPersonalInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnAppointments, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
+            .addGroup(controlPanelLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnHosp, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addComponent(btnDoctors, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -143,6 +155,8 @@ public class PatientJFrame extends javax.swing.JFrame {
                 .addComponent(btnLogout)
                 .addGap(24, 24, 24))
         );
+
+        nameLabel.getAccessibleContext().setAccessibleName("nameLabel");
 
         jSplitPaneSystem.setLeftComponent(controlPanel);
 
@@ -182,27 +196,27 @@ public class PatientJFrame extends javax.swing.JFrame {
     private void btnHospActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHospActionPerformed
         // TODO add your handling code here:
         
-        PatientViewHospital viewHosp = new PatientViewHospital(username,hospitalDirectory);
+        patientViewHospital viewHosp = new patientViewHospital(username,hospitalDirectory);
         jSplitPaneSystem.setRightComponent(viewHosp);
     }//GEN-LAST:event_btnHospActionPerformed
 
     private void btnDoctorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoctorsActionPerformed
         // TODO add your handling code here:
         //System.out.println(doctorDirectory.getDoctors().toString()+" In Doctors call");
-        PatientViewDoctor pvd = new PatientViewDoctor(username,personDirectory, doctorDirectory);
+        patientViewDoctor pvd = new patientViewDoctor(username,personDirectory, doctorDirectory);
         jSplitPaneSystem.setRightComponent(pvd);
     }//GEN-LAST:event_btnDoctorsActionPerformed
 
     private void btnPersonalInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPersonalInfoActionPerformed
         // TODO add your handling code here:
-        PatientViewPatientInfo vpi= new PatientViewPatientInfo(username,personDirectory, patientDirectory);
+        patientViewPatientInfo vpi= new patientViewPatientInfo(username,personDirectory, patientDirectory);
         jSplitPaneSystem.setRightComponent(vpi);
     }//GEN-LAST:event_btnPersonalInfoActionPerformed
 
     private void btnAppointmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAppointmentsActionPerformed
         // TODO add your handling code here:
         
-        PatientViewEncounter ve = new PatientViewEncounter(username,patientDirectory);
+        patientViewEncounter ve = new patientViewEncounter(username,patientDirectory);
         jSplitPaneSystem.setRightComponent(ve);
     }//GEN-LAST:event_btnAppointmentsActionPerformed
 
@@ -214,39 +228,39 @@ public class PatientJFrame extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PatientJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PatientJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PatientJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PatientJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                PatientJFrame patientFrame = new PatientJFrame(username,personDirectory ,patientDirectory, doctorDirectory, hospitalDirectory);
-                patientFrame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
-                patientFrame.setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(patientJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(patientJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(patientJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(patientJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                patientJFrame patientFrame = new patientJFrame(username,personDirectory ,patientDirectory, doctorDirectory, hospitalDirectory);
+//                patientFrame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+//                patientFrame.setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAppointments;
@@ -257,6 +271,7 @@ public class PatientJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel controlPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSplitPane jSplitPaneSystem;
+    private javax.swing.JLabel nameLabel;
     private javax.swing.JPanel workArea;
     // End of variables declaration//GEN-END:variables
 }

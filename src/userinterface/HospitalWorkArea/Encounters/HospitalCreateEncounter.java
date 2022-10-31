@@ -26,7 +26,7 @@ import model.VitalSigns;
 /**
  *
  * @author Shreya Baliga*/
-public class HospitalCreateEncounter extends javax.swing.JPanel {
+public class hospitalCreateEncounter extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -36,7 +36,7 @@ public class HospitalCreateEncounter extends javax.swing.JPanel {
     DoctorDirectory doctorDirectory;
     boolean validationCheck=true;
     
-    public HospitalCreateEncounter(PatientDirectory patientDirectory,DoctorDirectory doctorDirectory) {
+    public hospitalCreateEncounter(PatientDirectory patientDirectory,DoctorDirectory doctorDirectory) {
         initComponents();
         this.patientDirectory = patientDirectory;
         this.doctorDirectory = doctorDirectory;
@@ -75,12 +75,10 @@ public class HospitalCreateEncounter extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
-        lblTitle.setBackground(new java.awt.Color(0, 153, 153));
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Create Encounter");
 
-        lblDate.setBackground(new java.awt.Color(0, 153, 153));
         lblDate.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblDate.setText("Date :");
 
@@ -316,7 +314,7 @@ public class HospitalCreateEncounter extends javax.swing.JPanel {
                         patientEncounter.put(encounterDate,vitalSigns);
                          
                     } catch (ParseException ex) {
-                        Logger.getLogger(HospitalCreateEncounter.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(hospitalCreateEncounter.class.getName()).log(Level.SEVERE, null, ex);
                     }
                    
                     encounter.setPatientEncounter(patientEncounter);

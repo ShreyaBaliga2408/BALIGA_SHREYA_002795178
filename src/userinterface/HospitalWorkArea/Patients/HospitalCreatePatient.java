@@ -23,7 +23,7 @@ import model.PersonDirectory;
 /**
  *
  * @author Shreya Baliga*/
-public class HospitalCreatePatient extends javax.swing.JPanel {
+public class hospitalCreatePatient extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -34,7 +34,7 @@ public class HospitalCreatePatient extends javax.swing.JPanel {
     boolean emptyValidationStatus = true;
     boolean validationCheck = true;
     
-    public HospitalCreatePatient(PersonDirectory personDirectory,PatientDirectory patientDirectory) {
+    public hospitalCreatePatient(PersonDirectory personDirectory,PatientDirectory patientDirectory) {
         initComponents();
         initCityCmbx();
         this.personDirectory = personDirectory;
@@ -51,6 +51,7 @@ public class HospitalCreatePatient extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel3 = new javax.swing.JLabel();
         lblTitle = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
@@ -79,6 +80,10 @@ public class HospitalCreatePatient extends javax.swing.JPanel {
         comboCommunity = new javax.swing.JComboBox<>();
         txtHouseNo = new javax.swing.JTextField();
         comboGender = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        passwordField = new javax.swing.JPasswordField();
+
+        jLabel3.setText("jLabel3");
 
         setBackground(new java.awt.Color(0, 153, 153));
 
@@ -189,12 +194,14 @@ public class HospitalCreatePatient extends javax.swing.JPanel {
 
         comboGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
 
+        jLabel4.setText("Password : ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(56, Short.MAX_VALUE)
+                .addContainerGap(52, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -217,7 +224,9 @@ public class HospitalCreatePatient extends javax.swing.JPanel {
                                         .addComponent(lblState, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtStreet)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(96, 96, 96)
+                                            .addComponent(txtStreet))
                                         .addComponent(comboState, 0, 169, Short.MAX_VALUE)))
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(txtEmailID, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -251,10 +260,14 @@ public class HospitalCreatePatient extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnCreatePatient)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblCellPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(lblCellPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtCellPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(50, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtCellPhoneNo, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                                    .addComponent(passwordField))))))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,7 +318,9 @@ public class HospitalCreatePatient extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtEmailID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblEmailID))
+                    .addComponent(lblEmailID)
+                    .addComponent(jLabel4)
+                    .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnCreatePatient)
                 .addContainerGap(101, Short.MAX_VALUE))
@@ -352,26 +367,25 @@ public class HospitalCreatePatient extends javax.swing.JPanel {
                     float height = Float.parseFloat(txtHeight.getText());
                     float weight = Float.parseFloat(txtWeight.getText());
                     
-                    Random random=new Random();
-                    int patientID=random.nextInt((9999 - 100) + 1) + 10;
+                    int patientID = this.patientDirectory.getPatients().size()+1;
                      
-                    String password = name + String.valueOf(random.nextInt((9999 - 100) + 1)+ 10);
+                    String password = passwordField.getText();
                     
                     Person patient = new Patient(name,cellPhoneNumber,emailId,age,gender,house,patientID ,height ,weight, password);
                     personDirectory.addNewPerson(patient);
                     patientDirectory.addNewPatient(patient);
                     
-                    JOptionPane.showMessageDialog(this,"Patient Registered Successfully.Your New Patient Id is:"+patientID+" and password: "+password+",Please save this Patient Id for furture appointments.");
+                    JOptionPane.showMessageDialog(this,"Patient Registered Successfully. Your id is: "+patientID);
                                     
 
                 }
                 else{
-                    JOptionPane.showMessageDialog(this,"Some Error in entered data.Please check over the red fields to know more.");
+                    JOptionPane.showMessageDialog(this,"Hover on red fields for more description");
                     validationCheck=true;
                 }
             }
             else{
-                    JOptionPane.showMessageDialog(this,"Some Error in entered data. Please check over the red fields to know more.");
+                    JOptionPane.showMessageDialog(this,"Hover on red fields for more description");
                     emptyValidationStatus=true;
                 }   
         }
@@ -481,6 +495,16 @@ public class HospitalCreatePatient extends javax.swing.JPanel {
         {
             txtCellPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
+               if(!passwordField.getText().matches("^[a-zA-Z0-9@#$%&]+$"))
+        {
+            passwordField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            passwordField.setToolTipText("This Field must contain number, alphabets and one special character");
+            validationCheck=false;
+        }
+        else
+        {
+            passwordField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
         return validationCheck;
     }
     
@@ -562,6 +586,16 @@ public class HospitalCreatePatient extends javax.swing.JPanel {
         {
             txtCellPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
+        if(passwordField.getText().equals(null) || passwordField.getText().trim().isEmpty())
+        {
+            passwordField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            passwordField.setToolTipText("This Field must contain number, alphabets and one special character");
+            emptyValidationStatus=false;
+        }
+         if(!passwordField.getText().equals(null) && !passwordField.getText().trim().isEmpty())
+        {
+            passwordField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
         return emptyValidationStatus;
     }
     
@@ -597,6 +631,8 @@ public class HospitalCreatePatient extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> comboState;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel lblAge;
     private javax.swing.JLabel lblCellPhoneNo;
     private javax.swing.JLabel lblCity;
@@ -610,6 +646,7 @@ public class HospitalCreatePatient extends javax.swing.JPanel {
     private javax.swing.JLabel lblStreet;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblWeight;
+    private javax.swing.JPasswordField passwordField;
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtCellPhoneNo;
     private javax.swing.JTextField txtEmailID;

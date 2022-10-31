@@ -21,6 +21,8 @@ import model.Community;
 import model.Doctor;
 import model.DoctorDirectory;
 import model.DoctorSpecialization;
+import model.Hospital;
+import model.HospitalDirectory;
 import model.House;
 import model.Person;
 import model.PersonDirectory;
@@ -29,7 +31,7 @@ import userinterface.SystemWorkArea.Patient.*;
 /**
  *
  * @author Shreya Baliga*/
-public class HospitalCreateDoctor extends javax.swing.JPanel {
+public class hospitalCreateDoctor extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemCreatePatient
@@ -39,10 +41,13 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
     DoctorDirectory doctorDirectory;
     boolean emptyValidationStatus = true;
     boolean validationCheck = true;
-    public HospitalCreateDoctor(PersonDirectory personDirectory, DoctorDirectory doctorDirectory) {
+    HospitalDirectory hospitalDirectory;
+    
+    public hospitalCreateDoctor(PersonDirectory personDirectory, DoctorDirectory doctorDirectory, HospitalDirectory hospitalDirectory) {
         initComponents();
         this.personDirectory = personDirectory;
         this.doctorDirectory = doctorDirectory;
+        this.hospitalDirectory = hospitalDirectory;
         initSpecializationCmbx();
         initCityCmbx();
     }
@@ -86,6 +91,8 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
         txtPractisingFrom = new javax.swing.JFormattedTextField();
         lblHosp = new javax.swing.JLabel();
         txtHospId = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        passwordField = new javax.swing.JPasswordField();
 
         setBackground(new java.awt.Color(0, 153, 153));
 
@@ -189,11 +196,18 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
         lblHosp.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblHosp.setText("Hospital Id :");
 
+        txtHospId.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtHospIdFocusLost(evt);
+            }
+        });
         txtHospId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtHospIdActionPerformed(evt);
             }
         });
+
+        jLabel2.setText("Password: ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -257,9 +271,13 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnCreateDoctor)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblCellPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(lblCellPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtCellPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtCellPhoneNo, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                                    .addComponent(passwordField))))))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -314,7 +332,9 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtEmailID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblEmailID))
+                    .addComponent(lblEmailID)
+                    .addComponent(jLabel2)
+                    .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnCreateDoctor)
                 .addContainerGap(77, Short.MAX_VALUE))
@@ -372,8 +392,9 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
                     house.setCommunity(community);
 
 
-                    Random random=new Random();
-                    int doctorID=random.nextInt((9999 - 100) + 1) + 10;
+                    int doctorID= this.doctorDirectory.getDoctors().size()+1;
+                    
+                    String password = passwordField.getText();
                     
                     Date practisingDate = (Date) txtPractisingFrom.getValue();
                     
@@ -388,23 +409,23 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
                         
                     DoctorSpecialization specialization = DoctorSpecialization.valueOf(comboSpecialization.getSelectedItem().toString() );
 
-                    String password = name + String.valueOf(random.nextInt((9999 - 100) + 1)+ 10);
+                    
                     
                     Person doctor = new Doctor(name,cellPhoneNumber,emailId,age,gender,house,doctorID,practisingDate,specialization,hospId, password);
          
                     personDirectory.addNewPerson(doctor);
                     doctorDirectory.addNewDoctor(doctor);
 
-                    JOptionPane.showMessageDialog(this,"Doctor Registered Successfully.Your New Doctor Id is:"+doctorID+" and password: "+password+",Please save this Doctor Id for furture reference.");
+                    JOptionPane.showMessageDialog(this,"Doctor Registered Successfully with id: "+doctorID);
 
                 }
                 else{
-                    JOptionPane.showMessageDialog(this,"Some Error in entered data.Please check over the red fields to know more.");
+                    JOptionPane.showMessageDialog(this,"Hover on red fields for more description");
                     validationCheck=true;
                 }
             }
             else{
-                JOptionPane.showMessageDialog(this,"Some Error in entered data. Please check over the red fields to know more.");
+                JOptionPane.showMessageDialog(this,"Hover on red fields for more description");
                 emptyValidationStatus=true;
             }
         }
@@ -424,53 +445,77 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtHospIdActionPerformed
 
-    private boolean RegexValidation() {
+    private void txtHospIdFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtHospIdFocusLost
+        // TODO add your handling code here:
+         if(txtHospId.getText().length() > 0 && txtHospId.getText().matches("\\D+")){
+            txtHospId.setText( "");
+            JOptionPane.showMessageDialog(this,"Only integers are allowed");
+          
+        }
+        else if(txtHospId.getText().length() > 0 && !hospitalExists()){
+            
+            txtHospId.setText( "");
+            
+            String hospitalsData = "";
+            
+            for(Hospital hos : this.hospitalDirectory.getHospitals()){
+                
+               hospitalsData += hos.getHospitalName() + " -> "+hos.getHospitalID()+"\n";
+            }
+            
+            JOptionPane.showMessageDialog(this,"Hospital doesn't exist. List of hospitals: \n"+ hospitalsData);
+        }
+    }//GEN-LAST:event_txtHospIdFocusLost
+
+    public Boolean hospitalExists(){
+           
+        return this.hospitalDirectory.getHospitals().size() >= Integer.parseInt(txtHospId.getText());
+    }
+    
+        
+     private boolean RegexValidation() {
         if(!txtName.getText().matches("^[a-zA-Z ]+$"))
         {
             txtName.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
             txtName.setToolTipText("Please enter only characters and space.");
             validationCheck=false;
         }
-        
-        if(txtName.getText().matches("^[a-zA-Z ]+$"))
+        else
         {
             txtName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
         }
         
         
-        if(!txtAge.getText().matches("\\b\\d+\\b"))
+        if(!txtAge.getText().matches("^[0-9]{1,3}$"))
         {
             txtAge.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
-            txtAge.setToolTipText("Pleae enter only numbers");
+            txtAge.setToolTipText("Please enter upto three digit numbers");
             validationCheck=false;
         }
-        
-        if(txtAge.getText().matches("\\b\\d+\\b"))
+        else
         {
             txtAge.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
         
-        
         if(!txtHospId.getText().matches("\\b\\d+\\b"))
         {
             txtHospId.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
-            txtHospId.setToolTipText("Pleae enter only numbers");
+            txtHospId.setToolTipText("Please enter only numbers");
             validationCheck=false;
         }
-        
-        if(txtHospId.getText().matches("\\b\\d+\\b"))
+        else
         {
             txtHospId.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
         
-        if(!txtEmailID.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
+        
+        if(!txtEmailID.getText().matches("^[A-Za-z0-9+_.-]+@[A-Za-z]+.[A-Za-z]+$"))
         {
             txtEmailID.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
             txtEmailID.setToolTipText("Please enter a valid Email Address in the form abc@xyy.com");
             validationCheck=false;
         }
-        
-        if(txtEmailID.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
+        else
         {
             txtEmailID.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
@@ -481,8 +526,7 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
             txtCellPhoneNo.setToolTipText("Please enter a 10 digit number");
             validationCheck=false;
         }
-        
-        if(txtCellPhoneNo.getText().matches("^[0-9]{10}$"))
+        else
         {
             txtCellPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
@@ -493,15 +537,48 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
             txtPractisingFrom.setToolTipText("Please enter date in format mm/dd/yyyy");
             validationCheck=false;
         }
-        
-        if(txtPractisingFrom.getText().matches("^(1[0-2]|0[1-9])/(3[01]" + "|[12][0-9]|0[1-9])/[0-9]{4}$"))
+        else
         {
             txtPractisingFrom.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
         
+        if(!txtHouseNo.getText().matches("\\b\\d+\\b"))
+        {
+            txtHouseNo.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtHouseNo.setToolTipText("Please enter only numbers");
+            validationCheck=false;
+        }
+        else
+        {
+            txtHouseNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        
+        if(!txtStreet.getText().matches("^[a-zA-Z0-9 ]+$"))
+        {
+            txtName.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtName.setToolTipText("Please enter only characters and numbers only.");
+            validationCheck=false;
+        }
+        else
+        {
+            txtName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        
+         if(!passwordField.getText().matches("^[a-zA-Z0-9@#$%&]+$"))
+        {
+            passwordField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            passwordField.setToolTipText("This Field must contain number, alphabets and one special character");
+            validationCheck=false;
+        }
+        else
+        {
+            passwordField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        
         return validationCheck;
     }
-    
+     
+     
     private boolean EmpytyFieldValidation() {
         if(txtName.getText().equals(null) || txtName.getText().trim().isEmpty() )
         {
@@ -570,6 +647,16 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
         {
             txtCellPhoneNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
+        if(passwordField.getText().equals(null) || passwordField.getText().trim().isEmpty())
+        {
+            passwordField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            passwordField.setToolTipText("This Field must contain number, alphabets and one special character");
+            emptyValidationStatus=false;
+        }
+         if(!passwordField.getText().equals(null) && !passwordField.getText().trim().isEmpty())
+        {
+            passwordField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
         return emptyValidationStatus;
     }
     
@@ -613,6 +700,7 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> comboSpecialization;
     private javax.swing.JComboBox<String> comboState;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblAge;
     private javax.swing.JLabel lblCellPhoneNo;
     private javax.swing.JLabel lblCity;
@@ -628,6 +716,7 @@ public class HospitalCreateDoctor extends javax.swing.JPanel {
     private javax.swing.JLabel lblState;
     private javax.swing.JLabel lblStreet;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JPasswordField passwordField;
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtCellPhoneNo;
     private javax.swing.JTextField txtEmailID;

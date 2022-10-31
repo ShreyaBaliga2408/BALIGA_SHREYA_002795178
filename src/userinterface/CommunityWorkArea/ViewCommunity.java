@@ -15,13 +15,13 @@ import model.Hospital;
 /**
  *
  * @author Shreya Baliga*/
-public class ViewCommunity extends javax.swing.JPanel {
+public class viewCommunity extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemViewHospital
      */
     Community community;
-    public ViewCommunity(Community community) {
+    public viewCommunity(Community community) {
         initComponents();
         initCityCmbx();
         this.community = community;
@@ -48,7 +48,7 @@ public class ViewCommunity extends javax.swing.JPanel {
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("View Community");
+        lblTitle.setText("View Community Details");
 
         lblSearchHospital.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblSearchHospital.setText("View Community By City :");
