@@ -24,8 +24,7 @@ import model.VitalSigns;
 
 /**
  *
- * @author Shreya Baliga
- */
+ * @author Shreya Baliga*/
 public class SystemCreateEncounter extends javax.swing.JPanel {
 
     /**
@@ -73,7 +72,7 @@ public class SystemCreateEncounter extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(191, 172, 224));
 
-        jPanel1.setBackground(new java.awt.Color(191, 172, 224));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

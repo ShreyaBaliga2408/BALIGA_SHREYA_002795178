@@ -17,8 +17,7 @@ import userinterface.MainJFrame;
 
 /**
  *
- * @author Shreya Baliga
- */
+ * @author Shreya Baliga*/
 public class DoctorJFrame extends javax.swing.JFrame {
 
     /**
@@ -71,7 +70,7 @@ public class DoctorJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        controlPanel.setBackground(new java.awt.Color(100, 92, 170));
+        controlPanel.setBackground(new java.awt.Color(0, 153, 153));
         controlPanel.setPreferredSize(new java.awt.Dimension(200, 600));
 
         btnPatient.setText("Patient");

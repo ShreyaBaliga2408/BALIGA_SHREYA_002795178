@@ -8,12 +8,12 @@ import userinterface.SystemWorkArea.Doctor.SystemDoctorWorkPanel;
 import userinterface.SystemWorkArea.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import model.Community;
 import userinterface.MainJFrame;
 
 /**
  *
- * @author Shreya Baliga
- */
+ * @author Shreya Baliga*/
 public class CommunityJFrame extends javax.swing.JFrame {
 
     /**
@@ -21,10 +21,12 @@ public class CommunityJFrame extends javax.swing.JFrame {
      */
     
     public static String username;
+    Community community;
     
-    public CommunityJFrame(String username) {
+    public CommunityJFrame(String username, Community community) {
         initComponents();
         this.username = username;
+        this.community = community;
         
         if(username == null){
             JOptionPane.showMessageDialog(this, "Please login to proceed");
@@ -33,8 +35,6 @@ public class CommunityJFrame extends javax.swing.JFrame {
             mainFrame.main(null);
         }
         
-//        SystemDoctorWorkPanel systempatient = new SystemDoctorWorkPanel();
-//        jSplitPaneSystem.setRightComponent(systempatient);
         
     }
 
@@ -56,7 +56,7 @@ public class CommunityJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        controlPanel.setBackground(new java.awt.Color(100, 92, 170));
+        controlPanel.setBackground(new java.awt.Color(0, 153, 153));
         controlPanel.setPreferredSize(new java.awt.Dimension(200, 600));
 
         btnViewCommunity.setText("View Communities");
@@ -140,14 +140,14 @@ public class CommunityJFrame extends javax.swing.JFrame {
     private void btnViewCommunityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewCommunityActionPerformed
         // TODO add your handling code here:
         
-        ViewCommunity viewCommunity = new ViewCommunity();
+        ViewCommunity viewCommunity = new ViewCommunity(this.community);
         jSplitPaneSystem.setRightComponent(viewCommunity);
         
     }//GEN-LAST:event_btnViewCommunityActionPerformed
 
     private void btnAddCommunityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCommunityActionPerformed
         // TODO add your handling code here:
-        
+        jSplitPaneSystem.setRightComponent(new AddCommunity(this.community));
  
         
     }//GEN-LAST:event_btnAddCommunityActionPerformed
@@ -157,45 +157,6 @@ public class CommunityJFrame extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CommunityJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CommunityJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CommunityJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CommunityJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-               CommunityJFrame systemFrame = new CommunityJFrame(username);
-               systemFrame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
-               systemFrame.setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddCommunity;

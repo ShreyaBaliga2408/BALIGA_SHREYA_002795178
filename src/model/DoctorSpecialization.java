@@ -6,8 +6,7 @@ package model;
 
 /**
  *
- * @author Shreya Baliga
- */
+ * @author Shreya Baliga*/
 public enum DoctorSpecialization {
     AllergyAndImmunology,
     Dermatology,

@@ -16,8 +16,7 @@ import model.PersonDirectory;
 
 /**
  *
- * @author Shreya Baliga
- */
+ * @author Shreya Baliga*/
 public class HospitalViewPatient extends javax.swing.JPanel {
 
     /**
@@ -51,7 +50,7 @@ public class HospitalViewPatient extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPatientList = new javax.swing.JTable();
 
-        setBackground(new java.awt.Color(191, 172, 224));
+        setBackground(new java.awt.Color(0, 153, 153));
 
         lblSearchPatient.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblSearchPatient.setText("Search Patient by Name:");

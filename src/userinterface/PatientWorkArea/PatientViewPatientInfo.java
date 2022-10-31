@@ -18,8 +18,7 @@ import model.PersonDirectory;
 
 /**
  *
- * @author Shreya Baliga
- */
+ * @author Shreya Baliga*/
 public class PatientViewPatientInfo extends javax.swing.JPanel {
 
     /**
@@ -40,6 +39,7 @@ public class PatientViewPatientInfo extends javax.swing.JPanel {
         this.username = username;
         initCityCmbx();
         txtSearchPatient.setText(username);
+        addFields();
     }
 
     /**
@@ -83,7 +83,7 @@ public class PatientViewPatientInfo extends javax.swing.JPanel {
         lblGender = new javax.swing.JLabel();
         lblEmailID = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(191, 172, 224));
+        setBackground(new java.awt.Color(0, 153, 153));
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -349,47 +349,6 @@ public class PatientViewPatientInfo extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtSearchPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchPatientActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSearchPatientActionPerformed
-
-    private void btnSearchPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchPatientActionPerformed
-        // TODO add your handling code here:
-        
-         int patientId = Integer.parseInt(username);
-         
-         for(Patient p: patientDirectory.getPatients()){
-             
-             if(patientId == p.getPatientId()){
-                 txtName.setText(p.getName());
-                 txtAge.setText(String.valueOf(p.getAge()));
-                 comboGender.setSelectedItem(p.getGender());
-                 txtHeight.setText(String.valueOf(p.getHeight()));
-                 txtWeight.setText(String.valueOf(p.getWeight()));
-                 
-                 txtHouseNo.setText(String.valueOf(p.getHouse().getHouseNum()));
-                 txtStreet.setText(String.valueOf(p.getHouse().getStreet()));
-                 
-                String city = null;
-                String community = null;              
-                Map<String, String> communityMap = p.getHouse().getCommunity().getCommunity();            
-                for(Map.Entry m: communityMap.entrySet()){  
-                    city = m.getKey().toString();
-                    community = m.getValue().toString();
-                }  
-                 
-                comboCity.setSelectedItem(city);
-                comboCommunity.setSelectedItem(community);
-                
-                txtEmailID.setText(p.getEmailId());
-                txtCellPhoneNo.setText(String.valueOf(p.getCellPhoneNumber()));
-                
-            
-             }
-                 
-         }
-    }//GEN-LAST:event_btnSearchPatientActionPerformed
-
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameActionPerformed
@@ -488,6 +447,46 @@ public class PatientViewPatientInfo extends javax.swing.JPanel {
         }
 
     }//GEN-LAST:event_btnUpdatePatientActionPerformed
+
+    private void btnSearchPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchPatientActionPerformed
+        // TODO add your handling code here:
+
+        int patientId = Integer.parseInt(username);
+
+        for(Patient p: patientDirectory.getPatients()){
+
+            if(patientId == p.getPatientId()){
+                txtName.setText(p.getName());
+                txtAge.setText(String.valueOf(p.getAge()));
+                comboGender.setSelectedItem(p.getGender());
+                txtHeight.setText(String.valueOf(p.getHeight()));
+                txtWeight.setText(String.valueOf(p.getWeight()));
+
+                txtHouseNo.setText(String.valueOf(p.getHouse().getHouseNum()));
+                txtStreet.setText(String.valueOf(p.getHouse().getStreet()));
+
+                String city = null;
+                String community = null;
+                Map<String, String> communityMap = p.getHouse().getCommunity().getCommunity();
+                for(Map.Entry m: communityMap.entrySet()){
+                    city = m.getKey().toString();
+                    community = m.getValue().toString();
+                }
+
+                comboCity.setSelectedItem(city);
+                comboCommunity.setSelectedItem(community);
+
+                txtEmailID.setText(p.getEmailId());
+                txtCellPhoneNo.setText(String.valueOf(p.getCellPhoneNumber()));
+
+            }
+
+        }
+    }//GEN-LAST:event_btnSearchPatientActionPerformed
+
+    private void txtSearchPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchPatientActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSearchPatientActionPerformed
 
     private boolean RegexValidation() {
         if(!txtName.getText().matches("^[a-zA-Z ]+$"))
@@ -667,6 +666,42 @@ public class PatientViewPatientInfo extends javax.swing.JPanel {
             comboCity.addItem(cities[count++].toString());
         }
        initCommunityCmbx();
+    }
+    
+    public void addFields(){
+    
+        int patientId = Integer.parseInt(username);
+
+        for(Patient p: patientDirectory.getPatients()){
+
+            if(patientId == p.getPatientId()){
+                txtName.setText(p.getName());
+                txtAge.setText(String.valueOf(p.getAge()));
+                comboGender.setSelectedItem(p.getGender());
+                txtHeight.setText(String.valueOf(p.getHeight()));
+                txtWeight.setText(String.valueOf(p.getWeight()));
+
+                txtHouseNo.setText(String.valueOf(p.getHouse().getHouseNum()));
+                txtStreet.setText(String.valueOf(p.getHouse().getStreet()));
+
+                String city = null;
+                String community = null;
+                Map<String, String> communityMap = p.getHouse().getCommunity().getCommunity();
+                for(Map.Entry m: communityMap.entrySet()){
+                    city = m.getKey().toString();
+                    community = m.getValue().toString();
+                }
+
+                comboCity.setSelectedItem(city);
+                comboCommunity.setSelectedItem(community);
+
+                txtEmailID.setText(p.getEmailId());
+                txtCellPhoneNo.setText(String.valueOf(p.getCellPhoneNumber()));
+
+            }
+
+        }
+    
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

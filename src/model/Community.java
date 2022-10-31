@@ -10,8 +10,7 @@ import java.util.Map;
 
 /**
  *
- * @author Shreya Baliga
- */
+ * @author Shreya Baliga*/
 public class Community{
       
     

@@ -15,8 +15,7 @@ import model.PersonDirectory;
 
 /**
  *
- * @author Shreya Baliga
- */
+ * @author Shreya Baliga*/
 public class SystemViewPatient extends javax.swing.JPanel {
 
     /**
@@ -51,7 +50,7 @@ public class SystemViewPatient extends javax.swing.JPanel {
         tblPatientList = new javax.swing.JTable();
         btnDelete = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(191, 172, 224));
+        setBackground(new java.awt.Color(0, 153, 153));
 
         lblSearchPatient.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblSearchPatient.setText("Search Patient by Name:");

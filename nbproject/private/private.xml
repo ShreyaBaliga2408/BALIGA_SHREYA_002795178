@@ -3,10 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/T:/AED/Assignment/Choudhari_TejasHemant_002771165/Assignment2/src/userinterface/DoctorWorkArea/Encounters/DoctorViewEncounter.java</file>
-            <file>file:/T:/AED/Assignment/Choudhari_TejasHemant_002771165/Assignment2/src/userinterface/DoctorWorkArea/Encounters/DoctorUpdateEncounter.java</file>
-            <file>file:/T:/AED/Assignment/Choudhari_TejasHemant_002771165/Assignment2/src/userinterface/SystemWorkArea/Encounters/SystemViewEncounter.java</file>
-            <file>file:/T:/AED/Assignment/Choudhari_TejasHemant_002771165/Assignment2/src/userinterface/HospitalWorkArea/Encounters/HospitalUpdateEncounter.java</file>
+            <file>file:/C:/Users/shreya%20baliga/OneDrive/Desktop/ASSIGNMENT2-AED/src/userinterface/SystemWorkArea/Patient/SystemCreatePatient.java</file>
+            <file>file:/C:/Users/shreya%20baliga/OneDrive/Desktop/ASSIGNMENT2-AED/src/userinterface/SystemWorkArea/Doctor/SystemDoctorWorkPanel.java</file>
+            <file>file:/C:/Users/shreya%20baliga/OneDrive/Desktop/ASSIGNMENT2-AED/src/userinterface/DoctorWorkArea/DoctorJFrame.java</file>
+            <file>file:/C:/Users/shreya%20baliga/OneDrive/Desktop/ASSIGNMENT2-AED/src/model/System.java</file>
+            <file>file:/C:/Users/shreya%20baliga/OneDrive/Desktop/ASSIGNMENT2-AED/src/model/DoctorDirectory.java</file>
+            <file>file:/C:/Users/shreya%20baliga/OneDrive/Desktop/ASSIGNMENT2-AED/src/userinterface/SystemWorkArea/Doctor/SystemCreateDoctor.java</file>
+            <file>file:/C:/Users/shreya%20baliga/OneDrive/Desktop/ASSIGNMENT2-AED/src/userinterface/DoctorWorkArea/DoctorViewPatient.java</file>
+            <file>file:/C:/Users/shreya%20baliga/OneDrive/Desktop/ASSIGNMENT2-AED/src/model/PatientDirectory.java</file>
+            <file>file:/C:/Users/shreya%20baliga/OneDrive/Desktop/ASSIGNMENT2-AED/src/userinterface/DoctorWorkArea/Encounters/DoctorViewEncounter.java</file>
+            <file>file:/C:/Users/shreya%20baliga/OneDrive/Desktop/ASSIGNMENT2-AED/src/userinterface/PatientWorkArea/PatientViewPatientInfo.java</file>
+            <file>file:/C:/Users/shreya%20baliga/OneDrive/Desktop/ASSIGNMENT2-AED/src/userinterface/PatientWorkArea/PatientViewHospital.java</file>
         </group>
     </open-files>
 </project-private>

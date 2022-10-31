@@ -14,17 +14,18 @@ import model.Hospital;
 
 /**
  *
- * @author Shreya Baliga
- */
+ * @author Shreya Baliga*/
 public class ViewCommunity extends javax.swing.JPanel {
 
     /**
      * Creates new form SystemViewHospital
      */
-
-    public ViewCommunity() {
+    Community community;
+    public ViewCommunity(Community community) {
         initComponents();
         initCityCmbx();
+        this.community = community;
+        
     }
 
     /**
@@ -39,11 +40,11 @@ public class ViewCommunity extends javax.swing.JPanel {
         lblTitle = new javax.swing.JLabel();
         lblSearchHospital = new javax.swing.JLabel();
         btnSearchHospital = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblHospitalList = new javax.swing.JTable();
         comboCity = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        communityListItems = new javax.swing.JList<>();
 
-        setBackground(new java.awt.Color(191, 172, 224));
+        setBackground(new java.awt.Color(0, 153, 153));
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -53,32 +54,16 @@ public class ViewCommunity extends javax.swing.JPanel {
         lblSearchHospital.setText("View Community By City :");
 
         btnSearchHospital.setText("Search");
+        btnSearchHospital.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSearchHospitalMouseClicked(evt);
+            }
+        });
         btnSearchHospital.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchHospitalActionPerformed(evt);
             }
         });
-
-        tblHospitalList.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
-            },
-            new String [] {
-                "Community Name"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(tblHospitalList);
 
         comboCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,21 +71,28 @@ public class ViewCommunity extends javax.swing.JPanel {
             }
         });
 
+        communityListItems.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = {};
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(communityListItems);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblSearchHospital, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(comboCity, 0, 207, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2)
+                    .addComponent(comboCity, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSearchHospital, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,9 +104,9 @@ public class ViewCommunity extends javax.swing.JPanel {
                     .addComponent(lblSearchHospital, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearchHospital, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(comboCity, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62))
+                .addGap(46, 46, 46)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -128,49 +120,42 @@ public class ViewCommunity extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_comboCityActionPerformed
 
+    private void btnSearchHospitalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSearchHospitalMouseClicked
+        // TODO add your handling code here:
+        
+        String city = (String) comboCity.getSelectedItem();
+        this.community.getLstCommunity().forEach((cityName, communityList) ->{
+            
+            if(city.matches(cityName.toString())){
+                
+                Object data[][] = new Object[1][communityList.length];
+                
+                for(int i =0 ; i < communityList.length; i++){
+                    System.out.println(communityList[i]);
+                    data[0][i] = communityList[i];
+                }
+                
+                
+                communityListItems.setModel(new javax.swing.AbstractListModel<String>() {
+                    String[] strings = communityList;
+                    public int getSize() { return strings.length; }
+                    public String getElementAt(int i) { return strings[i]; }
+                });
+            
+            }
+        });
+    }//GEN-LAST:event_btnSearchHospitalMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSearchHospital;
     private javax.swing.JComboBox<String> comboCity;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JList<String> communityListItems;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblSearchHospital;
     private javax.swing.JLabel lblTitle;
-    private javax.swing.JTable tblHospitalList;
     // End of variables declaration//GEN-END:variables
 
-//    private void PopulateData() {
-//       try{
-//            Set<Hospital> hospitals = hospitalDirectory.getHospitals();
-//            DefaultTableModel model = new DefaultTableModel(new Object[]{ "Hospital Id", "Hospital Name", "Hospital Address", "City","Community"}, 0);
-//            if(hospitals!= null && !hospitals.isEmpty()){
-//              
-//                for(Hospital h: hospitals){           
-//                    
-//                    String hospName = h.getHospitalName();
-//                    String hospAddress = h.getHospitalAddress();
-//                    Community community = h.getCommunity();
-//                    String city = null;
-//                    String communityName = null;
-//                    
-//                    Map<String,String> communityMap = community.getCommunity();
-//                    
-//                    for(Map.Entry m: communityMap.entrySet()){  
-//                        city = m.getKey().toString();
-//                        communityName = m.getValue().toString();
-//                    }  
-//                    
-//                    model.addRow(new Object[]
-//                        {h,hospName,hospAddress,city,communityName});       
-//                }
-//            }
-//            tblHospitalList.setModel(model);
-//            
-//       }
-//       catch(Exception e)
-//       {
-//           System.out.println(e);
-//       }    
-//    }
     
     
     private void initCityCmbx() {

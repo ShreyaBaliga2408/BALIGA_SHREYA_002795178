@@ -13,8 +13,7 @@ import model.PersonDirectory;
 
 /**
  *
- * @author Shreya Baliga
- */
+ * @author Shreya Baliga*/
 public class SystemEncountersWorkPanel extends javax.swing.JPanel {
 
     PatientDirectory patientDirectory;
@@ -51,7 +50,7 @@ public class SystemEncountersWorkPanel extends javax.swing.JPanel {
 
         splitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        controlPanel.setBackground(new java.awt.Color(160, 132, 202));
+        controlPanel.setBackground(new java.awt.Color(204, 0, 51));
         controlPanel.setPreferredSize(new java.awt.Dimension(150, 609));
         controlPanel.setVerifyInputWhenFocusTarget(false);
 
@@ -107,7 +106,7 @@ public class SystemEncountersWorkPanel extends javax.swing.JPanel {
 
         splitPane.setLeftComponent(controlPanel);
 
-        patientWorkArea.setBackground(new java.awt.Color(191, 172, 224));
+        patientWorkArea.setBackground(new java.awt.Color(0, 153, 153));
 
         javax.swing.GroupLayout patientWorkAreaLayout = new javax.swing.GroupLayout(patientWorkArea);
         patientWorkArea.setLayout(patientWorkAreaLayout);

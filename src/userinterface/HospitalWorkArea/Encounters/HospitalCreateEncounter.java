@@ -25,8 +25,7 @@ import model.VitalSigns;
 
 /**
  *
- * @author Shreya Baliga
- */
+ * @author Shreya Baliga*/
 public class HospitalCreateEncounter extends javax.swing.JPanel {
 
     /**
@@ -72,14 +71,16 @@ public class HospitalCreateEncounter extends javax.swing.JPanel {
         lblDoctorId1 = new javax.swing.JLabel();
         txtHospId = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(191, 172, 224));
+        setBackground(new java.awt.Color(0, 153, 153));
 
-        jPanel1.setBackground(new java.awt.Color(191, 172, 224));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
+        lblTitle.setBackground(new java.awt.Color(0, 153, 153));
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Create Encounter");
 
+        lblDate.setBackground(new java.awt.Color(0, 153, 153));
         lblDate.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblDate.setText("Date :");
 

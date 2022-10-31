@@ -12,8 +12,7 @@ import java.util.Set;
 
 /**
  *
- * @author Shreya Baliga
- */
+ * @author Shreya Baliga*/
 public class PatientDirectory {
     
     private Set<Patient> patients = new HashSet<>();
@@ -30,7 +29,7 @@ public class PatientDirectory {
        community.setCommunity(communities);
        house.setCommunity(community);
         
-        Patient patient=new Patient("Tejas",Long.parseLong("8879385690"),"t@g.com",20,"Male",house,2554,Float.parseFloat("6.5"),88,"t11");
+        Patient patient=new Patient("shreya",Long.parseLong("8574984371"),"s@g.com",20,"Female",house,2554,Float.parseFloat("6.5"),88,"shreya");
         EncounterHistory encounterHistory=new EncounterHistory();
         Encounter encounter=new Encounter();
         

@@ -17,8 +17,7 @@ import model.HospitalDirectory;
 
 /**
  *
- * @author Shreya Baliga
- */
+ * @author Shreya Baliga*/
 public class AddCommunity extends javax.swing.JPanel {
 
     /**
@@ -27,11 +26,11 @@ public class AddCommunity extends javax.swing.JPanel {
     HospitalDirectory hospitalDirectory;
     boolean validationCheck = true;
     boolean emptyValidationStatus = true;
+    Community community;
             
-    public AddCommunity(HospitalDirectory hospitalDirectory) {
+    public AddCommunity(Community community) {
         initComponents();
-        initCityCmbx();
-        this.hospitalDirectory = hospitalDirectory;
+        this.community = community;
     }
 
     /**
@@ -45,66 +44,44 @@ public class AddCommunity extends javax.swing.JPanel {
 
         lblTitle = new javax.swing.JLabel();
         lblHospName = new javax.swing.JLabel();
-        txtHospitalName = new javax.swing.JTextField();
+        cityField = new javax.swing.JTextField();
         lblHospitalAddress = new javax.swing.JLabel();
-        txtHospAddress = new javax.swing.JTextField();
-        lblContactNo = new javax.swing.JLabel();
-        txtContactNo = new javax.swing.JTextField();
-        lblCommunity = new javax.swing.JLabel();
-        btnCreateHospital = new javax.swing.JButton();
-        lblCity = new javax.swing.JLabel();
-        comboCity = new javax.swing.JComboBox<>();
-        comboCommunity = new javax.swing.JComboBox<>();
+        communityField = new javax.swing.JTextField();
+        createCommunity = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(191, 172, 224));
+        setBackground(new java.awt.Color(0, 153, 153));
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Create Hospital");
 
         lblHospName.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblHospName.setText("Hospital Name :");
+        lblHospName.setText("City");
 
-        txtHospitalName.addActionListener(new java.awt.event.ActionListener() {
+        cityField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtHospitalNameActionPerformed(evt);
+                cityFieldActionPerformed(evt);
             }
         });
 
         lblHospitalAddress.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblHospitalAddress.setText("Hospital Address :");
+        lblHospitalAddress.setText("Community");
 
-        txtHospAddress.addActionListener(new java.awt.event.ActionListener() {
+        communityField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtHospAddressActionPerformed(evt);
+                communityFieldActionPerformed(evt);
             }
         });
 
-        lblContactNo.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblContactNo.setText("Contact Number :");
-
-        txtContactNo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtContactNoActionPerformed(evt);
+        createCommunity.setText("Create Community");
+        createCommunity.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                createCommunityMouseClicked(evt);
             }
         });
-
-        lblCommunity.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblCommunity.setText("Community :");
-
-        btnCreateHospital.setText("Create Hospital");
-        btnCreateHospital.addActionListener(new java.awt.event.ActionListener() {
+        createCommunity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCreateHospitalActionPerformed(evt);
-            }
-        });
-
-        lblCity.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblCity.setText("City :");
-
-        comboCity.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                comboCityItemStateChanged(evt);
+                createCommunityActionPerformed(evt);
             }
         });
 
@@ -118,23 +95,17 @@ public class AddCommunity extends javax.swing.JPanel {
                     .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(lblHospitalAddress, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblHospName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblContactNo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(lblHospitalAddress, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblHospName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtHospitalName, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
-                            .addComponent(txtHospAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
-                            .addComponent(txtContactNo, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
-                            .addComponent(btnCreateHospital)
-                            .addComponent(comboCommunity, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblCity, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(comboCity, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(cityField, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
+                            .addComponent(communityField, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE))))
                 .addContainerGap(73, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(createCommunity)
+                .addGap(226, 226, 226))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,215 +115,114 @@ public class AddCommunity extends javax.swing.JPanel {
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblHospName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtHospitalName, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE))
+                    .addComponent(cityField, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblHospitalAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtHospAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblContactNo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtContactNo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblCity, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                    .addComponent(comboCity))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblCommunity, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                    .addComponent(comboCommunity))
-                .addGap(18, 18, 18)
-                .addComponent(btnCreateHospital)
-                .addContainerGap(184, Short.MAX_VALUE))
+                    .addComponent(communityField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addComponent(createCommunity)
+                .addContainerGap(299, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtHospitalNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHospitalNameActionPerformed
+    private void cityFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtHospitalNameActionPerformed
+    }//GEN-LAST:event_cityFieldActionPerformed
 
-    private void txtHospAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHospAddressActionPerformed
+    private void communityFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_communityFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtHospAddressActionPerformed
+    }//GEN-LAST:event_communityFieldActionPerformed
 
-    private void txtContactNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContactNoActionPerformed
+    private void createCommunityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createCommunityActionPerformed
+        // TODO add your handling code here
+        
+    }//GEN-LAST:event_createCommunityActionPerformed
+
+    private void createCommunityMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createCommunityMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtContactNoActionPerformed
-
-    private void btnCreateHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateHospitalActionPerformed
-        // TODO add your handling code here:
-
-        try{
+         Boolean val = validateFields();
+        
+        if(val){
+            
+            String city = cityField.getText();
+            String comm = communityField.getText();
+            
+             this.community.getLstCommunity().forEach((cityName, communityList) ->{
+                 if(city.toLowerCase().matches(cityName.toString().toLowerCase())){
+                     
+                    String data[] = new String[communityList.length+1];
                 
-            if(EmpytyFieldValidation()){
-            
-                if(RegexValidation()){
+                    for(int i =0 ; i < communityList.length; i++){
+                        System.out.println(communityList[i]);
+                        data[i] = communityList[i];
+                    }
+                    data[communityList.length] = comm;
+                    
+                     switch (city.toLowerCase()) {
+                        case "newyork":
+                             this.community.getLstCommunity().put(City.NewYork, data);
+                             break;
+                        case "boston":
+                             this.community.getLstCommunity().put(City.Boston, data);
+                             break;
+                        case "southerncalifornia":
+                             this.community.getLstCommunity().put(City.SouthernCalifornia, data);
+                             break;
+                        case "austin":
+                             this.community.getLstCommunity().put(City.Austin, data);
+                             break;
+                         default:
+                             throw new AssertionError();
+                     }
+                    
                  
-                    Random random=new Random();
-                    int hospitalId = random.nextInt((9999 - 100) + 1) + 10;
-                    String hospitalName = txtHospitalName.getText();
-                    String hospitalAddress = txtHospAddress.getText();
-                    long contactNo = Long.parseLong(txtContactNo.getText());
-                    String city = comboCity.getSelectedItem().toString();
-                    String community = comboCommunity.getSelectedItem().toString();
-                    
-                    Hospital hospital = new Hospital();
-                    hospital.setHospitalID(hospitalId);
-                    hospital.setHospitalName(hospitalName);
-                    hospital.setHospitalAddress(hospitalAddress);
-                    hospital.setContactNumber(contactNo);
-                    
-                    Map<String, String> communityMap = new HashMap<>();
-                    communityMap.put(city,community);
-           
-                    Community c = new Community();
-                    c.setCommunity(communityMap);
-                    
-                    hospital.setCommunity(c);                 
-                    hospitalDirectory.setHospitals(hospital);
-                    
-                    JOptionPane.showMessageDialog(this,"Hospital Registered Successfully. New Hospital ID Id is:"+hospitalId+",Please save this Hospital Id for furture appointments.");
-                }
+                 }
+             
+             });
+             
+             JOptionPane.showMessageDialog(this, "Community Added successfully",
+               "Information", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+             JOptionPane.showMessageDialog(this, "Please enter correct data",
+               "Error", JOptionPane.ERROR_MESSAGE);
+             
+            cityField.setText("");
+            communityField.setText("");
+         }
+        
+        
+    }//GEN-LAST:event_createCommunityMouseClicked
+    
+    public Boolean validateFields(){
+        
+        String city = cityField.getText();
+        String comm = communityField.getText();
+        
+        if(city.length() > 0 && comm.length() > 0 && !hasNumbers(city) && !hasNumbers(comm) ){
+        
+            return true;
+        }
+        
+        return false;
+    };
+    
+    public Boolean hasNumbers(String data){
+        System.out.println(data.matches("[0-9]+"));
+        return data.matches("[0-9]+");
+    };
 
-                else{
-                    JOptionPane.showMessageDialog(this,"Some Error in entered data.Please check over the red fields to know more.");
-                    validationCheck=true;
-                }
-            }
-            else{
-                JOptionPane.showMessageDialog(this,"Some Error in entered data. Please check over the red fields to know more.");
-                emptyValidationStatus=true;
-            
-            }
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(this,"Patient not registered, Try again");
-            System.out.println(e.toString());
-            emptyValidationStatus=true;
-            if(hospitalDirectory.getHospitals().size()>0){
-                hospitalDirectory.getHospitals().remove(hospitalDirectory.getHospitals().size() - 1);
-            }
-        }
-        
-    }//GEN-LAST:event_btnCreateHospitalActionPerformed
 
-    private void comboCityItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboCityItemStateChanged
-        // TODO add your handling code here:
-       initCommunityCmbx();
-    }//GEN-LAST:event_comboCityItemStateChanged
     
-    private void initCommunityCmbx() {
-        comboCommunity.removeAllItems();
-        int count = 0;
-        var selectedCity=comboCity.getSelectedItem().toString();
-        City city=City.valueOf(selectedCity);
-        Community community=new Community();
-        community.setLstCommunity();
-        String[] communities=community.getLstCommunity().get(city);
-            for (String community_ : communities) {
-                comboCommunity.addItem(communities[count++]);
-            }
-    }
     
-    private void initCityCmbx() {
-       comboCity.removeAllItems();
-       int count = 0;
-        City[] cities = City.values();
-        for (City city_ : cities) {
-            comboCity.addItem(cities[count++].toString());
-        }
-       initCommunityCmbx();
-    }
-    
-    private boolean RegexValidation() {
-        if(!txtHospitalName.getText().matches("^[a-zA-Z ]+$"))
-        {
-            txtHospitalName.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
-            txtHospitalName.setToolTipText("Please enter only characters and space.");
-            validationCheck=false;
-        }
-        
-        if(txtHospitalName.getText().matches("^[a-zA-Z ]+$"))
-        {
-            txtHospitalName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
-        }
-        
-//        if(!txtHospAddress.getText().matches("^[a-zA-Z ]+$"))
-//        {
-//            txtHospAddress.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
-//            txtHospAddress.setToolTipText("Please enter only characters and space.");
-//            validationCheck=false;
-//        }
-//        
-//        if(txtHospAddress.getText().matches("^[a-zA-Z ]+$"))
-//        {
-//            txtHospAddress.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
-//        }
-        
-        if(!txtContactNo.getText().matches("^[0-9]{10}$"))
-        {
-            txtContactNo.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
-            txtContactNo.setToolTipText("Please enter a 10 digit number");
-            validationCheck=false;
-        }
-        
-        if(txtContactNo.getText().matches("^[0-9]{10}$"))
-        {
-            txtContactNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
-        }
-        
-        return validationCheck;
-    }
-    
-    private boolean EmpytyFieldValidation() {
-        if(txtHospitalName.getText().equals(null) || txtHospitalName.getText().trim().isEmpty() )
-        {
-            txtHospitalName.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
-            txtHospitalName.setToolTipText("This Field Cannot be empty");
-            emptyValidationStatus= false;
-        }
-        if(!txtHospitalName.getText().equals(null) && !txtHospitalName.getText().trim().isEmpty() )
-        {
-            txtHospitalName.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
-        }
-        
-        if(txtHospAddress.getText().equals(null) || txtHospAddress.getText().trim().isEmpty() )
-        {
-            txtHospAddress.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
-            txtHospAddress.setToolTipText("This Field Cannot be empty");
-            emptyValidationStatus= false;
-        }
-        if(!txtHospAddress.getText().equals(null) && !txtHospAddress.getText().trim().isEmpty() )
-        {
-            txtHospAddress.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
-        }
-        
-        if(txtContactNo.getText().equals(null) || txtContactNo.getText().trim().isEmpty())
-        {
-            txtContactNo.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
-            txtContactNo.setToolTipText("This Field Cannot be empty");
-            emptyValidationStatus=false;
-        }
-        if(!txtContactNo.getText().equals(null) && !txtContactNo.getText().trim().isEmpty())
-        {
-            txtContactNo.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
-        }
-        
-        return emptyValidationStatus;
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCreateHospital;
-    private javax.swing.JComboBox<String> comboCity;
-    private javax.swing.JComboBox<String> comboCommunity;
-    private javax.swing.JLabel lblCity;
-    private javax.swing.JLabel lblCommunity;
-    private javax.swing.JLabel lblContactNo;
+    private javax.swing.JTextField cityField;
+    private javax.swing.JTextField communityField;
+    private javax.swing.JButton createCommunity;
     private javax.swing.JLabel lblHospName;
     private javax.swing.JLabel lblHospitalAddress;
     private javax.swing.JLabel lblTitle;
-    private javax.swing.JTextField txtContactNo;
-    private javax.swing.JTextField txtHospAddress;
-    private javax.swing.JTextField txtHospitalName;
     // End of variables declaration//GEN-END:variables
 }

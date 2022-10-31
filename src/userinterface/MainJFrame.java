@@ -8,6 +8,7 @@ package userinterface;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
+import model.Community;
 import model.Doctor;
 import model.DoctorDirectory;
 import model.HospitalDirectory;
@@ -24,8 +25,7 @@ import userinterface.SystemWorkArea.SystemJFrame;
 
 /**
  *
- * @author Shreya Baliga
- */
+ * @author Shreya Baliga*/
 public class MainJFrame extends javax.swing.JFrame {
 
     /**
@@ -36,13 +36,16 @@ public class MainJFrame extends javax.swing.JFrame {
     public  DoctorDirectory doctorDirectory;
     public  PatientDirectory patientDirectory;
     public  HospitalDirectory hospitalDirectory;
+    public Community community;
     
     public MainJFrame() {
         initComponents();
         this.personDirectory = new PersonDirectory();
         this.doctorDirectory = new DoctorDirectory();
         this.patientDirectory = new PatientDirectory();
-        this.hospitalDirectory = new HospitalDirectory();        
+        this.hospitalDirectory = new HospitalDirectory();   
+        this.community = new Community();
+        this.community.setLstCommunity();
     }
 
     /**
@@ -67,7 +70,7 @@ public class MainJFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(191, 172, 224));
 
-        jPanel1.setBackground(new java.awt.Color(191, 172, 224));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
         txtPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,7 +195,7 @@ public class MainJFrame extends javax.swing.JFrame {
             if((username != null && !username.trim().isEmpty()) && (password != null && !password.trim().isEmpty())){
 
                 if(userRole.equals(UserRoles.System_Admin)){
-                    if(username.equals("s") && password.equals("s")){
+                    if(username.equals("system") && password.equals("system")){
                         reset();
                         loginStatus = true;
                         SystemJFrame systemFrame = new SystemJFrame(username,personDirectory,doctorDirectory,patientDirectory,hospitalDirectory);
@@ -205,10 +208,10 @@ public class MainJFrame extends javax.swing.JFrame {
                 }
 
                 if(userRole.equals(UserRoles.Community_Admin)){
-                    if(username.equals("c") && password.equals("c")){
+                    if(username.equals("community") && password.equals("community")){
                         reset();
                         loginStatus = true;
-                        CommunityJFrame communityFrame = new CommunityJFrame(username);
+                        CommunityJFrame communityFrame = new CommunityJFrame(username, this.community);
                         communityFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                         communityFrame.setVisible(true);
                     }
@@ -218,7 +221,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 }
 
                 if(userRole.equals(UserRoles.Hospital_Admin)){
-                    if(username.equals("h") && password.equals("h")){
+                    if(username.equals("hospital") && password.equals("hospital")){
                         reset();
                         loginStatus = true;
                         HospitalJFrame hospitalFrame = new HospitalJFrame(username,personDirectory, doctorDirectory, patientDirectory, hospitalDirectory);

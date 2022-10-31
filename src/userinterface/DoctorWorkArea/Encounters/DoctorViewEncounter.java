@@ -18,8 +18,7 @@ import model.VitalSigns;
 
 /**
  *
- * @author Shreya Baliga
- */
+ * @author Shreya Baliga*/
 public class DoctorViewEncounter extends javax.swing.JPanel {
 
     /**
@@ -51,7 +50,7 @@ public class DoctorViewEncounter extends javax.swing.JPanel {
         tblEncountersList = new javax.swing.JTable();
         txtSearchEncounters = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(191, 172, 224));
+        setBackground(new java.awt.Color(0, 153, 153));
 
         lblSearchEnctounter.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblSearchEnctounter.setText("Search Encounter By Patient Id :");

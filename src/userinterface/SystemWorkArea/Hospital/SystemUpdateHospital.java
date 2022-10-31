@@ -19,8 +19,7 @@ import userinterface.SystemWorkArea.Patient.*;
 
 /**
  *
- * @author Shreya Baliga
- */
+ * @author Shreya Baliga*/
 public class SystemUpdateHospital extends javax.swing.JPanel {
 
     /**
@@ -60,7 +59,7 @@ public class SystemUpdateHospital extends javax.swing.JPanel {
         txtHospitalSearch = new javax.swing.JTextField();
         btnSearchHospital = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(191, 172, 224));
+        setBackground(new java.awt.Color(0, 153, 153));
 
         lblHospName.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblHospName.setText("Hospital Name :");

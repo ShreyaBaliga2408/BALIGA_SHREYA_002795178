@@ -17,8 +17,7 @@ import userinterface.SystemWorkArea.Patient.*;
 
 /**
  *
- * @author Shreya Baliga
- */
+ * @author Shreya Baliga*/
 public class HospitalViewDoctor extends javax.swing.JPanel {
 
     /**
@@ -51,8 +50,9 @@ public class HospitalViewDoctor extends javax.swing.JPanel {
         txtSearchDoctor = new javax.swing.JTextField();
         btnSearchDoctor = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(191, 172, 224));
+        setBackground(new java.awt.Color(0, 153, 153));
 
+        lblTitle.setBackground(new java.awt.Color(0, 153, 153));
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("View Doctors");

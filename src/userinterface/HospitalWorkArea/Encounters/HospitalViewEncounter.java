@@ -22,8 +22,7 @@ import model.VitalSigns;
 
 /**
  *
- * @author Shreya Baliga
- */
+ * @author Shreya Baliga*/
 public class HospitalViewEncounter extends javax.swing.JPanel {
 
     /**
@@ -54,7 +53,7 @@ public class HospitalViewEncounter extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblEncountersList = new javax.swing.JTable();
 
-        setBackground(new java.awt.Color(191, 172, 224));
+        setBackground(new java.awt.Color(0, 153, 153));
 
         txtSearchEncounters.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -6,8 +6,7 @@ package model;
 
 /**
  *
- * @author Tejas
- */
+ * @author Shreya Baliga*/
 public class Hospital {
 
     private int HospitalID;
