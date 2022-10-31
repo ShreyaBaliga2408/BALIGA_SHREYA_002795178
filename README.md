@@ -13,7 +13,7 @@ README file is important
 NO DATABASE required - USE ArrayList or suitable DATA STRUCTURES for the DIRECTORIES
 Panels - At least 5 panels required: System Administrator, Doctor, Patient, Community Admin and Hospital Admin
 CRUD can be implemented in the same panel - e.g: A Hospital Administrator can perform all CRUD operations on Doctors in the same panel
-UNIQUE ID - for a person, doctor, encounter wherever valid is necessary
+UNIQUE ID - for a person, doctor, encounter wherever valid is necessary.
 
 
 
